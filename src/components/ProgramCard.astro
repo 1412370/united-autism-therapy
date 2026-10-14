@@ -1,0 +1,19 @@
+---
+import { Image } from 'astro:assets';
+import Icon, { type IconName } from './Icon.astro';
+import { PROGRAM_IMAGES } from '../utils/images';
+interface Props {
+  slug: string; title: string; icon: IconName; image: keyof typeof PROGRAM_IMAGES; alt: string; text: string; points: readonly string[];
+}
+const { slug, title, icon, image, alt, text, points } = Astro.props;
+---
+<article class="program-card card--link">
+  <Image src={PROGRAM_IMAGES[image]} alt={alt} widths={[360, 540, 760]} sizes="(min-width: 1100px) 360px, (min-width: 700px) 45vw, 92vw" loading="lazy" decoding="async" format="webp" class="program-card__img" />
+  <div class="program-card__body">
+    <span class="icon-badge icon-badge--leaf"><Icon name={icon} /></span>
+    <h3><a class="stretched" href={`/services/${slug}/`}>{title}</a></h3>
+    <p>{text}</p>
+    <ul class="tick-list">{points.map((p) => <li>{p}</li>)}</ul>
+    <span class="card__more" aria-hidden="true">Learn more →</span>
+  </div>
+</article>

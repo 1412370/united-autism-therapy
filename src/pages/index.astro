@@ -1,0 +1,217 @@
+---
+import { Picture, Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import BlogCard from '../components/BlogCard.astro';
+import FAQ from '../components/FAQ.astro';
+import CTABand from '../components/CTABand.astro';
+import ContactInfo from '../components/ContactInfo.astro';
+import MapEmbed from '../components/MapEmbed.astro';
+import Testimonials from '../components/Testimonials.astro';
+import BrandWave from '../components/BrandWave.astro';
+import ProgramCard from '../components/ProgramCard.astro';
+import Highlights from '../components/Highlights.astro';
+import { PROGRAMS } from '../data/highlights';
+import { GENERAL_FAQS } from '../data/faqs';
+import { BUSINESS, INTEGRATIONS, telHref } from '../data/site';
+import { localBusinessSchema, faqSchema } from '../utils/schema';
+import { getPosts } from '../utils/posts';
+import { IMAGES } from '../utils/images';
+import heroPhoto from '../assets/brand/hero-photo.jpg';
+
+const posts = await getPosts();
+const pick = (slugs: string[]) => slugs.map((s) => posts.find((p) => p.id === s)).filter((p) => p !== undefined);
+const startHere = pick(['benefits-of-in-home-aba-therapy', 'what-is-aba-therapy', 'how-to-start-in-home-aba-therapy']);
+const homeFaqs = GENERAL_FAQS.slice(0, 6);
+const routines = [
+  { t: 'Mealtime', d: 'requesting food, sitting with the family, trying new foods' },
+  { t: 'Play', d: 'taking turns, sharing toys, joining a game' },
+  { t: 'Getting dressed', d: 'following the steps, choosing clothes, asking for help' },
+  { t: 'Hygiene', d: 'handwashing, brushing teeth, bath-time routines' },
+  { t: 'Transitions', d: 'leaving the park, ending screen time, getting in the car' },
+];
+---
+<Layout
+  title="ABA Therapy for Autism in Westminster, CA | United Autism Therapy"
+  rawTitle
+  description={`Compassionate ABA, speech and occupational therapy for children with autism in Westminster, CA. In-home ABA across 5 California counties. Free consultation.`}
+  canonical="/"
+  schema={[localBusinessSchema(), ...(INTEGRATIONS.faqSchema ? [faqSchema(homeFaqs)] : [])]}
+>
+  <!-- Hero -->
+  <section class="hero hero--brand">
+    <div class="wrap split">
+      <div>
+        <div class="badge-row">
+          <span class="badge badge--green"><Icon name="check" />BCBA &amp; RBT certified</span>
+          <span class="badge badge--sun">Westminster, CA</span>
+        </div>
+        <h1>Compassionate <span class="accent">ABA Therapy</span> for Children with Autism</h1>
+        <p class="hero__lead">
+          Personalized, evidence-based therapy that helps children with autism communicate, connect and grow. Serving
+          Westminster, CA and families in Orange, Riverside, San Diego, San Bernardino and Santa Clara Counties.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn--cta" href="/contact/"><Icon name="calendar" />Free Consultation</a>
+          <a class="btn btn--ghost" href={telHref}><Icon name="phone" />{BUSINESS.phone}</a>
+        </div>
+        <ul class="counties" aria-label="Counties we serve">
+          {BUSINESS.counties.map((c) => <li><Icon name="pin" />{c}</li>)}
+        </ul>
+        <ul class="hero-stats" aria-label="At a glance">
+          <li><strong>4+</strong><span>Service settings</span></li>
+          <li><strong>100%</strong><span>Evidence-based methods</span></li>
+          <li><strong>Free</strong><span>Consultation</span></li>
+        </ul>
+      </div>
+      <div class="hero__media">
+        <Picture
+          src={heroPhoto}
+          formats={['avif', 'webp']}
+          alt="Smiling ABA therapist in a blue United Autism Therapy shirt working with a happy boy on a color-matching activity"
+          widths={[420, 640, 829]}
+          sizes="(min-width: 900px) 500px, 92vw"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
+        <div class="float-card float-card--top">
+          <span class="icon-badge icon-badge--coral"><Icon name="heart" /></span>
+          <div><strong>Family-Centered Care</strong><span>Every step of the way</span></div>
+        </div>
+        <div class="float-card float-card--bottom">
+          <span class="icon-badge icon-badge--leaf"><Icon name="shield" /></span>
+          <div><strong>Certified BCBAs &amp; RBTs</strong><span>Autism specialists</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlights: 4 care settings, each opens a popup -->
+  <Highlights />
+
+  <!-- Programs -->
+  <section class="section" aria-labelledby="programs-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="badge badge--green" style="margin-bottom:.9rem">Our programs</p>
+        <h2 id="programs-title">Comprehensive Autism Therapy in Westminster, CA</h2>
+        <p>A full range of autism therapy supporting communication, social development and behavioral growth at every stage.</p>
+      </div>
+      <div class="grid grid-3">
+        {PROGRAMS.map((p) => <ProgramCard {...p} />)}
+      </div>
+      <p class="text-center mt-2"><a class="btn btn--primary" href="/services/">View all services</a></p>
+    </div>
+  </section>
+  <BrandWave />
+
+  <!-- Approach -->
+  <section class="section" aria-labelledby="approach-title">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">Why families choose us</p>
+        <h2 id="approach-title">Qualified professionals. Individualized support. Family-centered care.</h2>
+        <p class="lead mt-1">Every child with autism deserves compassionate, evidence-based care from people who truly care.</p>
+        <p class="mt-1">
+          Applied Behavior Analysis (ABA) is one of the most widely used, evidence-based approaches for supporting autistic
+          children (<a href="https://www.cdc.gov/autism/treatment/index.html" rel="noopener" target="_blank">CDC</a>). How it’s
+          done matters: our programs are positive, play-based and respectful of your child’s comfort and choices.
+        </p>
+        <p class="mt-1"><a href="/about/">More about our approach →</a></p>
+      </div>
+      <div class="grid grid-2">
+        <div class="card"><span class="icon-badge"><Icon name="shield" /></span><h3>Qualified professionals</h3><p>Plans are designed and supervised by BCBAs and delivered by Registered Behavior Technicians. <a href="/blog/bcba-vs-rbt/">BCBA vs RBT</a></p></div>
+        <div class="card"><span class="icon-badge icon-badge--sun"><Icon name="heart" /></span><h3>Individualized support</h3><p>Goals are built around your child’s strengths, needs and your family’s priorities. <a href="/blog/aba-therapy-goals/">Example goals</a></p></div>
+        <div class="card"><span class="icon-badge icon-badge--coral"><Icon name="family" /></span><h3>Family-centered care</h3><p>Hands-on parent training helps skills carry over into daily life. <a href="/services/parent-training/">Parent training</a></p></div>
+        <div class="card"><span class="icon-badge icon-badge--leaf"><Icon name="chart" /></span><h3>Measured progress</h3><p>Session data is reviewed by your BCBA and shared with you. <a href="/blog/data-driven-aba-therapy/">How we track progress</a></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Routines -->
+  <section class="section section--sky" aria-labelledby="routines-title">
+    <div class="wrap split split--reverse">
+      <div>
+        <p class="eyebrow">ABA in everyday life</p>
+        <h2 id="routines-title">Learning that fits into your family’s day</h2>
+        <p class="lead mt-1">At home, ordinary moments become chances to practice. Your child’s BCBA may build goals around:</p>
+        <ul class="check-list mt-2">
+          {routines.map((r) => <li><strong>{r.t}</strong> — {r.d}</li>)}
+        </ul>
+        <p class="mt-2"><a href="/blog/aba-in-everyday-family-routines/">See how ABA works in family routines →</a></p>
+      </div>
+      <div class="service-hero-img">
+        <Image src={IMAGES.routines.src} alt={IMAGES.routines.alt} widths={[480, 720, 960]} sizes="(min-width: 900px) 520px, 92vw" loading="lazy" decoding="async" format="webp" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Steps -->
+  <section class="section section--primary" aria-labelledby="steps-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Getting started</p>
+        <h2 id="steps-title">How to start in-home ABA therapy</h2>
+        <p>We guide you through each step, including insurance and authorization.</p>
+      </div>
+      <ol class="steps">
+        <li><h3>Free consultation</h3><p>Tell us about your child and ask anything. No obligation.</p></li>
+        <li><h3>Insurance check</h3><p>We help you understand your benefits and start authorization.</p></li>
+        <li><h3>Assessment</h3><p>A BCBA gets to know your child’s strengths, needs and your goals.</p></li>
+        <li><h3>Therapy at home</h3><p>Your personalized plan begins, with regular updates and parent coaching.</p></li>
+      </ol>
+      <div class="btn-row mt-3"><a class="btn btn--light" href="/contact/">Start today</a><a class="btn btn--cta" href="/blog/how-to-start-in-home-aba-therapy/">Read the step-by-step guide</a></div>
+    </div>
+  </section>
+
+  <Testimonials />
+
+  <!-- Local -->
+  <section class="section" aria-labelledby="visit-title">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">Service area</p>
+        <h2 id="visit-title">Serving Westminster and five California counties</h2>
+        <p class="lead mt-1">
+          From our base on Beach Blvd in Westminster, we bring in-home ABA therapy to families across Orange, Riverside,
+          San Diego, San Bernardino and Santa Clara Counties.
+        </p>
+        <ul class="counties">{BUSINESS.counties.map((c) => <li><Icon name="pin" />{c}</li>)}</ul>
+        <div class="mt-2"><ContactInfo /></div>
+        <p class="mt-1"><a href="/locations/">Our service areas →</a> · <a href="/locations/westminster-ca/">Our Westminster location →</a></p>
+      </div>
+      <MapEmbed />
+    </div>
+  </section>
+
+  <!-- Resources -->
+  {startHere.length > 0 && (
+    <section class="section section--sand" aria-labelledby="resources-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Parent resources</p>
+          <h2 id="resources-title">Answers for families who are just starting</h2>
+          <p>Plain-language guides from our team, with sources you can check.</p>
+        </div>
+        <div class="grid grid-3">{startHere.map((p) => <BlogCard post={p} />)}</div>
+        <p class="text-center mt-2"><a class="btn btn--ghost" href="/blog/">Browse all resources</a></p>
+      </div>
+    </section>
+  )}
+
+  <!-- FAQ -->
+  <section class="section" aria-labelledby="faq-home-title">
+    <div class="wrap-narrow">
+      <div class="section-head section-head--center">
+        <p class="eyebrow">FAQ</p>
+        <h2 id="faq-home-title">Frequently asked questions about in-home ABA</h2>
+      </div>
+      <FAQ items={homeFaqs} />
+      <p class="text-center mt-2"><a href="/faq/">See all questions →</a></p>
+    </div>
+  </section>
+
+  <CTABand title="Start your child’s therapy journey at home" />
+</Layout>

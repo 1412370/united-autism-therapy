@@ -1,0 +1,13 @@
+---
+import Icon from './Icon.astro';
+import { BUSINESS, isSet } from '../data/site';
+const links = [
+  { key: 'facebook', label: 'United Autism Therapy on Facebook', url: BUSINESS.social.facebook as string },
+  { key: 'instagram', label: 'United Autism Therapy on Instagram', url: BUSINESS.social.instagram as string },
+].filter((l) => isSet(l.url));
+---
+{links.length > 0 && (
+  <ul class="social-links" style="list-style:none;padding:0">
+    {links.map((l) => <li><a href={l.url} target="_blank" rel="noopener me" aria-label={l.label}><Icon name={l.key as 'facebook' | 'instagram'} /></a></li>)}
+  </ul>
+)}

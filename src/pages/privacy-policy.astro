@@ -1,0 +1,39 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { SITE, BUSINESS, isSet, fullAddress } from '../data/site';
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Privacy Policy', href: '/privacy-policy/' }];
+const contact = isSet(BUSINESS.email) ? BUSINESS.email : BUSINESS.phone;
+const updated = 'September 30, 2026';
+---
+<!-- TEMPLATE: have this policy reviewed by a qualified attorney before launch (HIPAA, CCPA/CPRA). -->
+<PageLayout title="Privacy Policy" description={`How ${SITE.legalName} collects, uses and protects information submitted through this website.`} h1="Privacy Policy" crumbs={crumbs} showHeroCta={false} showCta={false} lead={`Last updated ${updated}`}>
+  <section class="section"><div class="wrap-narrow prose">
+    <p>This Privacy Policy explains how {SITE.legalName} (“we”, “us”) handles information collected through this website. It does not replace the Notice of Privacy Practices you receive as a client, which governs protected health information under HIPAA.</p>
+    <h2>Information we collect</h2>
+    <ul>
+      <li><strong>Information you give us</strong> through the consultation form, such as your name, phone number, email, ZIP code, your child’s age range and your message.</li>
+      <li><strong>Technical information</strong> such as browser type, pages visited and approximate location, collected through analytics tools if enabled.</li>
+    </ul>
+    <p>Please do not submit diagnoses, medical records or insurance ID numbers through the website form. We will collect clinical and insurance information through secure channels during intake.</p>
+    <p>Form submissions are stored in a Google Sheets spreadsheet and emailed to our team using Google services. Google’s privacy policy applies to that processing.</p>
+    <h2>How we use information</h2>
+    <ul>
+      <li>To respond to your inquiry and schedule a consultation</li>
+      <li>To improve our website and understand which pages are helpful</li>
+      <li>To comply with legal obligations</li>
+    </ul>
+    <p>We do not sell your personal information.</p>
+    <h2>Cookies and analytics</h2>
+    <p>If analytics are enabled, we use tools such as Google Analytics to understand how visitors use the site. These tools may set cookies. You can block cookies in your browser settings. We do not send form contents to analytics providers.</p>
+    <h2>Maps</h2>
+    <p>Our map is loaded from Google Maps only when you choose “Show map.” Google’s privacy policy applies to that content.</p>
+    <h2>How we protect information</h2>
+    <p>We use reasonable administrative, technical and physical safeguards. No method of transmission over the internet is completely secure.</p>
+    <h2>Your California privacy rights</h2>
+    <p>Depending on your circumstances, California law may give you rights to know, delete or correct personal information and to opt out of certain sharing. To make a request, contact us using the details below.</p>
+    <h2>Children’s privacy</h2>
+    <p>This website is intended for parents and caregivers. We do not knowingly collect personal information directly from children under 13 through this website.</p>
+    <h2>Contact</h2>
+    <p>{SITE.legalName}, {fullAddress}. Contact: {contact}.</p>
+  </div></section>
+</PageLayout>

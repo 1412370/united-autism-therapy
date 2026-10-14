@@ -1,0 +1,12 @@
+# cPanel Git Version Control deployment for the `deploy` branch.
+# cPanel → Git Version Control → Manage → Pull or Deploy → "Deploy HEAD Commit"
+# copies the built site into public_html.
+#
+# If your site lives somewhere else (add-on domain), change DEPLOYPATH,
+# e.g. $HOME/unitedautismcenter.com/
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=$HOME/public_html/
+    - /bin/cp -R * $DEPLOYPATH
+    - /bin/cp .htaccess $DEPLOYPATH

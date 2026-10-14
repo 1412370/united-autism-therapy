@@ -1,0 +1,101 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { BUSINESS, telHref } from '../data/site';
+import { localBusinessSchema } from '../utils/schema';
+
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Insurance', href: '/insurance/' }];
+const faqs = [
+  {
+    q: 'Does Medi-Cal cover ABA therapy?',
+    a: 'Medi-Cal covers Behavioral Health Treatment, including ABA, for members under 21 when it is medically necessary, according to the California Department of Health Care Services. A physician or psychologist determines medical necessity.',
+    link: { href: '/blog/does-medi-cal-cover-aba-therapy/', label: 'Read our Medi-Cal guide' },
+  },
+  {
+    q: 'What do I need before starting ABA with insurance?',
+    a: 'Plans usually ask for a diagnosis or recommendation from a physician or psychologist, and prior authorization before therapy starts. Requirements vary, so we help you confirm what your plan needs.',
+  },
+  {
+    q: 'Will I have out-of-pocket costs?',
+    a: 'That depends on your plan’s deductible, copays or coinsurance. We will help you understand your benefits before services begin so there are no surprises.',
+  },
+  {
+    q: 'My plan isn’t listed. Can I still call?',
+    a: `Yes. Call ${BUSINESS.phone} and we will check whether we can work with your plan and explain your options.`,
+  },
+];
+---
+<PageLayout
+  title="Insurance & Medi-Cal for ABA Therapy"
+  description="Many plans, including Medi-Cal, cover ABA therapy for children with an autism diagnosis. Learn how coverage works and how our team helps with authorization."
+  h1="Insurance & Medi-Cal for ABA Therapy"
+  eyebrow="Coverage"
+  lead="Many plans, including Medi-Cal, cover ABA therapy for children with an autism diagnosis. Our team will help you understand your coverage and start the authorization process."
+  crumbs={crumbs}
+  faqs={faqs}
+  faqTitle="Insurance questions"
+  schema={[localBusinessSchema()]}
+>
+  <section class="section">
+    <div class="wrap article-layout" style="padding-block:0">
+      <div class="prose">
+        <h2>How we help with coverage</h2>
+        <p>Insurance can feel like the hardest part of getting started. You don’t have to figure it out alone. When you call us, we can:</p>
+        <ul>
+          <li>Walk you through what your plan typically requires for ABA therapy</li>
+          <li>Explain the documents you may need, such as a diagnosis report or referral</li>
+          <li>Help start the authorization process</li>
+          <li>Talk through any expected out-of-pocket costs before services begin</li>
+        </ul>
+
+        <h2>Medi-Cal and ABA therapy</h2>
+        <p>
+          In California, Medi-Cal covers Behavioral Health Treatment (BHT), which includes Applied Behavior Analysis, for
+          members under 21 when services are medically necessary. Only a physician or psychologist can determine that BHT is
+          medically necessary. Members enrolled in a Medi-Cal managed care plan receive BHT through their health plan
+          (<a href="https://www.dhcs.ca.gov/services/medi-cal/Pages/BehavioralHealthTreatment.aspx" target="_blank" rel="noopener">California Department of Health Care Services</a>).
+          In Orange County, many Medi-Cal members are enrolled with <a href="https://www.caloptima.org/" target="_blank" rel="noopener">CalOptima Health</a>.
+        </p>
+        <p>For a step-by-step explanation, read <a href="/blog/does-medi-cal-cover-aba-therapy/">Does Medi-Cal cover ABA therapy?</a></p>
+
+        <h2>Private and employer insurance</h2>
+        <p>
+          Many commercial health plans also cover ABA therapy for autism, but benefits, requirements and costs differ from plan
+          to plan. The quickest way to find out is to call the member services number on your insurance card, or call us and
+          we’ll help you check.
+        </p>
+
+        <h2>Plans we work with</h2>
+        <!-- TODO (business): replace this paragraph with the verified list of accepted plans. Do not list a plan until it is confirmed. -->
+        <p>
+          We work with Medi-Cal and a range of health plans. Because networks change, please call
+          <a href={telHref}>{BUSINESS.phone}</a> to confirm whether we can work with your specific plan.
+        </p>
+
+        <h2>What to have ready when you call</h2>
+        <ul>
+          <li>Your child’s insurance card (you can share details by phone — please don’t send ID numbers through our website form)</li>
+          <li>Any diagnosis report or recommendation you already have</li>
+          <li>Your child’s pediatrician’s name</li>
+          <li>Questions or concerns you’d like to discuss</li>
+        </ul>
+        <p class="disclaimer">This page is general information, not insurance or legal advice. Coverage depends on your specific plan. Always confirm benefits with your health plan.</p>
+      </div>
+      <aside class="sidebar">
+        <div class="card cta-card">
+          <h2>Check your coverage</h2>
+          <p>Call our team and we’ll help you understand your benefits.</p>
+          <a class="btn btn--light" href={telHref}>Call {BUSINESS.phone}</a>
+          <p style="text-align:center;margin-top:.75rem"><a href="/contact/">or request a callback</a></p>
+        </div>
+        <div class="card">
+          <h2>Helpful guides</h2>
+          <ul class="mt-1" style="padding-left:1.1rem;display:grid;gap:.5rem">
+            <li><a href="/blog/does-medi-cal-cover-aba-therapy/">Does Medi-Cal cover ABA therapy?</a></li>
+            <li><a href="/blog/when-to-get-an-autism-evaluation/">When to get an autism evaluation</a></li>
+            <li><a href="/blog/autism-support-orange-county-parents/">Autism support in Orange County</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+</PageLayout>

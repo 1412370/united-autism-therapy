@@ -1,0 +1,36 @@
+# Builds the Astro site on every push to `main` and publishes the finished
+# static files (dist/) to the `deploy` branch. cPanel's Git Version Control
+# clones the `deploy` branch and copies it into public_html via .cpanel.yml.
+name: Build and publish deploy branch
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+      - run: npm run audit
+
+      - name: Publish dist/ to the deploy branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: deploy
+          publish_dir: ./dist
+          force_orphan: true
+          commit_message: 'Deploy ${{ github.sha }}'

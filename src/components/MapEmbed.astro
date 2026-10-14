@@ -1,0 +1,31 @@
+---
+/**
+ * Click-to-load Google Map. The iframe (≈500 KB+ of third-party JS) loads only
+ * when a visitor asks for it, protecting page speed and privacy. The address
+ * and a directions link are always visible without JavaScript.
+ */
+import { BUSINESS, mapsUrl, fullAddress } from '../data/site';
+const embedSrc = `https://www.google.com/maps?q=${encodeURIComponent(BUSINESS.mapsQuery)}&output=embed`;
+---
+<div class="map-facade" data-map-src={embedSrc}>
+  <div>
+    <p><strong>United Autism Therapy</strong><br />{fullAddress}</p>
+    <div class="btn-row mt-1" style="justify-content:center">
+      <button type="button" class="btn btn--primary" data-map-load>Show map</button>
+      <a class="btn btn--ghost" href={mapsUrl} target="_blank" rel="noopener">Get directions</a>
+    </div>
+    <p class="muted mt-1" style="font-size:.85rem">Loading the map connects to Google Maps.</p>
+  </div>
+</div>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-map-src]').forEach((box) => {
+    box.querySelector('[data-map-load]')?.addEventListener('click', () => {
+      const f = document.createElement('iframe');
+      f.src = box.dataset.mapSrc!;
+      f.title = 'Map showing United Autism Therapy in Westminster, CA';
+      f.loading = 'lazy';
+      f.referrerPolicy = 'no-referrer-when-downgrade';
+      box.appendChild(f);
+    });
+  });
+</script>

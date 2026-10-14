@@ -1,0 +1,30 @@
+---
+/**
+ * Generates one static page per Markdown file in src/content/blog/.
+ * Add a new .md file there and the next build creates /blog/<slug>/,
+ * adds it to the blog index, its category page, related posts and sitemap.
+ */
+import { render } from 'astro:content';
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import { getPosts, getRelated } from '../../utils/posts';
+import { CATEGORY_SLUGS } from '../../data/categories';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  // Guard against a post slug colliding with a reserved blog route.
+  const reserved = new Set(['category', 'page', ...CATEGORY_SLUGS]);
+  for (const p of posts) {
+    if (reserved.has(p.id)) throw new Error(`Blog slug "${p.id}" is reserved — choose another slug.`);
+  }
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post, related: getRelated(post, posts, 3) },
+  }));
+}
+
+const { post, related } = Astro.props;
+const { Content, headings } = await render(post);
+---
+<BlogLayout post={post} headings={headings} related={related}>
+  <Content />
+</BlogLayout>

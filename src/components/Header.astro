@@ -1,0 +1,108 @@
+---
+import Logo from './Logo.astro';
+import Icon from './Icon.astro';
+import { MAIN_NAV } from '../data/navigation';
+import SocialLinks from './SocialLinks.astro';
+import { BUSINESS, telHref } from '../data/site';
+
+const path = Astro.url.pathname;
+const isCurrent = (href: string) => path === href;
+const isSection = (href: string) => href !== '/' && path.startsWith(href);
+---
+<div class="topbar">
+  <div class="wrap">
+    <span class="topbar__hours">Westminster, CA · Serving {BUSINESS.countiesShort} · {BUSINESS.hoursShort}</span>
+    <span style="display:inline-flex;align-items:center;gap:.9rem">Call <a href={telHref}>{BUSINESS.phone}</a><SocialLinks /></span>
+  </div>
+</div>
+<header class="site-header" id="site-header">
+  <div class="wrap">
+    <Logo />
+    <button class="menu-btn" type="button" aria-controls="primary-nav" aria-expanded="false" data-menu-btn>
+      <Icon name="menu" /><span data-menu-label>Menu</span>
+    </button>
+    <nav class="nav" id="primary-nav" aria-label="Main" data-open="false">
+      <ul class="nav__list">
+        {MAIN_NAV.map((item, i) =>
+          item.children ? (
+            <li class="nav__item">
+              <button
+                class="nav__toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls={`subnav-${i}`}
+                data-sub-toggle
+                aria-current={isSection(item.href) ? 'true' : undefined}
+              >
+                {item.label}<Icon name="chevron" />
+              </button>
+              <ul class="nav__sub" id={`subnav-${i}`} hidden>
+                <li><a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>All services</a></li>
+                {item.children.map((c) => (
+                  <li><a href={c.href} aria-current={isCurrent(c.href) ? 'page' : undefined}>{c.label}</a></li>
+                ))}
+              </ul>
+            </li>
+          ) : (
+            <li class="nav__item">
+              <a class="nav__link" href={item.href} aria-current={isCurrent(item.href) || isSection(item.href) ? 'page' : undefined}>{item.label}</a>
+            </li>
+          )
+        )}
+      </ul>
+      <div class="nav__cta">
+        <a class="btn btn--cta" href="/contact/">Free Consultation</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Progressive enhancement: without JS the nav still renders (desktop) and
+  // every link is reachable from the footer and /services/.
+  const header = document.getElementById('site-header');
+  const nav = document.getElementById('primary-nav');
+  const btn = document.querySelector<HTMLButtonElement>('[data-menu-btn]');
+  const label = document.querySelector('[data-menu-label]');
+
+  const setMenu = (open: boolean) => {
+    if (!nav || !btn) return;
+    nav.dataset.open = String(open);
+    btn.setAttribute('aria-expanded', String(open));
+    if (label) label.textContent = open ? 'Close' : 'Menu';
+    document.body.dataset.menuOpen = String(open);
+    if (open && header) nav.style.setProperty('--nav-top', `${header.getBoundingClientRect().bottom}px`);
+  };
+  btn?.addEventListener('click', () => setMenu(nav?.dataset.open !== 'true'));
+
+  const closeSubs = (except?: Element) => {
+    document.querySelectorAll<HTMLButtonElement>('[data-sub-toggle]').forEach((t) => {
+      if (t === except) return;
+      t.setAttribute('aria-expanded', 'false');
+      document.getElementById(t.getAttribute('aria-controls')!)?.setAttribute('hidden', '');
+    });
+  };
+  document.querySelectorAll<HTMLButtonElement>('[data-sub-toggle]').forEach((t) => {
+    t.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = t.getAttribute('aria-expanded') === 'true';
+      closeSubs(t);
+      t.setAttribute('aria-expanded', String(!open));
+      const sub = document.getElementById(t.getAttribute('aria-controls')!);
+      if (open) sub?.setAttribute('hidden', '');
+      else sub?.removeAttribute('hidden');
+    });
+  });
+  document.addEventListener('click', (e) => {
+    if (!(e.target as Element).closest('.nav__item')) closeSubs();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    closeSubs();
+    if (nav?.dataset.open === 'true') { setMenu(false); btn?.focus(); }
+  });
+  // Reset the mobile menu when resizing to desktop.
+  matchMedia('(min-width: 1181px)').addEventListener('change', (m) => { if (m.matches) setMenu(false); });
+  // Desktop default: nav visible.
+  if (matchMedia('(min-width: 1181px)').matches && nav) nav.dataset.open = 'false';
+</script>

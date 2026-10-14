@@ -1,0 +1,36 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import ProgramCard from '../../components/ProgramCard.astro';
+import { CORE_SERVICES } from '../../data/services';
+import { PROGRAMS } from '../../data/highlights';
+import { absoluteUrl } from '../../data/site';
+import { localBusinessSchema, BUSINESS_ID } from '../../utils/schema';
+
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Services', href: '/services/' }];
+const catalog = {
+  '@type': 'OfferCatalog',
+  name: 'Autism therapy services',
+  url: absoluteUrl('/services/'),
+  itemListElement: CORE_SERVICES.map((s) => ({
+    '@type': 'Offer',
+    itemOffered: { '@type': 'Service', name: s.name, url: absoluteUrl(`/services/${s.slug}/`), provider: { '@id': BUSINESS_ID } },
+  })),
+};
+---
+<PageLayout
+  title="Autism Therapy Services in Westminster, CA"
+  description="Applied Behavior Analysis (ABA), speech and language therapy, and occupational therapy for children with autism in Westminster, CA and surrounding counties."
+  h1="Our Autism Therapy Services"
+  eyebrow="Our programs"
+  lead="Three core therapies that work together to support communication, social development, independence and behavioral growth."
+  crumbs={crumbs}
+  schema={[localBusinessSchema(), catalog]}
+>
+  <section class="section">
+    <div class="wrap">
+      <div class="grid grid-3">
+        {PROGRAMS.map((p) => <ProgramCard {...p} />)}
+      </div>
+    </div>
+  </section>
+</PageLayout>

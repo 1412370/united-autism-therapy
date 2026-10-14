@@ -1,0 +1,56 @@
+---
+/**
+ * Green highlights band with four care settings. Each item opens an
+ * accessible <dialog> popup. Without JavaScript, items link to the service page.
+ */
+import Icon from './Icon.astro';
+import { HIGHLIGHTS } from '../data/highlights';
+import { telHref, BUSINESS } from '../data/site';
+---
+<section class="highlights" aria-labelledby="highlights-title">
+  <h2 id="highlights-title" class="sr-only">Ways your child can receive care</h2>
+  <div class="wrap highlights__grid">
+    {HIGHLIGHTS.map((h) => (
+      <a class="highlight" href={h.href} data-dialog-open={`dlg-${h.id}`} aria-haspopup="dialog">
+        <span class="highlight__icon"><Icon name={h.icon} /></span>
+        <strong class="highlight__title">{h.title}</strong>
+        <span class="highlight__text">{h.short}</span>
+        <span class="highlight__more" aria-hidden="true">Details +</span>
+      </a>
+    ))}
+  </div>
+</section>
+
+{HIGHLIGHTS.map((h) => (
+  <dialog class="modal" id={`dlg-${h.id}`} aria-labelledby={`dlg-${h.id}-title`}>
+    <div class="modal__inner">
+      <button type="button" class="modal__close" data-dialog-close aria-label="Close">
+        <Icon name="close" />
+      </button>
+      <span class="icon-badge icon-badge--leaf"><Icon name={h.icon} /></span>
+      <h3 id={`dlg-${h.id}-title`} class="modal__title">{h.title}</h3>
+      <p>{h.intro}</p>
+      <ul class="tick-list mt-1">{h.points.map((p) => <li>{p}</li>)}</ul>
+      <div class="btn-row mt-2">
+        <a class="btn btn--primary" href={h.href}>{h.cta}</a>
+        <a class="btn btn--ghost" href={telHref}>Call {BUSINESS.phone}</a>
+      </div>
+    </div>
+  </dialog>
+))}
+
+<script>
+  document.querySelectorAll<HTMLAnchorElement>('[data-dialog-open]').forEach((trigger) => {
+    const dlg = document.getElementById(trigger.dataset.dialogOpen!) as HTMLDialogElement | null;
+    if (!dlg || typeof dlg.showModal !== 'function') return;
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      dlg.showModal();
+      dlg.querySelector<HTMLElement>('[data-dialog-close]')?.focus();
+    });
+    dlg.querySelector('[data-dialog-close]')?.addEventListener('click', () => dlg.close());
+    // Close when clicking the backdrop.
+    dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener('close', () => trigger.focus());
+  });
+</script>

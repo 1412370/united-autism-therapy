@@ -1,0 +1,23 @@
+---
+import Icon from './Icon.astro';
+import { BUSINESS, telHref } from '../data/site';
+interface Props { title?: string; text?: string; }
+const {
+  title = 'Start with a free consultation',
+  text = 'Tell us about your child and your goals. We’ll answer your questions, explain the next steps and help you check your insurance coverage. No pressure, no obligation.',
+} = Astro.props;
+---
+<section class="section">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>{title}</h2>
+        <p>{text}</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn--light" href="/contact/"><Icon name="calendar" />Request a Consultation</a>
+        <a class="btn btn--cta" href={telHref}><Icon name="phone" />Call {BUSINESS.phone}</a>
+      </div>
+    </div>
+  </div>
+</section>

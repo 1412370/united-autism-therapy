@@ -1,0 +1,67 @@
+---
+/**
+ * Standard content page: hero with breadcrumbs + H1, page body, optional FAQ
+ * block and a closing consultation CTA. Adds BreadcrumbList (and FAQPage when
+ * FAQs are passed) to the page's JSON-LD.
+ */
+import Layout from './Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import FAQ from '../components/FAQ.astro';
+import CTABand from '../components/CTABand.astro';
+import { INTEGRATIONS, telHref, BUSINESS } from '../data/site';
+import { breadcrumbSchema, faqSchema, type Crumb } from '../utils/schema';
+import type { SEOProps } from '../components/SEO.astro';
+
+interface Props extends SEOProps {
+  h1: string;
+  eyebrow?: string;
+  lead?: string;
+  crumbs: Crumb[];
+  faqs?: { q: string; a: string; link?: { href: string; label: string } }[];
+  faqTitle?: string;
+  schema?: Record<string, unknown>[];
+  showHeroCta?: boolean;
+  showCta?: boolean;
+  ctaTitle?: string;
+  ctaText?: string;
+}
+const {
+  h1, eyebrow, lead, crumbs, faqs = [], faqTitle = 'Frequently asked questions', schema = [],
+  showHeroCta = true, showCta = true, ctaTitle, ctaText, ...seo
+} = Astro.props;
+
+const allSchema = [
+  breadcrumbSchema(crumbs),
+  ...(faqs.length && INTEGRATIONS.faqSchema ? [faqSchema(faqs)] : []),
+  ...schema,
+];
+---
+<Layout {...seo} schema={allSchema}>
+  <section class="page-hero">
+    <div class="wrap">
+      <Breadcrumbs crumbs={crumbs} />
+      {eyebrow && <p class="eyebrow mt-1">{eyebrow}</p>}
+      <h1>{h1}</h1>
+      {lead && <p class="page-hero__lead">{lead}</p>}
+      {showHeroCta && (
+        <div class="btn-row">
+          <a class="btn btn--cta" href="/contact/">Request a Free Consultation</a>
+          <a class="btn btn--ghost" href={telHref}>Call {BUSINESS.phone}</a>
+        </div>
+      )}
+      <slot name="hero" />
+    </div>
+  </section>
+
+  <slot />
+
+  {faqs.length > 0 && (
+    <section class="section section--sky">
+      <div class="wrap-narrow">
+        <FAQ items={faqs} title={faqTitle} />
+      </div>
+    </section>
+  )}
+
+  {showCta && <CTABand title={ctaTitle} text={ctaText} />}
+</Layout>

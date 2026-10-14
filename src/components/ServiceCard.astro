@@ -1,0 +1,14 @@
+---
+import Icon from './Icon.astro';
+import type { Service } from '../data/services';
+interface Props { service: Service; headingLevel?: 'h2' | 'h3'; tone?: 'default' | 'sun' | 'coral' | 'leaf'; }
+const { service, headingLevel = 'h3', tone = 'default' } = Astro.props;
+const H = headingLevel;
+const badge = tone === 'default' ? 'icon-badge' : `icon-badge icon-badge--${tone}`;
+---
+<article class="card card--link">
+  <span class={badge}><Icon name={service.icon} /></span>
+  <H><a class="stretched" href={`/services/${service.slug}/`}>{service.name}</a></H>
+  <p>{service.summary}</p>
+  <span class="card__more" aria-hidden="true">Learn more →</span>
+</article>

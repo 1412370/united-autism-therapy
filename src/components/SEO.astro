@@ -1,0 +1,81 @@
+---
+/**
+ * Reusable <head> meta: title, description, canonical, robots, Open Graph,
+ * Twitter cards and search-engine verification tags.
+ *
+ * <SEO
+ *   title="ABA Therapy in Westminster, CA"
+ *   description="Individualized ABA therapy..."
+ *   canonical="/services/aba-therapy/"   // path or absolute URL; defaults to current URL
+ * />
+ */
+import { SITE, INTEGRATIONS } from '../data/site';
+
+export interface SEOProps {
+  title?: string;
+  description?: string;
+  /** Path ("/about/") or absolute URL. Defaults to the current page URL. */
+  canonical?: string;
+  /** Absolute or root-relative image URL (1200×630 recommended). */
+  image?: string;
+  imageAlt?: string;
+  type?: 'website' | 'article';
+  noindex?: boolean;
+  /** Skip the " | United Autism Therapy" suffix (e.g. homepage). */
+  rawTitle?: boolean;
+  publishedTime?: Date;
+  modifiedTime?: Date;
+}
+
+const {
+  title = SITE.defaultTitle,
+  description = SITE.defaultDescription,
+  canonical,
+  image = SITE.ogImage,
+  imageAlt = `${SITE.name} — ${SITE.tagline}`,
+  type = 'website',
+  noindex = false,
+  rawTitle = false,
+  publishedTime,
+  modifiedTime,
+} = Astro.props as SEOProps;
+
+// Add the brand suffix only when the result stays within ~60 characters, so
+// Google doesn't truncate the part that matters. (The site name is also sent
+// via WebSite schema, which Google uses for the site-name label.)
+const suffix = ` | ${SITE.name}`;
+const fullTitle = rawTitle || title.length + suffix.length > 62 ? title : `${title}${suffix}`;
+// Canonical: always absolute, https, non-www, trailing slash, no query string.
+const canonicalUrl = new URL(canonical ?? Astro.url.pathname, SITE.url);
+canonicalUrl.search = '';
+canonicalUrl.hash = '';
+if (!canonicalUrl.pathname.endsWith('/') && !/\.[a-z0-9]+$/i.test(canonicalUrl.pathname)) canonicalUrl.pathname += '/';
+const imageUrl = new URL(image, SITE.url).toString();
+const robots = noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1';
+---
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalUrl.toString()} />
+<meta name="robots" content={robots} />
+
+<meta property="og:site_name" content={SITE.name} />
+<meta property="og:locale" content={SITE.locale} />
+<meta property="og:type" content={type} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalUrl.toString()} />
+<meta property="og:image" content={imageUrl} />
+<meta property="og:image:alt" content={imageAlt} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+{type === 'article' && publishedTime && <meta property="article:published_time" content={publishedTime.toISOString()} />}
+{type === 'article' && modifiedTime && <meta property="article:modified_time" content={modifiedTime.toISOString()} />}
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageUrl} />
+<meta name="twitter:image:alt" content={imageAlt} />
+
+{INTEGRATIONS.googleSiteVerification && <meta name="google-site-verification" content={INTEGRATIONS.googleSiteVerification} />}
+{INTEGRATIONS.bingSiteVerification && <meta name="msvalidate.01" content={INTEGRATIONS.bingSiteVerification} />}

@@ -1,0 +1,125 @@
+---
+import { Image } from 'astro:assets';
+import PageLayout from '../layouts/PageLayout.astro';
+import Icon from '../components/Icon.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+import { CORE_SERVICES } from '../data/services';
+import { SITE, BUSINESS, fullAddress, telHref, absoluteUrl } from '../data/site';
+import { localBusinessSchema, ORG_ID } from '../utils/schema';
+import { IMAGES } from '../utils/images';
+
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'About', href: '/about/' }];
+const aboutPage = { '@type': 'AboutPage', '@id': absoluteUrl('/about/#page'), url: absoluteUrl('/about/'), name: `About ${SITE.name}`, about: { '@id': ORG_ID } };
+---
+<PageLayout
+  title="About Us: In-Home ABA Therapy in Westminster"
+  description="United Autism Therapy provides in-home ABA therapy in Westminster and Orange County, CA, with BCBA-designed, family-centered care for children with autism."
+  h1="About United Autism Therapy"
+  eyebrow="Supporting Children. Empowering Families."
+  lead="Built on one belief: every child with autism deserves compassionate, evidence-based care from people who truly care — in the place they feel most at home."
+  crumbs={crumbs}
+  schema={[localBusinessSchema(), aboutPage]}
+>
+  <section class="section">
+    <div class="wrap split">
+      <div class="prose">
+        <h2>Who we are</h2>
+        <p>
+          United Autism Therapy is an autism therapy provider based in Westminster, California. Our core service is
+          <a href="/services/in-home-aba/">in-home ABA therapy</a>: Applied Behavior Analysis delivered in families’ homes
+          across Orange County. We also offer <a href="/services/parent-training/">parent training</a>,
+          <a href="/services/center-based-aba/">center-based</a> and <a href="/services/school-based-aba/">school-based ABA</a>,
+          <a href="/services/speech-language-therapy/">speech and language therapy</a> and
+          <a href="/services/occupational-therapy/">occupational therapy</a>.
+        </p>
+        <p>
+          Every child is different. Our Board Certified Behavior Analysts (BCBAs) design individualized plans around each
+          child’s strengths, challenges and family goals, and Registered Behavior Technicians (RBTs) deliver sessions under
+          their supervision.
+        </p>
+      </div>
+      <figure class="service-hero-img">
+        <Image src={IMAGES.goals.src} alt={IMAGES.goals.alt} widths={[480, 720, 960]} sizes="(min-width: 900px) 520px, 92vw" loading="eager" decoding="async" format="webp" />
+      </figure>
+    </div>
+  </section>
+
+  <section class="section section--sand" aria-labelledby="mission-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Our mission</p>
+        <h2 id="mission-title">Child-centered, family-supported, evidence-based</h2>
+      </div>
+      <div class="grid grid-3">
+        <div class="card"><span class="icon-badge"><Icon name="heart" /></span><h3>Child-centered care</h3><p>We start with your child’s interests and comfort. Learning is positive and play-based, and we pay attention to your child’s willingness to take part.</p></div>
+        <div class="card"><span class="icon-badge icon-badge--sun"><Icon name="family" /></span><h3>Family support</h3><p>Parents are partners, not spectators. We set goals with you, coach you in practical strategies and keep you informed.</p></div>
+        <div class="card"><span class="icon-badge icon-badge--leaf"><Icon name="book" /></span><h3>Evidence-based approach</h3><p>Decisions are guided by behavioral science, clinical judgment, your child’s data and your family’s goals — never a one-size-fits-all program.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="approach-title">
+    <div class="wrap split split--reverse">
+      <div class="prose">
+        <p class="eyebrow">Our approach</p>
+        <h2 id="approach-title">How we work with your family</h2>
+        <ul>
+          <li><strong>Individualized care.</strong> A BCBA assesses your child and writes goals for the skills that matter most in your daily life.</li>
+          <li><strong>In-home model.</strong> Therapy happens in your home, during real routines, so skills are learned where they are used. <a href="/blog/benefits-of-in-home-aba-therapy/">Why in-home ABA?</a></li>
+          <li><strong>Family collaboration.</strong> You’re coached during sessions and through <a href="/services/parent-training/">parent training</a>, and your observations shape the plan.</li>
+          <li><strong>Progress monitoring.</strong> Therapists collect data every session; your BCBA reviews it and adjusts the plan. <a href="/blog/data-driven-aba-therapy/">How we track progress</a></li>
+        </ul>
+        <p>We never promise specific outcomes, because every child’s path is their own. We do promise clear communication and respectful care.</p>
+      </div>
+      <figure class="service-hero-img">
+        <Image src={IMAGES.data.src} alt={IMAGES.data.alt} widths={[480, 720, 960]} sizes="(min-width: 900px) 520px, 92vw" loading="lazy" decoding="async" format="webp" />
+      </figure>
+    </div>
+  </section>
+
+  <section class="section section--sky" aria-labelledby="team-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Our team</p>
+        <h2 id="team-title">Qualified, credentialed professionals</h2>
+        <p>{BUSINESS.credentialsStatement} You can confirm any BCBA’s or RBT’s certification in the <a href="https://www.bacb.com/services/o.php?page=101135" target="_blank" rel="noopener">BACB certificant registry</a>.</p>
+      </div>
+      <!--
+        TEAM PROFILES — add real, verified team members here (name, credential,
+        role, short bio, photo, BACB registry link). Do not publish names or
+        credentials until the business confirms them. Example:
+        <div class="grid grid-3">
+          <article class="card"><h3>[NAME], BCBA</h3><p>[Clinical Director] …</p></article>
+        </div>
+      -->
+      <p><a href="/blog/bcba-vs-rbt/">What’s the difference between a BCBA and an RBT? →</a></p>
+    </div>
+  </section>
+
+  <!-- Key facts: a plain, machine-readable summary of the business (helps search and AI answer engines). -->
+  <section class="section" aria-labelledby="facts-title">
+    <div class="wrap-narrow">
+      <h2 id="facts-title">United Autism Therapy at a glance</h2>
+      <dl class="facts mt-2">
+        <div><dt>Business</dt><dd>{SITE.legalName}</dd></div>
+        <div><dt>What we do</dt><dd>In-home ABA therapy for children with autism, plus parent training, center-based and school-based ABA, speech and language therapy, and occupational therapy</dd></div>
+        <div><dt>Service area</dt><dd>Westminster and Orange County, California</dd></div>
+        <div><dt>Address</dt><dd>{fullAddress}</dd></div>
+        <div><dt>Phone</dt><dd><a href={telHref}>{BUSINESS.phone}</a></dd></div>
+        <div><dt>Hours</dt><dd>Monday–Saturday, 8:00 AM–6:00 PM; closed Sunday</dd></div>
+        <div><dt>Clinical team</dt><dd>BCBA-designed and supervised programs, delivered with RBTs</dd></div>
+        <div><dt>Insurance</dt><dd>Many plans, including Medi-Cal, cover ABA for children with an autism diagnosis — <a href="/insurance/">details</a></dd></div>
+        <div><dt>First step</dt><dd>Free consultation — <a href="/contact/">request one online</a></dd></div>
+        <div><dt>Follow us</dt><dd><SocialLinks /></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section section--sand">
+    <div class="wrap">
+      <div class="section-head"><h2>Our services</h2></div>
+      <div class="grid grid-3">{CORE_SERVICES.map((s) => <ServiceCard service={s} />)}</div>
+    </div>
+  </section>
+</PageLayout>

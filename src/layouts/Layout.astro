@@ -1,0 +1,54 @@
+---
+/**
+ * Base HTML document used by every page. Handles <head>, site-wide schema,
+ * header, footer, skip link and the mobile call bar.
+ */
+import '@fontsource-variable/nunito';
+import '../styles/global.css';
+import SEO, { type SEOProps } from '../components/SEO.astro';
+import Schema from '../components/Schema.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Analytics from '../components/Analytics.astro';
+import { SITE, INTEGRATIONS, telHref } from '../data/site';
+import { graph, organizationSchema, websiteSchema } from '../utils/schema';
+
+interface Props extends SEOProps {
+  /** Extra JSON-LD nodes for this page (merged into one @graph). */
+  schema?: Record<string, unknown>[];
+}
+const { schema = [], ...seo } = Astro.props;
+const jsonLd = graph(organizationSchema(), websiteSchema(), ...schema);
+---
+<!doctype html>
+<html lang={SITE.lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <SEO {...seo} />
+    <meta name="theme-color" content={SITE.themeColor} />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <Schema data={jsonLd} />
+    <Analytics />
+  </head>
+  <body>
+    {INTEGRATIONS.gtmId && (
+      <noscript><iframe src={`https://www.googletagmanager.com/ns.html?id=${INTEGRATIONS.gtmId}`} height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
+    )}
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <Header />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <Footer />
+    <div class="call-bar" role="complementary" aria-label="Quick contact">
+      <a class="btn btn--primary" href={telHref}>Call Now</a>
+      <a class="btn btn--cta" href="/contact/">Free Consultation</a>
+    </div>
+  </body>
+</html>

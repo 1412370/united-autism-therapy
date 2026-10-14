@@ -1,0 +1,39 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import ContactForm from '../components/ContactForm.astro';
+import ContactInfo from '../components/ContactInfo.astro';
+import MapEmbed from '../components/MapEmbed.astro';
+import { SITE, absoluteUrl } from '../data/site';
+import { localBusinessSchema, BUSINESS_ID } from '../utils/schema';
+
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Contact', href: '/contact/' }];
+const contactPage = { '@type': 'ContactPage', '@id': absoluteUrl('/contact/#page'), url: absoluteUrl('/contact/'), name: `Contact ${SITE.name}`, about: { '@id': BUSINESS_ID } };
+---
+<PageLayout
+  title="Contact Us & Request a Free Consultation"
+  description="Request a free consultation with United Autism Therapy in Westminster, CA. Call (714) 709-7819 or send a message about ABA, speech or occupational therapy."
+  h1="Request a Free Consultation"
+  eyebrow="Contact"
+  lead="Tell us a little about your child and how to reach you. A member of our team will get back to you to talk through your questions, next steps and insurance."
+  crumbs={crumbs}
+  showHeroCta={false}
+  showCta={false}
+  schema={[localBusinessSchema(), contactPage]}
+>
+  <section class="section">
+    <div class="wrap split" style="align-items:start">
+      <div>
+        <h2 class="sr-only">Consultation request form</h2>
+        <ContactForm />
+      </div>
+      <div class="stack">
+        <h2 style="font-size:var(--fs-600)">Visit or call</h2>
+        <ContactInfo />
+        <MapEmbed />
+        <div class="notice">
+          <p><strong>What happens next?</strong> We’ll contact you, usually by phone, to learn about your child, answer your questions and explain the intake and insurance steps. There’s no obligation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>

@@ -1,0 +1,14 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Medical Disclaimer', href: '/medical-disclaimer/' }];
+---
+<PageLayout title="Medical Disclaimer" description="The information on this website is educational and is not a substitute for professional medical advice, diagnosis or treatment." h1="Medical Disclaimer" crumbs={crumbs} showHeroCta={false} showCta={false}>
+  <section class="section"><div class="wrap-narrow prose">
+    <p>The articles, FAQs and other information on this website are provided for general educational purposes. They are not a substitute for professional medical advice, diagnosis or treatment.</p>
+    <p>Always talk with your child’s pediatrician or another qualified health professional about questions regarding your child’s development, a possible diagnosis or treatment options. Do not ignore professional advice or delay seeking it because of something you read here.</p>
+    <p>United Autism Therapy provides therapy services. We do not diagnose autism through this website, and reading our content does not create a provider–client relationship.</p>
+    <p>Therapy outcomes vary from child to child. We do not guarantee specific results.</p>
+    <p>If you think your child is having a medical emergency, call 911 or go to the nearest emergency room.</p>
+    <p>Our articles cite sources such as the CDC, NIH, the American Speech-Language-Hearing Association, the American Occupational Therapy Association, the Behavior Analyst Certification Board and California state agencies. We review content periodically; each article shows the date it was last updated.</p>
+  </div></section>
+</PageLayout>

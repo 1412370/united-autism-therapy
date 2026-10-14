@@ -1,0 +1,72 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import ContactInfo from '../../components/ContactInfo.astro';
+import MapEmbed from '../../components/MapEmbed.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import { LOCATIONS } from '../../data/locations';
+import { CORE_SERVICES } from '../../data/services';
+import { localBusinessSchema } from '../../utils/schema';
+import { telHref, mapsUrl, BUSINESS } from '../../data/site';
+
+export function getStaticPaths() {
+  return LOCATIONS.map((loc) => ({ params: { slug: loc.slug }, props: { loc } }));
+}
+const { loc } = Astro.props;
+const services = CORE_SERVICES;
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Locations', href: '/locations/' },
+  { name: loc.name, href: `/locations/${loc.slug}/` },
+];
+const faqs = [
+  { q: 'Where is your Westminster center?', a: `We are located at ${loc.address.street}, ${loc.address.city}, ${loc.address.region} ${loc.address.postalCode}.` },
+  { q: 'What are your hours?', a: 'Monday through Saturday, 8:00 AM to 6:00 PM. We are closed on Sundays.' },
+  { q: 'Do you serve families outside Westminster?', a: 'Yes. In addition to our center, we provide in-home and school-based ABA to families throughout Orange County. Call us to confirm availability in your area.' },
+  { q: 'Can I tour the center before starting?', a: 'Please call us to ask about visiting. A free consultation is a good first step to learn about our programs.' },
+];
+---
+<PageLayout
+  title={loc.title}
+  description={loc.description}
+  h1={loc.h1}
+  eyebrow="Location"
+  lead="Center-based ABA therapy, speech therapy, occupational therapy and parent training on Beach Blvd in Westminster — with in-home and school-based programs across Orange County."
+  crumbs={crumbs}
+  faqs={faqs}
+  faqTitle="Visiting our Westminster center"
+  schema={[localBusinessSchema()]}
+>
+  <section class="section">
+    <div class="wrap split" style="align-items:start">
+      <div class="stack">
+        <h2>Address, hours and contact</h2>
+        <ContactInfo />
+        <div class="btn-row">
+          <a class="btn btn--primary" href={mapsUrl} target="_blank" rel="noopener">Get directions</a>
+          <a class="btn btn--ghost" href={telHref}>Call {BUSINESS.phone}</a>
+        </div>
+      </div>
+      <div class="stack">
+        <MapEmbed />
+        <div class="prose">
+          <h2>Serving Westminster and Orange County</h2>
+          <p>
+            Our Westminster center is home to our <a href="/services/center-based-aba/">center-based ABA program</a> and is
+            the base for our team’s work with families across Orange County. If getting to the center is hard for your family,
+            ask about <a href="/services/in-home-aba/">in-home ABA</a> or <a href="/services/school-based-aba/">school-based support</a>.
+          </p>
+          <p>
+            New to autism services in the area? Our guide to <a href="/blog/autism-support-orange-county-parents/">autism support for parents in Orange County</a>
+            covers the Regional Center of Orange County, school supports and insurance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section section--sand">
+    <div class="wrap">
+      <div class="section-head"><h2>Services available from our Westminster center</h2></div>
+      <div class="grid grid-3">{services.map((s) => <ServiceCard service={s} />)}</div>
+    </div>
+  </section>
+</PageLayout>

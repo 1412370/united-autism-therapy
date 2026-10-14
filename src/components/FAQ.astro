@@ -1,0 +1,27 @@
+---
+/**
+ * Accessible FAQ accordion built on native <details>/<summary> — works with
+ * no JavaScript, and answers are in the HTML for crawlers.
+ * FAQPage JSON-LD is emitted by the page layout (see INTEGRATIONS.faqSchema).
+ */
+interface Item { q: string; a: string; link?: { href: string; label: string }; }
+interface Props { items: Item[]; headingLevel?: 'h2' | 'h3'; title?: string; id?: string; openFirst?: boolean; }
+const { items, title, headingLevel = 'h2', id = 'faq', openFirst = false } = Astro.props;
+const H = headingLevel;
+---
+{items.length > 0 && (
+  <section class="faq-section" aria-labelledby={title ? `${id}-title` : undefined}>
+    {title && <H id={`${id}-title`} style="margin-bottom:1.25rem">{title}</H>}
+    <div class="faq">
+      {items.map((item, i) => (
+        <details open={openFirst && i === 0}>
+          <summary>{item.q}</summary>
+          <div class="faq__answer">
+            <p>{item.a}</p>
+            {item.link && <p class="mt-1"><a href={item.link.href}>{item.link.label} →</a></p>}
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+)}

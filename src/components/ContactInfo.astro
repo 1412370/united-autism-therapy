@@ -1,0 +1,38 @@
+---
+/** NAP block — identical everywhere it appears (local SEO consistency). */
+import Icon from './Icon.astro';
+import { SITE, BUSINESS, isSet, telHref, mapsUrl } from '../data/site';
+interface Props { showHours?: boolean; }
+const { showHours = true } = Astro.props;
+---
+<div class="card">
+  <ul class="info-list">
+    <li>
+      <Icon name="pin" />
+      <span><strong>{SITE.legalName}</strong>
+        <a href={mapsUrl} target="_blank" rel="noopener">{BUSINESS.address.street}, {BUSINESS.address.city}, {BUSINESS.address.region} {BUSINESS.address.postalCode}</a>
+      </span>
+    </li>
+    <li>
+      <Icon name="phone" />
+      <span><strong>Phone</strong><a href={telHref}>{BUSINESS.phone}</a></span>
+    </li>
+    {isSet(BUSINESS.email) && (
+      <li><Icon name="mail" /><span><strong>Email</strong><a href={`mailto:${BUSINESS.email}`}>{BUSINESS.email}</a></span></li>
+    )}
+    <li>
+      <Icon name="family" />
+      <span><strong>Areas served</strong>Westminster, CA and families across {BUSINESS.countiesShort}</span>
+    </li>
+  </ul>
+  {showHours && (
+    <>
+      <h3 class="mt-2" style="font-size:1.05rem">Hours</h3>
+      <table class="hours-table mt-1">
+        <tbody>
+          {BUSINESS.hours.map((h) => (<tr><th scope="row">{h.days}</th><td>{h.value}</td></tr>))}
+        </tbody>
+      </table>
+    </>
+  )}
+</div>

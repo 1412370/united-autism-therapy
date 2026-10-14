@@ -1,0 +1,121 @@
+---
+/**
+ * Service pages: /services/aba-therapy/, /services/in-home-aba/, …
+ * One template, many pages — metadata comes from src/data/services.ts and the
+ * body copy from src/content/services/<slug>.md.
+ */
+import { getCollection, render } from 'astro:content';
+import PageLayout from '../../layouts/PageLayout.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { SERVICES, getService, ABA_SETTINGS, CORE_SERVICES } from '../../data/services';
+import { BUSINESS } from '../../data/site';
+import { getPosts } from '../../utils/posts';
+import { serviceSchema, localBusinessSchema } from '../../utils/schema';
+import { Image } from 'astro:assets';
+import { IMAGES } from '../../utils/images';
+
+export async function getStaticPaths() {
+  const bodies = await getCollection('services');
+  return SERVICES.map((s) => {
+    const entry = bodies.find((b) => b.data.service === s.slug);
+    if (!entry) throw new Error(`Missing src/content/services/${s.slug}.md`);
+    return { params: { slug: s.slug }, props: { entry } };
+  });
+}
+
+const { entry } = Astro.props;
+const service = getService(entry.data.service);
+const { Content } = await render(entry);
+const parent = service.parent ? getService(service.parent) : null;
+const posts = await getPosts();
+const related = service.relatedPosts.map((slug) => posts.find((p) => p.id === slug)).filter((p) => p !== undefined).slice(0, 6);
+const siblings = service.slug === 'aba-therapy' ? ABA_SETTINGS : parent ? ABA_SETTINGS.filter((s) => s.slug !== service.slug) : [];
+const img = service.image ? IMAGES[service.image] : null;
+const others = CORE_SERVICES.filter((s) => s.slug !== service.slug);
+
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Services', href: '/services/' },
+  ...(parent ? [{ name: parent.name, href: `/services/${parent.slug}/` }] : []),
+  { name: service.name, href: `/services/${service.slug}/` },
+];
+---
+<PageLayout
+  title={service.seoTitle}
+  description={service.description}
+  h1={service.h1}
+  eyebrow={parent ? `${parent.name} · Westminster & Orange County` : 'Westminster & Orange County, CA'}
+  lead={service.summary}
+  crumbs={crumbs}
+  faqs={[...service.faqs]}
+  faqTitle={`${service.name}: common questions`}
+  schema={[serviceSchema(service), localBusinessSchema()]}
+>
+  <section class="section">
+    <div class="wrap">
+      <div class="article-layout" style="padding-block:0">
+        <div>
+          {service.answer && (
+            <div class="quick-answer">
+              <p class="quick-answer__label">Quick answer</p>
+              <p>{service.answer}</p>
+            </div>
+          )}
+          {img && (
+            <figure class="service-hero-img mt-2">
+              <Image src={img.src} alt={img.alt} widths={[480, 760, 1100]} sizes="(min-width: 1100px) 760px, 94vw" loading="eager" fetchpriority="high" decoding="async" format="webp" />
+            </figure>
+          )}
+          <div class="prose mt-2">
+            <Content />
+          </div>
+        </div>
+        <aside class="sidebar" aria-label={`${service.name} at a glance`}>
+          <div class="card">
+            <h2>At a glance</h2>
+            <ul class="check-list mt-1">{service.highlights.map((h) => <li>{h}</li>)}</ul>
+          </div>
+          <div class="card cta-card">
+            <h2>Talk with our team</h2>
+            <p>Free consultation. We’ll answer your questions and help you check insurance.</p>
+            <a class="btn btn--light" href="/contact/">Request a Consultation</a>
+            <p style="text-align:center;margin-top:.75rem">or call <a href={`tel:${BUSINESS.phoneE164}`}>{BUSINESS.phone}</a></p>
+          </div>
+          <div class="card">
+            <h2>Insurance</h2>
+            <p class="mt-1">Many plans, including Medi-Cal, cover ABA therapy for children with an autism diagnosis.</p>
+            <p class="mt-1"><a href="/insurance/">Insurance & Medi-Cal →</a></p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  {siblings.length > 0 && (
+    <section class="section section--sand">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">{service.slug === 'aba-therapy' ? 'Where therapy happens' : 'Other ABA settings'}</p>
+          <h2>{service.slug === 'aba-therapy' ? 'ABA at our center, at home or at school' : 'Combine settings to fit your child'}</h2>
+        </div>
+        <div class="grid grid-3">{siblings.map((s) => <ServiceCard service={s} />)}</div>
+      </div>
+    </section>
+  )}
+
+  {related.length > 0 && (
+    <section class="section">
+      <div class="wrap">
+        <RelatedPosts posts={related} title={`Learn more about ${service.name.toLowerCase()}`} intro="Parent-friendly guides from our team." />
+      </div>
+    </section>
+  )}
+
+  <section class="section section--sky">
+    <div class="wrap">
+      <div class="section-head"><h2>{service.parent ? 'Our services' : 'Our other services'}</h2></div>
+      <div class="grid grid-3">{others.map((s) => <ServiceCard service={s} />)}</div>
+    </div>
+  </section>
+</PageLayout>

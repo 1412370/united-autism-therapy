@@ -1,0 +1,11 @@
+---
+/** Decorative rainbow wave in the logo's colors (blue · green · yellow · orange). */
+interface Props { flip?: boolean; }
+const { flip = false } = Astro.props;
+---
+<svg class="brand-wave" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true" focusable="false" style={flip ? 'transform:scaleY(-1)' : undefined}>
+  <path d="M0 22 C 240 2, 480 2, 720 20 S 1200 38, 1440 14 V40 H0Z" fill="#0a5aa8" />
+  <path d="M0 28 C 240 10, 480 10, 720 27 S 1200 42, 1440 22 V40 H0Z" fill="#3a9a1a" />
+  <path d="M0 33 C 240 18, 480 18, 720 32 S 1200 44, 1440 29 V40 H0Z" fill="#f7b500" />
+  <path d="M0 37 C 240 26, 480 26, 720 36 S 1200 46, 1440 34 V40 H0Z" fill="#f47b20" />
+</svg>

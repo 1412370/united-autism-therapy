@@ -1,0 +1,26 @@
+{
+  "name": "united-autism-therapy",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "build:fast": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "images": "node scripts/generate-images.mjs",
+    "audit": "node scripts/audit.mjs",
+    "preview:offline": "node scripts/make-offline-preview.mjs"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^8.0.2",
+    "@fontsource-variable/nunito": "^5.3.0",
+    "astro": "^7.3.5"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "sharp": "^0.35.5",
+    "typescript": "^6.0.3"
+  }
+}

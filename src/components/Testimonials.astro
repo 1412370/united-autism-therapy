@@ -1,0 +1,25 @@
+---
+/** Renders only testimonials marked `verified: true` in src/data/testimonials.ts. */
+import { PUBLISHED_TESTIMONIALS } from '../data/testimonials';
+interface Props { title?: string; }
+const { title = 'What families say' } = Astro.props;
+---
+{PUBLISHED_TESTIMONIALS.length > 0 && (
+  <section class="section section--sand" aria-labelledby="testimonials-title">
+    <div class="wrap">
+      <div class="section-head section-head--center">
+        <p class="eyebrow">Real families</p>
+        <h2 id="testimonials-title">{title}</h2>
+        <p>Shared with permission. Every child’s experience is different.</p>
+      </div>
+      <div class="grid grid-3">
+        {PUBLISHED_TESTIMONIALS.map((t) => (
+          <figure class="card quote">
+            <blockquote><p>“{t.quote}”</p></blockquote>
+            <figcaption><strong>{t.name}</strong>{t.context}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

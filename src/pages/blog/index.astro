@@ -1,0 +1,41 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { CATEGORIES } from '../../data/categories';
+import { getPosts } from '../../utils/posts';
+import { absoluteUrl } from '../../data/site';
+
+const posts = await getPosts();
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Blog', href: '/blog/' }];
+const listSchema = {
+  '@type': 'Blog',
+  '@id': absoluteUrl('/blog/#blog'),
+  name: 'United Autism Therapy Parent Resources',
+  url: absoluteUrl('/blog/'),
+  blogPost: posts.map((p) => ({ '@type': 'BlogPosting', headline: p.data.h1 ?? p.data.title, url: absoluteUrl(`/blog/${p.id}/`), datePublished: p.data.date.toISOString() })),
+};
+---
+<PageLayout
+  title="Autism & ABA Therapy Resources for Parents"
+  description="Plain-language guides for parents about ABA therapy, autism, speech therapy, occupational therapy, Medi-Cal and local Orange County resources."
+  h1="Autism & ABA Therapy Resources for Parents"
+  eyebrow="Parent resources"
+  lead="Clear, practical answers to the questions families ask us most — written for parents and caregivers, with sources you can check."
+  crumbs={crumbs}
+  showHeroCta={false}
+  schema={[listSchema]}
+>
+  <section class="section" style="padding-top:2rem">
+    <div class="wrap">
+      <nav aria-label="Blog categories" class="mt-1">
+        <ul class="tag-list" style="gap:.6rem">
+          {CATEGORIES.map((c) => <li style="background:none;padding:0"><a class="chip" href={`/blog/category/${c.slug}/`}>{c.name}</a></li>)}
+        </ul>
+      </nav>
+      <h2 class="sr-only">All articles</h2>
+      <div class="grid grid-3 mt-2">
+        {posts.map((p, i) => <BlogCard post={p} eager={i < 3} />)}
+      </div>
+    </div>
+  </section>
+</PageLayout>

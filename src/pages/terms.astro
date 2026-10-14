@@ -1,0 +1,23 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { SITE } from '../data/site';
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Terms of Use', href: '/terms/' }];
+---
+<!-- TEMPLATE: have these terms reviewed by a qualified attorney before launch. -->
+<PageLayout title="Terms of Use" description={`Terms of use for the ${SITE.name} website, including our educational-content notice, no-guarantee statement and external link policy.`} h1="Terms of Use" crumbs={crumbs} showHeroCta={false} showCta={false} lead="Last updated September 30, 2026">
+  <section class="section"><div class="wrap-narrow prose">
+    <p>By using this website you agree to these terms. If you do not agree, please do not use the site.</p>
+    <h2>Educational information only</h2>
+    <p>Content on this website is for general information and education. It is not medical, legal or insurance advice and does not create a provider–client relationship. See our <a href="/medical-disclaimer/">Medical Disclaimer</a>.</p>
+    <h2>No guarantee of results</h2>
+    <p>Every child is different. We do not promise or guarantee specific therapy outcomes.</p>
+    <h2>Intellectual property</h2>
+    <p>Text, graphics and logos on this site belong to {SITE.legalName} or are used with permission. You may share links to our pages; please do not copy content without permission.</p>
+    <h2>External links</h2>
+    <p>We link to outside resources, such as government and professional organizations, for your convenience. We are not responsible for their content.</p>
+    <h2>Limitation of liability</h2>
+    <p>To the extent permitted by law, {SITE.legalName} is not liable for damages arising from use of this website.</p>
+    <h2>Changes</h2>
+    <p>We may update these terms. The date above shows the latest version.</p>
+  </div></section>
+</PageLayout>

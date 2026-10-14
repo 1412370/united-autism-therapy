@@ -1,0 +1,21 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { BUSINESS, telHref } from '../data/site';
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Accessibility', href: '/accessibility/' }];
+---
+<PageLayout title="Accessibility Statement" description="Our commitment to making the United Autism Therapy website accessible to all families, including people who use assistive technology." h1="Accessibility Statement" crumbs={crumbs} showHeroCta={false} showCta={false}>
+  <section class="section"><div class="wrap-narrow prose">
+    <p>We want every family to be able to use this website. We aim to follow the Web Content Accessibility Guidelines (WCAG) 2.2 Level AA.</p>
+    <h2>What we do</h2>
+    <ul>
+      <li>Semantic HTML with a logical heading structure</li>
+      <li>Keyboard navigation with visible focus indicators and a “skip to content” link</li>
+      <li>Text alternatives for meaningful images</li>
+      <li>Color contrast that meets AA guidelines for body text</li>
+      <li>Form fields with labels and clear error messages</li>
+      <li>Respect for “reduce motion” settings</li>
+    </ul>
+    <h2>Need help?</h2>
+    <p>If anything on this site is hard to use, please call us at <a href={telHref}>{BUSINESS.phone}</a> and we will help you get the information you need.</p>
+  </div></section>
+</PageLayout>

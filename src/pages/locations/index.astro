@@ -1,0 +1,33 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { LOCATIONS } from '../../data/locations';
+import { BUSINESS, telHref } from '../../data/site';
+
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Locations', href: '/locations/' }];
+---
+<PageLayout
+  title="Locations & Service Area"
+  description="United Autism Therapy is based in Westminster, CA, with in-home ABA for families in Orange, Riverside, San Diego, San Bernardino and Santa Clara Counties."
+  h1="Our Location & Service Area"
+  eyebrow="Locations"
+  lead="One location in Westminster, and in-home ABA across five California counties."
+  crumbs={crumbs}
+>
+  <section class="section">
+    <div class="wrap grid grid-2">
+      {LOCATIONS.map((l) => (
+        <article class="card card--link">
+          <h2 style="font-size:var(--fs-600)"><a class="stretched" href={`/locations/${l.slug}/`}>{l.name} center</a></h2>
+          <p class="mt-1">{l.address.street}<br />{l.address.city}, {l.address.region} {l.address.postalCode}</p>
+          <p class="mt-1">{l.phone}</p>
+          <span class="card__more" aria-hidden="true">Hours &amp; directions →</span>
+        </article>
+      ))}
+      <article class="card">
+        <h2 style="font-size:var(--fs-600)">Counties we serve (in-home ABA)</h2>
+        <ul class="counties">{BUSINESS.counties.map((c) => <li>{c}, CA</li>)}</ul>
+        <p class="mt-1">We bring ABA therapy to families’ homes in these counties. <a href="/locations/orange-county-ca/">See our Orange County service area</a>, or <a href={telHref}>call {BUSINESS.phone}</a> to confirm availability at your address.</p>
+      </article>
+    </div>
+  </section>
+</PageLayout>

@@ -1,0 +1,37 @@
+---
+/**
+ * Analytics integration point. Nothing loads unless an ID is set in
+ * src/data/site.ts (INTEGRATIONS.ga4Id or INTEGRATIONS.gtmId).
+ *
+ * Healthcare privacy: do not send form contents, child details or other health
+ * information to analytics. Track events like "consultation_form_submit" or
+ * "click_to_call" only. If you add advertising pixels, review HIPAA/CCPA
+ * guidance and add a consent banner first.
+ */
+import { INTEGRATIONS } from '../data/site';
+const { ga4Id, gtmId } = INTEGRATIONS;
+---
+{gtmId ? (
+  <script is:inline define:vars={{ gtmId }}>
+    (function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': Date.now(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0], j = d.createElement(s); j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', gtmId);
+  </script>
+) : ga4Id ? (
+  <>
+    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}></script>
+    <script is:inline define:vars={{ ga4Id }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', ga4Id, { anonymize_ip: true });
+      // Conversion events (no personal data): click-to-call + form submits.
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href^="tel:"]');
+        if (a) gtag('event', 'click_to_call', { link_url: location.pathname });
+      });
+      document.addEventListener('uat:form-submitted', function () { gtag('event', 'generate_lead', { form: 'consultation' }); });
+    </script>
+  </>
+) : null}

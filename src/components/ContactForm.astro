@@ -1,0 +1,145 @@
+---
+/**
+ * Consultation request form.
+ *
+ * Static-site friendly: posts to INTEGRATIONS.formEndpoint (Formspree, Basin,
+ * Web3Forms, a LeadConnector webhook or a PHP mailer on your host). With JS it
+ * submits via fetch and redirects to /thank-you/; without JS it is a normal
+ * HTML form POST.
+ *
+ * Privacy: the form asks for contact details only, and tells families not to
+ * include diagnoses or medical records. If you need to collect health
+ * information, use a HIPAA-eligible form provider with a signed BAA.
+ */
+import { INTEGRATIONS, BUSINESS, isSet, telHref } from '../data/site';
+import { CORE_SERVICES } from '../data/services';
+const endpoint = isSet(INTEGRATIONS.formEndpoint) ? INTEGRATIONS.formEndpoint : '';
+---
+<form
+  class="form card"
+  method="post"
+  action={endpoint || '#'}
+  data-consult-form
+  data-endpoint={endpoint}
+  aria-describedby="form-privacy"
+>
+  <div class="form__row form__row--2">
+    <div class="field">
+      <label for="f-name">Parent / caregiver name <span class="req" aria-hidden="true">*</span></label>
+      <input id="f-name" name="name" type="text" autocomplete="name" required />
+    </div>
+    <div class="field">
+      <label for="f-phone">Phone <span class="req" aria-hidden="true">*</span></label>
+      <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required />
+    </div>
+  </div>
+  <div class="form__row form__row--2">
+    <div class="field">
+      <label for="f-email">Email</label>
+      <input id="f-email" name="email" type="email" autocomplete="email" />
+    </div>
+    <div class="field">
+      <label for="f-zip">ZIP code</label>
+      <input id="f-zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}" aria-describedby="f-zip-hint" />
+      <p class="hint" id="f-zip-hint">Helps us confirm in-home availability in your area.</p>
+    </div>
+  </div>
+  <div class="form__row form__row--2">
+    <div class="field">
+      <label for="f-age">Child’s age</label>
+      <select id="f-age" name="child_age">
+        <option value="">Select…</option>
+        <option>Under 3</option>
+        <option>3–5</option>
+        <option>6–12</option>
+        <option>13–17</option>
+        <option>18 or older</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="f-service">Service you’re interested in</label>
+      <select id="f-service" name="service">
+        <option value="">Not sure yet</option>
+        {CORE_SERVICES.map((s) => <option>{s.name}</option>)}
+      </select>
+    </div>
+  </div>
+  <div class="field">
+    <label for="f-contact">Best way to reach you</label>
+    <select id="f-contact" name="preferred_contact">
+      <option>Phone call</option>
+      <option>Text message</option>
+      <option>Email</option>
+    </select>
+  </div>
+  <div class="field">
+    <label for="f-message">How can we help?</label>
+    <textarea id="f-message" name="message" aria-describedby="f-message-hint"></textarea>
+    <p class="hint" id="f-message-hint">A few words is plenty. Please don’t include diagnoses, medical records or insurance ID numbers — we’ll collect those securely later.</p>
+  </div>
+  <!-- Spam honeypot: hidden from people, tempting to bots. -->
+  <div aria-hidden="true" style="position:absolute;left:-9999px">
+    <label for="f-website">Leave this field empty</label>
+    <input id="f-website" name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
+  </div>
+  <input type="hidden" name="page" value="/contact/" />
+  <div class="field field--check">
+    <input id="f-consent" name="consent" type="checkbox" value="yes" required />
+    <label for="f-consent">I agree to be contacted by United Autism Therapy about my inquiry. <span class="req" aria-hidden="true">*</span></label>
+  </div>
+  <p id="form-privacy" class="hint">See our <a href="/privacy-policy/">Privacy Policy</a>. Fields marked <span class="req">*</span> are required.</p>
+  <div class="form-status" role="status" aria-live="polite" hidden data-form-status></div>
+  <button class="btn btn--cta" type="submit" style="justify-self:start">Request My Free Consultation</button>
+  <p class="hint">Prefer to talk? Call <a href={telHref}>{BUSINESS.phone}</a>, Monday–Saturday, 8 AM–6 PM.</p>
+</form>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('[data-consult-form]');
+  const status = form?.querySelector<HTMLElement>('[data-form-status]');
+  const show = (msg: string, type: 'ok' | 'error') => {
+    if (!status) return;
+    status.textContent = msg;
+    status.dataset.type = type;
+    status.hidden = false;
+    status.focus?.();
+  };
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    const endpoint = form.dataset.endpoint;
+    if (!endpoint) {
+      show('Our online form is being set up. Please call (714) 709-7819 and we’ll be happy to help.', 'error');
+      return;
+    }
+    const btn = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+    btn?.setAttribute('disabled', '');
+    // URL-encoded body = a "simple" CORS request (no preflight), which Google
+    // Apps Script web apps and most form services accept.
+    const body = new URLSearchParams();
+    new FormData(form).forEach((v, k) => body.append(k, String(v)));
+    body.set('page', location.pathname);
+    body.set('_ajax', '1');
+    const done = () => {
+      document.dispatchEvent(new CustomEvent('uat:form-submitted'));
+      location.href = '/thank-you/';
+    };
+    try {
+      const res = await fetch(endpoint, { method: 'POST', body, headers: { Accept: 'application/json' } });
+      if (!res.ok) throw new Error(String(res.status));
+      const data = await res.json().catch(() => ({ result: 'success' }));
+      if (data.result === 'error') throw new Error(data.error || 'Form error');
+      done();
+    } catch (err) {
+      // Some browsers/extensions block reading the cross-origin response even
+      // though the request was delivered. Retry once without reading it.
+      if (err instanceof TypeError) {
+        try {
+          await fetch(endpoint, { method: 'POST', body, mode: 'no-cors' });
+          return done();
+        } catch { /* fall through */ }
+      }
+      show('Sorry, something went wrong sending your request. Please call (714) 709-7819.', 'error');
+      btn?.removeAttribute('disabled');
+    }
+  });
+</script>

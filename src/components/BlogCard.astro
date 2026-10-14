@@ -1,0 +1,30 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import { getCategory } from '../data/categories';
+import { formatDate, readingTime } from '../utils/posts';
+
+interface Props { post: CollectionEntry<'blog'>; headingLevel?: 'h2' | 'h3'; eager?: boolean; }
+const { post, headingLevel = 'h3', eager = false } = Astro.props;
+const H = headingLevel;
+const d = post.data;
+---
+<article class="card card--link post-card">
+  <div class="post-card__img">
+    <Image
+      src={d.featuredImage}
+      alt=""
+      widths={[360, 560, 760]}
+      sizes="(min-width: 1100px) 340px, (min-width: 700px) 45vw, 92vw"
+      loading={eager ? 'eager' : 'lazy'}
+      decoding="async"
+      format="webp"
+    />
+  </div>
+  <div class="post-card__body">
+    <span class="chip" style="align-self:flex-start">{getCategory(d.category).name}</span>
+    <H><a class="stretched" href={`/blog/${post.id}/`}>{d.h1 ?? d.title}</a></H>
+    <p>{d.description}</p>
+    <p class="post-card__meta"><time datetime={d.date.toISOString()}>{formatDate(d.date)}</time> · {readingTime(post.body)} min read</p>
+  </div>
+</article>

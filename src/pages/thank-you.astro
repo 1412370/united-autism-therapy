@@ -1,0 +1,17 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { BUSINESS, telHref } from '../data/site';
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Thank you', href: '/thank-you/' }];
+---
+<PageLayout title="Thank You" description="Thanks for contacting United Autism Therapy." h1="Thank you — we received your request" crumbs={crumbs} noindex showHeroCta={false} showCta={false}
+  lead="A member of our team will reach out soon, usually by phone, during business hours (Monday–Saturday, 8 AM–6 PM).">
+  <section class="section"><div class="wrap-narrow prose">
+    <p>If you need to reach us sooner, call <a href={telHref}>{BUSINESS.phone}</a>.</p>
+    <p>While you wait, you may find these guides helpful:</p>
+    <ul>
+      <li><a href="/blog/what-is-aba-therapy/">What is ABA therapy? A parent’s guide</a></li>
+      <li><a href="/blog/does-medi-cal-cover-aba-therapy/">Does Medi-Cal cover ABA therapy?</a></li>
+      <li><a href="/blog/how-to-choose-an-aba-provider/">How to choose an ABA provider</a></li>
+    </ul>
+  </div></section>
+</PageLayout>

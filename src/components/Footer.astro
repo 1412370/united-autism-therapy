@@ -1,0 +1,43 @@
+---
+import Logo from './Logo.astro';
+import SocialLinks from './SocialLinks.astro';
+import BrandWave from './BrandWave.astro';
+import { FOOTER_NAV, LEGAL_NAV } from '../data/navigation';
+import { SITE, BUSINESS, isSet, telHref, mapsUrl } from '../data/site';
+
+const year = new Date().getFullYear();
+---
+<BrandWave />
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <Logo eager={false} />
+        <p class="mt-1"><strong style="color:#fff">Supporting Children. Empowering Families.</strong> ABA, speech and occupational therapy for children with autism in Westminster, CA, with in-home ABA across {BUSINESS.countiesShort}.</p>
+        <address class="footer-nap">
+          <strong style="color:#fff">{SITE.legalName}</strong>
+          <a href={mapsUrl} rel="noopener" target="_blank">{BUSINESS.address.street}<br />{BUSINESS.address.city}, {BUSINESS.address.region} {BUSINESS.address.postalCode}</a>
+          <a href={telHref}>{BUSINESS.phone}</a>
+          {isSet(BUSINESS.email) && <a href={`mailto:${BUSINESS.email}`}>{BUSINESS.email}</a>}
+        </address>
+        <div class="mt-1"><SocialLinks /></div>
+        <p class="mt-1">{BUSINESS.hoursShort}</p>
+      </div>
+      {FOOTER_NAV.map((col) => (
+        <nav aria-label={col.heading}>
+          <h2>{col.heading}</h2>
+          <ul>{col.links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+        </nav>
+      ))}
+    </div>
+    <p class="footer-disclaimer">
+      Information on this website is for general education and is not medical advice. Please talk with your child’s doctor or a qualified professional about your child’s specific needs. Therapy outcomes vary from child to child.
+    </p>
+    <div class="footer-bottom">
+      <p>© {year} {SITE.legalName}. All rights reserved.</p>
+      <nav aria-label="Legal">
+        <ul>{LEGAL_NAV.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+      </nav>
+    </div>
+  </div>
+</footer>

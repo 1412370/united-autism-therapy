@@ -1,0 +1,10 @@
+---
+/** Client logo (docs/source-assets/logo.png), served as optimized WebP. */
+import { Image } from 'astro:assets';
+import { logo } from '../utils/images';
+interface Props { href?: string; eager?: boolean; }
+const { href = '/', eager = true } = Astro.props;
+---
+<a class="logo" href={href}>
+  <Image src={logo} alt="United Autism Therapy home" widths={[180, 270, 360]} sizes="180px" loading={eager ? 'eager' : 'lazy'} decoding="async" format="webp" layout="none" />
+</a>

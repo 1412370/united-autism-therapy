@@ -1,0 +1,45 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import BlogCard from '../../../components/BlogCard.astro';
+import { CATEGORIES } from '../../../data/categories';
+import { SERVICES } from '../../../data/services';
+import { getPosts } from '../../../utils/posts';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  // Only build categories that have posts (no thin/empty archive pages).
+  return CATEGORIES.filter((c) => posts.some((p) => p.data.category === c.slug)).map((c) => ({
+    params: { category: c.slug },
+    props: { category: c, posts: posts.filter((p) => p.data.category === c.slug) },
+  }));
+}
+
+const { category, posts } = Astro.props;
+const pillar = SERVICES.find((s) => `/services/${s.slug}/` === category.pillar);
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Blog', href: '/blog/' },
+  { name: category.name, href: `/blog/category/${category.slug}/` },
+];
+---
+<PageLayout
+  title={`${category.name} Articles for Parents`}
+  description={category.description}
+  h1={`${category.name}: Guides for Parents`}
+  eyebrow="Parent resources"
+  lead={category.description}
+  crumbs={crumbs}
+  showHeroCta={false}
+>
+  <section class="section" style="padding-top:2.5rem">
+    <div class="wrap">
+      {pillar && (
+        <p class="notice">Looking for services? Learn about <a href={category.pillar}><strong>{pillar.name}</strong> at United Autism Therapy</a> in Westminster and Orange County.</p>
+      )}
+      <h2 class="sr-only">Articles</h2>
+      <div class="grid grid-3 mt-2">
+        {posts.map((p, i) => <BlogCard post={p} eager={i < 3} />)}
+      </div>
+    </div>
+  </section>
+</PageLayout>

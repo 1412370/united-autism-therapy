@@ -1,0 +1,100 @@
+---
+/**
+ * Service-area page (not a physical location). Only lists cities that the
+ * business has confirmed in BUSINESS.servedCities — no thin per-city pages.
+ */
+import { Image } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import ContactInfo from '../../components/ContactInfo.astro';
+import { BUSINESS, telHref, absoluteUrl } from '../../data/site';
+import { getService, CORE_SERVICES } from '../../data/services';
+import { localBusinessSchema, serviceSchema, BUSINESS_ID } from '../../utils/schema';
+import { IMAGES } from '../../utils/images';
+
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Locations', href: '/locations/' },
+  { name: 'Orange County, CA', href: '/locations/orange-county-ca/' },
+];
+const inHome = getService('in-home-aba');
+const cities = BUSINESS.servedCities;
+const faqs = [
+  { q: 'Do you provide in-home ABA therapy in Orange County?', a: 'Yes. United Autism Therapy provides in-home ABA therapy for children with autism across Orange County, from our base in Westminster. Call (714) 709-7819 to confirm availability for your city and schedule.' },
+  { q: 'How do I find out if you serve my neighborhood?', a: 'Call us Monday through Saturday, 8 AM to 6 PM, or send a consultation request with your ZIP code. We will confirm whether in-home sessions are available at your address.' },
+  { q: 'Can my child receive therapy at school instead of home?', a: 'School-based support may be possible where the school permits it. Many families combine in-home ABA with school-based or center-based sessions. Ask us about your child’s situation.' },
+  { q: 'What local resources can help Orange County families?', a: 'The Regional Center of Orange County (RCOC), your school district’s special education team and your health plan are common starting points. Our guide to autism support in Orange County explains each one.' },
+];
+const areaPage = {
+  '@type': 'WebPage',
+  '@id': absoluteUrl('/locations/orange-county-ca/#page'),
+  name: 'In-home ABA therapy in Orange County, CA',
+  about: { '@id': BUSINESS_ID },
+  spatialCoverage: { '@type': 'AdministrativeArea', name: 'Orange County, California' },
+};
+---
+<PageLayout
+  title="In-Home ABA Therapy Across Orange County, CA"
+  description="United Autism Therapy brings in-home ABA therapy to families across Orange County, CA, from our base in Westminster. Call to confirm availability in your city."
+  h1="In-Home ABA Therapy in Orange County, CA"
+  eyebrow="Service area"
+  lead="We bring BCBA-designed ABA therapy to families’ homes across Orange County, from our base on Beach Blvd in Westminster."
+  crumbs={crumbs}
+  faqs={faqs}
+  faqTitle="Orange County service area: common questions"
+  schema={[localBusinessSchema(), serviceSchema(inHome), areaPage]}
+>
+  <section class="section">
+    <div class="wrap split" style="align-items:start">
+      <div class="prose">
+        <div class="quick-answer">
+          <p class="quick-answer__label">Quick answer</p>
+          <p>United Autism Therapy provides in-home ABA therapy for children with autism throughout Orange County, California. A BCBA designs each child’s plan, an RBT works with the child at home, and parents are coached along the way. Call {BUSINESS.phone} to confirm availability for your address.</p>
+        </div>
+        <h2>How in-home ABA works for Orange County families</h2>
+        <p>
+          Therapy happens in your home, built around your child’s real routines — meals, play, getting dressed and transitions.
+          Our team travels to you, so your child can learn in the place where they feel most comfortable. Read
+          <a href="/services/in-home-aba/">how in-home ABA works</a> and the
+          <a href="/blog/benefits-of-in-home-aba-therapy/">benefits of in-home ABA</a>.
+        </p>
+        <h2>Areas we serve</h2>
+        {cities.length > 0 ? (
+          <>
+            <p>We currently provide in-home ABA in these Orange County communities:</p>
+            <ul>{cities.map((c) => <li>{c}, CA</li>)}</ul>
+            <p>Don’t see your city? <a href={telHref}>Call us</a> — availability changes as our team grows.</p>
+          </>
+        ) : (
+          <p>
+            We serve Westminster and families across Orange County. Because availability depends on your address and schedule,
+            the fastest way to confirm is to <a href={telHref}>call {BUSINESS.phone}</a> or include your ZIP code in a
+            <a href="/contact/">consultation request</a>.
+          </p>
+        )}
+        <h2>Other counties we serve</h2>
+        <p>Besides Orange County, our in-home ABA program serves families in Riverside, San Diego, San Bernardino and Santa Clara Counties. Call to confirm availability at your address.</p>
+        <h2>Local support for families</h2>
+        <p>
+          Many Orange County families also connect with the Regional Center of Orange County, their school district and their
+          health plan. Our guide to <a href="/blog/autism-support-orange-county-parents/">autism support for parents in Orange County</a>
+          explains where to start, and our <a href="/insurance/">insurance page</a> covers Medi-Cal and private plans.
+        </p>
+      </div>
+      <div class="stack">
+        <figure class="service-hero-img">
+          <Image src={IMAGES['in-home'].src} alt={IMAGES['in-home'].alt} widths={[480, 720, 960]} sizes="(min-width: 900px) 480px, 92vw" loading="eager" decoding="async" format="webp" />
+        </figure>
+        <ContactInfo />
+      </div>
+    </div>
+  </section>
+  <section class="section section--sand">
+    <div class="wrap">
+      <div class="section-head"><h2>Services for Orange County families</h2></div>
+      <div class="grid grid-3">
+        {CORE_SERVICES.map((s) => <ServiceCard service={s} />)}
+      </div>
+    </div>
+  </section>
+</PageLayout>
