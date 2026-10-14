@@ -82,7 +82,7 @@ export const INTEGRATIONS = {
    * webhook, or a PHP mail script on your host). Leave the placeholder to show
    * a phone-first fallback message instead of a broken form.
    */
-  formEndpoint: '[FORM ENDPOINT URL]', // paste the Google Apps Script Web app URL (…/exec) here — see docs/google-apps-script/SETUP.md
+  formEndpoint: 'https://script.google.com/macros/s/AKfycbyT6GH6M9LZA80F84CHYAvHXW34D4pI4yMPu0Mxl_tF78ky2NuMbuX4DUjUk0NgbnYGZw/exec', // paste the Google Apps Script Web app URL (…/exec) here — see docs/google-apps-script/SETUP.md
   /** GA4 measurement ID, e.g. G-XXXXXXXXXX. Empty = no analytics script loaded. */
   ga4Id: '',
   /** Google Tag Manager container, e.g. GTM-XXXXXXX. Use GA4 *or* GTM, not both. */
