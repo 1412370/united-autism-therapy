@@ -8,8 +8,8 @@ updatedDate: 2026-09-30
 author: uat-clinical-team
 category: autism
 tags: ["autism", "diagnosis", "getting started", "parent resources"]
-featuredImage: ../../assets/blog/understanding-autism-spectrum-disorder.png
-alt: "A parent and young child sitting on a living room rug stacking colorful blocks together"
+featuredImage: ../../assets/blog/understanding-autism-spectrum-disorder.jpg
+alt: "An adult and a young child sitting on a living room rug stacking colorful blocks together"
 primaryKeyword: "autism spectrum disorder in children"
 secondaryKeywords: ["what is autism spectrum disorder", "autism levels", "types of autism", "asd meaning"]
 searchIntent: informational

@@ -8,7 +8,7 @@ updatedDate: 2026-09-30
 author: uat-clinical-team
 category: parent-resources
 tags: ["orange county", "parent resources", "getting started", "early intervention", "insurance"]
-featuredImage: ../../assets/blog/autism-support-orange-county-parents.png
+featuredImage: ../../assets/blog/autism-support-orange-county-parents.jpg
 alt: "Two parents sitting on a couch with a notebook and laptop, planning next steps while their preschooler plays on a rug"
 primaryKeyword: "autism support for parents orange county"
 secondaryKeywords: ["autism resources orange county", "regional center of orange county autism", "autism services orange county"]

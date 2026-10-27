@@ -8,7 +8,7 @@ updatedDate: 2026-09-30
 author: uat-clinical-team
 category: speech-therapy
 tags: ["speech therapy", "communication", "autism", "at home"]
-featuredImage: ../../assets/blog/speech-therapy-for-autism.png
+featuredImage: ../../assets/blog/speech-therapy-for-autism.jpg
 alt: "A speech therapist and a young child sitting at a small table playing with a picture book and toy animals"
 primaryKeyword: "speech therapy for autism"
 secondaryKeywords: ["speech therapy for autistic child", "speech therapy for autism at home", "how speech therapy helps autism", "speech and language therapy"]

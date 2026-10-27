@@ -8,7 +8,7 @@ date: 2026-10-22
 author: uat-clinical-team
 category: autism
 tags: ["meltdowns", "behavior", "sensory", "parent guide", "emotional regulation"]
-featuredImage: ../../assets/blog/autism-meltdown-vs-tantrum.png
+featuredImage: ../../assets/blog/autism-meltdown-vs-tantrum.jpg
 alt: "Parent kneeling calmly beside a young child sitting on a soft rug in a quiet, dimly lit corner with noise-canceling headphones nearby"
 primaryKeyword: "autism meltdown vs tantrum"
 secondaryKeywords: ["autism meltdown", "how to calm an autistic child during a meltdown", "signs of an autism meltdown", "autism meltdown triggers", "autistic shutdown", "sensory overload"]

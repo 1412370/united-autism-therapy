@@ -8,7 +8,7 @@ updatedDate: 2026-09-30
 author: uat-clinical-team
 category: aba-therapy
 tags: ["aba therapy", "parent guide", "communication skills", "choosing a provider"]
-featuredImage: ../../assets/blog/benefits-of-aba-therapy.png
+featuredImage: ../../assets/blog/benefits-of-aba-therapy.jpg
 alt: "A young child smiling while handing a picture card to a therapist during snack time at a small table"
 primaryKeyword: "benefits of aba therapy"
 secondaryKeywords: ["benefits of aba therapy for children", "pros and cons of aba therapy", "is aba therapy effective", "what can aba therapy help with"]

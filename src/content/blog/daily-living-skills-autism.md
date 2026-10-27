@@ -9,7 +9,7 @@ updatedDate: 2026-10-05
 author: uat-clinical-team
 category: autism
 tags: ["autism", "daily living skills", "in-home aba", "independence", "parent guide"]
-featuredImage: ../../assets/blog/daily-living-skills-autism.png
+featuredImage: ../../assets/blog/daily-living-skills-autism.jpg
 alt: "Young girl brushing her teeth at a bathroom sink while looking at a picture schedule taped beside the mirror, a parent standing nearby"
 primaryKeyword: "daily living skills for children with autism"
 secondaryKeywords: ["autism daily living skills", "self-care skills autism", "independence skills autism", "teaching life skills to autistic children"]

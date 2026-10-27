@@ -8,7 +8,7 @@ updatedDate: 2026-09-30
 author: uat-clinical-team
 category: parent-resources
 tags: ["insurance", "medi-cal", "aba therapy", "getting started", "orange county"]
-featuredImage: ../../assets/blog/does-medi-cal-cover-aba-therapy.png
+featuredImage: ../../assets/blog/does-medi-cal-cover-aba-therapy.jpg
 alt: "Parent at a kitchen table reviewing health plan papers and a Medi-Cal card while a young child plays with blocks nearby"
 primaryKeyword: "does medi-cal cover aba therapy"
 secondaryKeywords: ["medi-cal aba therapy", "behavioral health treatment medi-cal", "caloptima aba", "insurance for aba therapy california"]

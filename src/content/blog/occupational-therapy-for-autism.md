@@ -8,7 +8,7 @@ updatedDate: 2026-09-30
 author: uat-clinical-team
 category: occupational-therapy
 tags: ["occupational therapy", "daily living skills", "sensory", "at home", "autism"]
-featuredImage: ../../assets/blog/occupational-therapy-for-autism.png
+featuredImage: ../../assets/blog/occupational-therapy-for-autism.jpg
 alt: "An occupational therapist helping a young child thread large beads onto a string at a small table"
 primaryKeyword: "occupational therapy for autism"
 secondaryKeywords: ["occupational therapy for autistic child", "ot for autism at home", "occupational therapy activities for autism", "fine motor skills"]

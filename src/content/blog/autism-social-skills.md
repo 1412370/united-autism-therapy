@@ -9,7 +9,7 @@ updatedDate: 2026-10-05
 author: uat-clinical-team
 category: autism
 tags: ["autism", "social skills", "aba therapy", "in-home aba", "parent guide"]
-featuredImage: ../../assets/blog/autism-social-skills.png
+featuredImage: ../../assets/blog/autism-social-skills.jpg
 alt: "Young boy and his older sister taking turns stacking blocks on a living-room floor while a therapist kneels beside them and smiles"
 primaryKeyword: "social skills for children with autism"
 secondaryKeywords: ["autism social skills", "teaching social skills to autistic children", "turn-taking autism", "aba social skills goals"]

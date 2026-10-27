@@ -8,7 +8,7 @@ date: 2026-10-15
 author: uat-clinical-team
 category: parent-resources
 tags: ["sleep", "bedtime routine", "parent guide", "daily living skills", "orange county"]
-featuredImage: ../../assets/blog/autism-and-sleep-routines.png
+featuredImage: ../../assets/blog/autism-and-sleep-routines.jpg
 alt: "Quiet child's bedroom at dusk with a soft night light, a picture-card bedtime schedule on the wall, and a neatly made bed"
 primaryKeyword: "autism sleep routine"
 secondaryKeywords: ["autism bedtime routine", "autism sleep problems", "visual bedtime schedule", "autistic child won't sleep", "melatonin autism", "autism support orange county"]

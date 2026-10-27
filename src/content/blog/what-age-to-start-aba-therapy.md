@@ -8,7 +8,7 @@ updatedDate: 2026-09-30
 author: uat-clinical-team
 category: aba-therapy
 tags: ["aba therapy", "early intervention", "toddlers", "getting started"]
-featuredImage: ../../assets/blog/what-age-to-start-aba-therapy.png
+featuredImage: ../../assets/blog/what-age-to-start-aba-therapy.jpg
 alt: "A toddler sitting on a parent's lap on a play mat, reaching for a toy that a smiling therapist is holding out"
 primaryKeyword: "what age to start aba therapy"
 secondaryKeywords: ["what age does aba therapy start", "what age does aba therapy stop", "at what age is aba most effective", "aba therapy for toddlers"]

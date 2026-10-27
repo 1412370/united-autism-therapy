@@ -9,7 +9,7 @@ updatedDate: 2026-10-05
 author: uat-clinical-team
 category: aba-therapy
 tags: ["aba therapy", "bcba", "rbt", "choosing a provider", "parent guide"]
-featuredImage: ../../assets/blog/bcba-vs-rbt.png
+featuredImage: ../../assets/blog/bcba-vs-rbt.jpg
 alt: "Behavior analyst reviewing a session clipboard with a behavior technician while a young child plays with blocks on a living-room rug nearby"
 primaryKeyword: "bcba vs rbt"
 secondaryKeywords: ["difference between bcba and rbt", "what is a bcba", "what is an rbt", "rbt supervision", "aba therapy team roles"]

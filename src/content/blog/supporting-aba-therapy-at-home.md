@@ -8,7 +8,7 @@ updatedDate: 2026-09-30
 author: uat-clinical-team
 category: parent-resources
 tags: ["aba therapy", "parent involvement", "parent guide", "daily routines", "in-home aba"]
-featuredImage: ../../assets/blog/supporting-aba-therapy-at-home.png
+featuredImage: ../../assets/blog/supporting-aba-therapy-at-home.jpg
 alt: "A parent and young child look at a picture schedule on the refrigerator together before breakfast in a home kitchen"
 primaryKeyword: "how parents can support aba therapy at home"
 secondaryKeywords: ["aba strategies at home", "parent involvement in aba", "generalization at home"]

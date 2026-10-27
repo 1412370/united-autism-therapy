@@ -9,7 +9,7 @@ updatedDate: 2026-10-05
 author: uat-clinical-team
 category: parent-resources
 tags: ["insurance", "aba therapy", "getting started", "parent guide", "medi-cal"]
-featuredImage: ../../assets/blog/how-to-start-aba-through-insurance.png
+featuredImage: ../../assets/blog/how-to-start-aba-through-insurance.jpg
 alt: "Mother on the phone at a kitchen table with a notebook, an insurance card, and a folder of paperwork while her young son colors beside her"
 primaryKeyword: "how to get aba therapy covered by insurance"
 secondaryKeywords: ["aba therapy insurance", "aba prior authorization", "questions to ask insurance about aba", "does insurance cover aba therapy"]

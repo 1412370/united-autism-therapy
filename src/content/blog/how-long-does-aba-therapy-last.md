@@ -8,7 +8,7 @@ updatedDate: 2026-09-30
 author: uat-clinical-team
 category: aba-therapy
 tags: ["aba therapy", "parent guide", "bcba", "insurance"]
-featuredImage: ../../assets/blog/how-long-does-aba-therapy-last.png
+featuredImage: ../../assets/blog/how-long-does-aba-therapy-last.jpg
 alt: "A parent and a BCBA sitting together at a table reviewing a progress chart, with a child playing with toys in the background"
 primaryKeyword: "how long does aba therapy last"
 secondaryKeywords: ["how long does aba therapy take to work", "how many hours of aba therapy per week", "aba session length", "focused vs comprehensive aba"]

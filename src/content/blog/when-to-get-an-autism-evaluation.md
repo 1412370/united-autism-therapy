@@ -8,7 +8,7 @@ updatedDate: 2026-09-30
 author: uat-clinical-team
 category: autism
 tags: ["diagnosis", "autism signs", "getting started", "orange county", "parent resources"]
-featuredImage: ../../assets/blog/when-to-get-an-autism-evaluation.png
+featuredImage: ../../assets/blog/when-to-get-an-autism-evaluation.jpg
 alt: "Child psychologist sitting on the floor with a preschooler playing with blocks while a parent watches and takes notes"
 primaryKeyword: "autism evaluation for kids"
 secondaryKeywords: ["when to get an autism evaluation", "autism assessment", "who diagnoses autism", "autism evaluation near me"]

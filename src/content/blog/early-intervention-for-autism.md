@@ -8,7 +8,7 @@ updatedDate: 2026-09-30
 author: uat-clinical-team
 category: autism
 tags: ["early intervention", "toddlers", "getting started", "parent resources", "orange county"]
-featuredImage: ../../assets/blog/early-intervention-for-autism.png
+featuredImage: ../../assets/blog/early-intervention-for-autism.jpg
 alt: "Therapist and parent sitting on a living room floor with a toddler, playing with a shape sorter together"
 primaryKeyword: "early intervention autism"
 secondaryKeywords: ["early intervention autism services", "benefits of early intervention", "california early start autism"]

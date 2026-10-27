@@ -8,7 +8,7 @@ date: 2026-10-22
 author: uat-clinical-team
 category: parent-resources
 tags: ["iep", "special education", "school", "orange county", "early start", "parent guide"]
-featuredImage: ../../assets/blog/iep-for-autism-orange-county.png
+featuredImage: ../../assets/blog/iep-for-autism-orange-county.jpg
 alt: "Parent and teacher sitting at a small school table reviewing a printed plan together, with a child's backpack and crayons nearby"
 primaryKeyword: "iep for autism"
 secondaryKeywords: ["how to get an iep for autism", "iep orange county", "autism iep goals", "iep meeting tips", "early start to iep transition", "iep vs 504 plan"]

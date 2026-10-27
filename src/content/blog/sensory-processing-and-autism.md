@@ -8,7 +8,7 @@ updatedDate: 2026-09-30
 author: uat-clinical-team
 category: occupational-therapy
 tags: ["sensory", "occupational therapy", "autism", "at home", "parent resources"]
-featuredImage: ../../assets/blog/sensory-processing-and-autism.png
+featuredImage: ../../assets/blog/sensory-processing-and-autism.jpg
 alt: "A young child wearing noise-reducing headphones and resting in a cozy reading nook with soft pillows"
 primaryKeyword: "sensory processing autism"
 secondaryKeywords: ["sensory issues autism", "sensory integration autism", "sensory seeking vs avoiding", "sensory overload in children"]

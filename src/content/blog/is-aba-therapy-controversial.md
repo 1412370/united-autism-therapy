@@ -8,7 +8,7 @@ updatedDate: 2026-09-30
 author: uat-clinical-team
 category: aba-therapy
 tags: ["aba therapy", "neurodiversity", "choosing a provider", "parent guide"]
-featuredImage: ../../assets/blog/is-aba-therapy-controversial.png
+featuredImage: ../../assets/blog/is-aba-therapy-controversial.jpg
 alt: "A therapist sits on the floor beside a young child who is happily flapping their hands while playing with a sensory toy"
 primaryKeyword: "why is aba therapy controversial"
 secondaryKeywords: ["aba therapy controversy", "aba criticism", "neurodiversity-affirming aba"]

@@ -8,7 +8,7 @@ updatedDate: 2026-09-30
 author: uat-clinical-team
 category: aba-therapy
 tags: ["aba therapy", "center-based aba", "in-home aba", "choosing a provider", "parent guide"]
-featuredImage: ../../assets/blog/center-based-vs-in-home-aba-therapy.png
+featuredImage: ../../assets/blog/center-based-vs-in-home-aba-therapy.jpg
 alt: "Side-by-side view of a child playing with a therapist in a bright therapy room and a child practicing a snack routine at a kitchen table at home"
 primaryKeyword: "center-based vs in-home aba"
 secondaryKeywords: ["benefits of center based aba therapy", "benefits of in home aba therapy", "in home vs clinic aba"]

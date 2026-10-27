@@ -8,7 +8,7 @@ updatedDate: 2026-09-30
 author: uat-clinical-team
 category: autism
 tags: ["autism signs", "toddlers", "diagnosis", "early intervention", "getting started"]
-featuredImage: ../../assets/blog/early-signs-of-autism.png
+featuredImage: ../../assets/blog/early-signs-of-autism.jpg
 alt: "Toddler sitting on a play mat lining up colorful toy cars while a parent watches nearby"
 primaryKeyword: "early signs of autism"
 secondaryKeywords: ["early signs of autism in toddlers", "signs of autism in 2 year old", "early signs of autism in babies", "autism signs by age"]

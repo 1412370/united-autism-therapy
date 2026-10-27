@@ -8,7 +8,7 @@ updatedDate: 2026-09-30
 author: uat-clinical-team
 category: speech-therapy
 tags: ["aac", "speech therapy", "communication", "autism"]
-featuredImage: ../../assets/blog/aac-and-autism.png
+featuredImage: ../../assets/blog/aac-and-autism.jpg
 alt: "A young child pointing to a picture symbol on a tablet communication app while a parent sits beside them"
 primaryKeyword: "aac autism"
 secondaryKeywords: ["aac device for autism", "aac app", "what is aac", "alternative communication"]

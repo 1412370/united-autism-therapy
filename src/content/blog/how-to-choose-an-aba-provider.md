@@ -8,7 +8,7 @@ updatedDate: 2026-09-30
 author: uat-clinical-team
 category: aba-therapy
 tags: ["aba therapy", "choosing a provider", "parent guide", "insurance", "getting started"]
-featuredImage: ../../assets/blog/how-to-choose-an-aba-provider.png
+featuredImage: ../../assets/blog/how-to-choose-an-aba-provider.jpg
 alt: "A parent sits across a small table from a clinician, holding a printed checklist and taking notes during a consultation"
 primaryKeyword: "how to choose an aba provider"
 secondaryKeywords: ["questions to ask aba providers", "questions to ask an aba therapist", "what to look for in an aba center", "aba provider red flags"]
