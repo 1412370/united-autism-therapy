@@ -1,7 +1,7 @@
 ---
 /**
  * Analytics integration point. Nothing loads unless an ID is set in
- * src/data/site.ts (INTEGRATIONS.ga4Id or INTEGRATIONS.gtmId).
+ * src/data/site.ts (INTEGRATIONS.ga4Id, INTEGRATIONS.googleAdsId or INTEGRATIONS.gtmId).
  *
  * Healthcare privacy: do not send form contents, child details or other health
  * information to analytics. Track events like "consultation_form_submit" or
@@ -9,7 +9,8 @@
  * guidance and add a consent banner first.
  */
 import { INTEGRATIONS } from '../data/site';
-const { ga4Id, gtmId } = INTEGRATIONS;
+const { ga4Id, gtmId, googleAdsId } = INTEGRATIONS;
+const tagId = ga4Id || googleAdsId; // gtag.js only needs to load once
 ---
 {gtmId ? (
   <script is:inline define:vars={{ gtmId }}>
@@ -18,14 +19,15 @@ const { ga4Id, gtmId } = INTEGRATIONS;
       j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i; f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', gtmId);
   </script>
-) : ga4Id ? (
+) : tagId ? (
   <>
-    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}></script>
-    <script is:inline define:vars={{ ga4Id }}>
+    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${tagId}`}></script>
+    <script is:inline define:vars={{ ga4Id, googleAdsId }}>
       window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
-      gtag('config', ga4Id, { anonymize_ip: true });
+      if (ga4Id) gtag('config', ga4Id, { anonymize_ip: true });
+      if (googleAdsId) gtag('config', googleAdsId);
       // Conversion events (no personal data): click-to-call + form submits.
       document.addEventListener('click', function (e) {
         var a = e.target.closest && e.target.closest('a[href^="tel:"]');

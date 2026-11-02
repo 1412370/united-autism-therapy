@@ -87,6 +87,8 @@ export const INTEGRATIONS = {
   ga4Id: '',
   /** Google Tag Manager container, e.g. GTM-XXXXXXX. Use GA4 *or* GTM, not both. */
   gtmId: '',
+  /** Google Ads tag ID (AW-XXXXXXXXXX). Loads with the same gtag.js as GA4. */
+  googleAdsId: 'AW-18509624527',
   /** Google Search Console HTML-tag verification token (content="..."). */
   googleSiteVerification: '',
   bingSiteVerification: '',
