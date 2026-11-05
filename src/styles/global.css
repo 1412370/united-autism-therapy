@@ -259,6 +259,7 @@ strong { color: var(--c-ink); }
 .hero h1 { margin-bottom: 1.1rem; }
 .hero h1 em { font-style: normal; color: var(--c-primary-500); }
 .hero__lead { font-size: var(--fs-500); color: var(--c-body); max-width: 38rem; margin-bottom: 1.75rem; }
+.hero__note { font-size: var(--fs-300); color: var(--c-body); max-width: 38rem; margin: -1rem 0 1.75rem; }
 .hero__trust { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.6rem 1.25rem; margin-top: 1.75rem; font-size: var(--fs-300); font-weight: 600; color: var(--c-ink); }
 .hero__trust li { display: inline-flex; align-items: center; gap: 0.45rem; }
 .hero__trust svg { width: 1.2rem; height: 1.2rem; color: var(--c-leaf); }

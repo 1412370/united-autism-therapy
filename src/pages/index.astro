@@ -35,7 +35,7 @@ const routines = [
 <Layout
   title="ABA Therapy for Autism in Westminster, CA"
   rawTitle
-  description={`Compassionate ABA, speech and occupational therapy for children with autism in Westminster, CA. In-home ABA across 5 California counties. Free consultation.`}
+  description="ABA therapy for children with autism in Westminster, CA, designed and supervised by BCBAs. In-home ABA is launching in Orange County first. Free consultation."
   canonical="/"
   schema={[localBusinessSchema(), ...(INTEGRATIONS.faqSchema ? [faqSchema(homeFaqs)] : [])]}
 >
@@ -47,10 +47,15 @@ const routines = [
           <span class="badge badge--green"><Icon name="check" />BCBA &amp; RBT certified</span>
           <span class="badge badge--sun">Westminster, CA</span>
         </div>
-        <h1>Compassionate <span class="accent">ABA Therapy</span> for Children with Autism</h1>
+        <h1><span class="accent">ABA Therapy</span> for Children with Autism in Westminster, CA</h1>
         <p class="hero__lead">
-          Personalized, evidence-based therapy that helps children with autism communicate, connect and grow. Serving
-          Westminster, CA and families in Orange, Riverside, San Diego, San Bernardino and Santa Clara Counties.
+          United Autism Therapy provides ABA therapy for children with autism. Programs are designed and supervised by
+          Board Certified Behavior Analysts (BCBAs) and delivered with Registered Behavior Technicians (RBTs). In-home ABA
+          is our flagship service, with center-based, school-based and parent training options.
+        </p>
+        <p class="hero__note">
+          We serve Westminster and five California counties. In-home ABA is launching in Orange County first, so call to
+          confirm availability at your address.
         </p>
         <div class="btn-row">
           <a class="btn btn--cta" href="/contact/"><Icon name="calendar" />Free Consultation</a>
@@ -60,8 +65,8 @@ const routines = [
           {BUSINESS.counties.map((c) => <li><Icon name="pin" />{c}</li>)}
         </ul>
         <ul class="hero-stats" aria-label="At a glance">
-          <li><strong>4+</strong><span>Service settings</span></li>
-          <li><strong>100%</strong><span>Evidence-based methods</span></li>
+          <li><strong>4</strong><span>Care settings</span></li>
+          <li><strong>BCBA</strong><span>Designed and supervised programs</span></li>
           <li><strong>Free</strong><span>Consultation</span></li>
         </ul>
       </div>

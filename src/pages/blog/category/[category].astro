@@ -1,7 +1,7 @@
 ---
 import PageLayout from '../../../layouts/PageLayout.astro';
 import BlogCard from '../../../components/BlogCard.astro';
-import { CATEGORIES } from '../../../data/categories';
+import { CATEGORIES, CATEGORY_INTROS } from '../../../data/categories';
 import { SERVICES } from '../../../data/services';
 import { getPosts } from '../../../utils/posts';
 
@@ -15,6 +15,7 @@ export async function getStaticPaths() {
 }
 
 const { category, posts } = Astro.props;
+const intro = CATEGORY_INTROS[category.slug];
 const pillar = SERVICES.find((s) => `/services/${s.slug}/` === category.pillar);
 const crumbs = [
   { name: 'Home', href: '/' },
@@ -35,6 +36,12 @@ const crumbs = [
     <div class="wrap">
       {pillar && (
         <p class="notice">Looking for services? Learn about <a href={category.pillar}><strong>{pillar.name}</strong> at United Autism Therapy</a> in Westminster and Orange County.</p>
+      )}
+      {intro && (
+        <div class="mt-2">
+          <h2>{intro.heading}</h2>
+          {intro.paragraphs.map((html) => <p set:html={html} />)}
+        </div>
       )}
       <h2 class="sr-only">Articles</h2>
       <div class="grid grid-3 mt-2">
