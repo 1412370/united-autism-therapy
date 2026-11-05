@@ -69,7 +69,7 @@ export const SERVICES = [
       },
       {
         q: 'Do you provide in-home ABA therapy in my city?',
-        a: 'We provide in-home ABA across Orange, Riverside, San Diego, San Bernardino and Santa Clara Counties. Call (714) 709-7819 to confirm availability for your neighborhood and schedule.',
+        a: 'We provide in-home ABA across Orange, Riverside, San Diego, San Bernardino and Santa Clara Counties, launching in Orange County first. Call (714) 709-7819 to confirm availability for your neighborhood and schedule.',
       },
       {
         q: 'Does a parent need to be home during in-home sessions?',
