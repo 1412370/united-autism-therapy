@@ -10,7 +10,7 @@ export const LOCATIONS = [
   {
     slug: 'westminster-ca',
     name: 'Westminster, CA',
-    title: 'ABA Therapy Center in Westminster, CA',
+    title: 'ABA Center in Westminster, CA',
     h1: 'Our Westminster, CA Autism Therapy Center',
     description:
       'Visit United Autism Therapy at 13571 Beach Blvd, Westminster, CA 92683. Center-based ABA, speech, OT and parent training, plus in-home ABA across Orange County.',

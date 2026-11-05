@@ -1,7 +1,7 @@
 ---
 title: "Autism Therapy in Orange County: A Guide to Your Options"
 h1: "Autism Therapy in Orange County: How to Choose the Right Services"
-description: "Compare autism therapy options in Orange County: ABA, speech and occupational therapy, in-home vs. center-based care, how families pay, and what to ask providers."
+description: "Compare autism therapy options in Orange County: ABA, speech and OT, in-home vs. center-based care, how families pay, and what to ask providers."
 summary: "Autism therapy in Orange County usually includes ABA (applied behavior analysis), speech-language therapy, and occupational therapy, delivered at home, in a center, or at school. Most families pay through health insurance, including Medi-Cal plans like CalOptima Health, when therapy is medically necessary. Start with your pediatrician, check your plan's benefits, and ask each provider about credentials, parent involvement, and how progress is measured."
 slug: autism-therapy-orange-county
 date: 2026-11-03

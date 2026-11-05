@@ -1,7 +1,7 @@
 ---
 title: "Autism in Orange County: Answers to Common Parent Questions"
 h1: "Autism in Orange County: Answers to the Questions Parents Ask Most"
-description: "Clear answers about autism in Orange County: how common it is, early signs, who diagnoses it, Regional Center services, therapy, insurance, schools, and support."
+description: "Answers about autism in Orange County: how common it is, early signs, who diagnoses it, Regional Center services, therapy, insurance, schools and support."
 summary: "If you're concerned about autism in Orange County, start with your pediatrician, who can screen your child and refer you for a full evaluation. Children under 3 can be evaluated through the Regional Center of Orange County's Early Start program without a diagnosis. From age 3, school districts can assess for special education. Health plans, including Medi-Cal through CalOptima Health, can cover therapies like ABA when medically necessary."
 slug: autism-in-orange-county
 date: 2026-11-03

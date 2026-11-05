@@ -2,7 +2,7 @@
 title: "Functional Communication Training in ABA: A Parent's Guide"
 h1: "Functional Communication Training in ABA: Teaching Your Child a Better Way to Ask"
 summary: "Functional communication training (FCT) is an ABA approach that teaches a child a reliable way to ask for what they want or need, such as a word, sign, picture or device, in place of a behavior that gets the same result. A BCBA first looks at what the behavior is doing for the child, then teaches and reinforces the replacement skill. Results vary."
-description: "Functional communication training in ABA explained for parents: how a BCBA teaches a replacement way to communicate, what it looks like at home, and when to ask."
+description: "Functional communication training in ABA for parents: how a BCBA teaches a replacement way to communicate, what it looks like at home and when to ask."
 slug: functional-communication-training-aba
 date: 2026-11-23
 author: uat-clinical-team

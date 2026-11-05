@@ -15,7 +15,7 @@ export const CATEGORIES = [
   {
     slug: 'autism',
     name: 'Autism',
-    description: 'Understanding autism in children: early signs, evaluations, early intervention and what the autism spectrum means.',
+    description: 'Understanding autism in children: early signs, evaluations, early intervention and what the autism spectrum means for daily life.',
     pillar: '/services/aba-therapy/',
   },
   {
@@ -27,13 +27,13 @@ export const CATEGORIES = [
   {
     slug: 'speech-therapy',
     name: 'Speech & Communication',
-    description: 'How speech and language therapy and AAC can support communication for children with autism.',
+    description: 'How speech and language therapy and AAC can support communication for children with autism, with practical guides for parents in Orange County.',
     pillar: '/services/speech-language-therapy/',
   },
   {
     slug: 'occupational-therapy',
     name: 'Occupational Therapy',
-    description: 'Occupational therapy, sensory processing, fine motor and daily living skills for children with autism.',
+    description: 'Occupational therapy, sensory processing, fine motor and daily living skills for children with autism, explained for parents in Orange County.',
     pillar: '/services/occupational-therapy/',
   },
 ] as const;

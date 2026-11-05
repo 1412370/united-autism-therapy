@@ -129,7 +129,7 @@ export const SERVICES = [
   {
     slug: 'parent-training',
     name: 'Parent Training',
-    seoTitle: 'ABA Parent Training in Westminster, CA',
+    seoTitle: 'ABA Parent Training in Westminster',
     h1: 'ABA Parent Training & Caregiver Coaching',
     description:
       'Hands-on ABA parent training in Westminster and Orange County. Learn practical strategies to support communication, routines and behavior at home.',
@@ -205,7 +205,7 @@ export const SERVICES = [
     seoTitle: 'School-Based ABA Therapy in Orange County',
     h1: 'School-Based ABA Support in Orange County',
     description:
-      'School-based ABA support for children with autism in Westminster and Orange County, helping kids practice learning, social and classroom skills where they learn.',
+      'School-based ABA support for children with autism in Westminster and Orange County, helping kids practice learning, social and classroom skills at school.',
     summary: 'Support in the classroom so your child can practice learning, social and routine skills with teachers and peers.',
     primaryKeyword: 'school based ABA therapy Orange County',
     secondaryKeywords: ['school based ABA', 'ABA in schools', 'school based ABA services', 'classroom behavior support autism'],

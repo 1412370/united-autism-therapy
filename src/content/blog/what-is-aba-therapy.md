@@ -1,5 +1,5 @@
 ---
-title: "What Is ABA Therapy? A Parent's Guide"
+title: "What Is ABA Therapy? A Parent Guide"
 h1: "What Is ABA Therapy? A Clear Guide for Parents"
 description: "What is ABA therapy? A plain-language guide for parents on what ABA stands for, how it helps kids build skills, who provides it, and what modern ABA looks like."
 slug: what-is-aba-therapy

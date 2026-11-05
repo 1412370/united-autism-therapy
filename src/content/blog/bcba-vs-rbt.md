@@ -1,5 +1,5 @@
 ---
-title: "BCBA vs RBT: What Parents Should Know"
+title: "BCBA vs RBT: A Parent's Guide"
 h1: "BCBA vs RBT: Who Does What on Your Child's ABA Team"
 description: "BCBA vs RBT explained for parents: what each ABA credential means, who designs the plan, who runs sessions, how supervision works, and how to check credentials."
 summary: "A BCBA (Board Certified Behavior Analyst) holds a graduate-level certification, assesses your child, writes the ABA treatment plan, and supervises the team. An RBT (Registered Behavior Technician) holds a paraprofessional certification and works directly with your child in sessions, following the BCBA's plan under close, ongoing supervision. Both credentials are issued by the Behavior Analyst Certification Board (BACB)."

@@ -40,11 +40,11 @@ const {
   modifiedTime,
 } = Astro.props as SEOProps;
 
-// Add the brand suffix only when the result stays within ~60 characters, so
+// Add the brand suffix only when the result stays within 60 characters, so
 // Google doesn't truncate the part that matters. (The site name is also sent
 // via WebSite schema, which Google uses for the site-name label.)
 const suffix = ` | ${SITE.name}`;
-const fullTitle = rawTitle || title.length + suffix.length > 62 ? title : `${title}${suffix}`;
+const fullTitle = rawTitle || title.length + suffix.length > 60 ? title : `${title}${suffix}`;
 // Canonical: always absolute, https, non-www, trailing slash, no query string.
 const canonicalUrl = new URL(canonical ?? Astro.url.pathname, SITE.url);
 canonicalUrl.search = '';

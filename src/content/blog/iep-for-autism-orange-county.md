@@ -1,5 +1,5 @@
 ---
-title: "IEP for Autism in Orange County: A Parent's Step-by-Step Guide"
+title: "IEP for Autism in Orange County: A Parent's Guide"
 h1: "How to Get an IEP for Your Autistic Child in Orange County"
 description: "How to get an IEP for your autistic child in Orange County: requesting an assessment, California timelines, the IEP meeting, and the move from Early Start at 3."
 summary: "An IEP (Individualized Education Program) is a written plan for special education services that public schools provide to eligible children ages 3 to 21. To start, send your school district a written request for a special education assessment. In California, the district generally has 15 days to send an assessment plan, and an IEP meeting is held within 60 days of your signed consent, not counting long school breaks."
