@@ -18,7 +18,7 @@ export const SITE = {
   tagline: 'Supporting Children. Empowering Families.', // from the client's logo
   defaultTitle: 'ABA Therapy for Children With Autism in Westminster, CA',
   defaultDescription:
-    'ABA, speech and occupational therapy for children with autism in Westminster, CA, with in-home ABA across Orange, Riverside, San Diego, San Bernardino and Santa Clara Counties.',
+    'ABA, speech and occupational therapy for children with autism in Westminster, CA, with in-home ABA across Orange, Riverside, San Diego, San Bernardino and Santa Clara Counties, launching in Orange County first.',
   locale: 'en_US',
   lang: 'en',
   /** Default social share image (1200×630) in /public. */

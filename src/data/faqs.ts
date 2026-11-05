@@ -61,7 +61,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
     id: 'visit',
     title: 'Location & hours',
     items: [
-      { q: 'Where are you located?', a: 'United Autism Therapy is based at 13571 Beach Blvd, Westminster, CA 92683. We provide in-home ABA to families across Orange, Riverside, San Diego, San Bernardino and Santa Clara Counties.', link: { href: '/locations/westminster-ca/', label: 'Our Westminster location' } },
+      { q: 'Where are you located?', a: 'United Autism Therapy is based at 13571 Beach Blvd, Westminster, CA 92683. We provide in-home ABA to families across Orange, Riverside, San Diego, San Bernardino and Santa Clara Counties, launching in Orange County first.', link: { href: '/locations/westminster-ca/', label: 'Our Westminster location' } },
       { q: 'What are your hours?', a: 'We are open Monday through Saturday, 8:00 AM to 6:00 PM, and closed on Sundays.' },
       { q: 'What happens at the free consultation?', a: 'We listen to your concerns and goals, answer your questions, explain the intake and insurance steps, and help you decide whether in-home ABA is a good fit. There is no obligation.', link: { href: '/blog/how-to-start-in-home-aba-therapy/', label: 'How to start in-home ABA' } },
     ],

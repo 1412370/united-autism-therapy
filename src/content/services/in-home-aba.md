@@ -67,6 +67,6 @@ You do not need to buy special materials or rearrange your house. A space with f
 
 ## Service area
 
-We serve families in Orange, Riverside, San Diego, San Bernardino and Santa Clara Counties. Availability can depend on your neighborhood and schedule, so the quickest way to confirm is to call [(714) 709-7819](tel:+17147097819), Monday through Saturday from 8 AM to 6 PM, or [request a consultation](/contact/). See all of our [service areas](/locations/).
+We serve families in Orange, Riverside, San Diego, San Bernardino and Santa Clara Counties. In-home ABA is launching in Orange County first, so availability in the other counties can depend on your neighborhood and schedule, so the quickest way to confirm is to call [(714) 709-7819](tel:+17147097819), Monday through Saturday from 8 AM to 6 PM, or [request a consultation](/contact/). See all of our [service areas](/locations/).
 
 Every child progresses at their own pace, and no provider can promise specific results. What we can promise is an individualized plan, clear communication and a team that treats your child and your home with respect.

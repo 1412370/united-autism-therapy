@@ -13,7 +13,7 @@ Sources: the business's current site (audited 2026-09-30) and the business's inf
 - Facebook: https://www.facebook.com/profile.php?id=61595161883736 · Instagram: https://www.instagram.com/united_autism_therapy/
 - Tagline (from the logo): "Supporting Children. Empowering Families."
 - POSITIONING (2026-10): **In-home ABA therapy is the flagship service** across Westminster and Orange County. Center-based, school-based, parent training, speech and OT are still offered but secondary. Emphasize in-home ABA, qualified professionals (BCBA-supervised, RBT-delivered), individualized support and family-centered care.
-- Area served: Westminster and Orange County, CA (in-home and school-based programs across Orange County)
+- Area served: Westminster, CA. In-home ABA covers Orange, Riverside, San Diego, San Bernardino and Santa Clara Counties, CA, and is launching in Orange County first. School-based programs are across Orange County.
 - Services: ABA therapy (center-based, in-home, school-based), parent training, speech & language therapy, occupational therapy
 - Team: the site states "BCBA & RBT certified" / "Certified BCBAs & RBTs". NO individual names are known.
 - Insurance: the site states "Many plans including Medi-Cal cover ABA therapy for children with an autism diagnosis" and that the team helps families navigate coverage and authorization. No other plan names are verified.
