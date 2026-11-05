@@ -85,14 +85,10 @@ const aboutPage = { '@type': 'AboutPage', '@id': absoluteUrl('/about/#page'), ur
         <h2 id="team-title">Qualified, credentialed professionals</h2>
         <p>{BUSINESS.credentialsStatement} You can confirm any BCBA’s or RBT’s certification in the <a href="https://www.bacb.com/services/o.php?page=101135" target="_blank" rel="noopener">BACB certificant registry</a>.</p>
       </div>
-      <!--
-        TEAM PROFILES — add real, verified team members here (name, credential,
-        role, short bio, photo, BACB registry link). Do not publish names or
-        credentials until the business confirms them. Example:
-        <div class="grid grid-3">
-          <article class="card"><h3>[NAME], BCBA</h3><p>[Clinical Director] …</p></article>
-        </div>
-      -->
+      {/* TEAM PROFILES: add real, verified team members here (name, credential,
+          role, short bio, photo, BACB registry link). Do not publish names or
+          credentials until the business confirms them. Astro strips this comment
+          from the built HTML. */}
       <p><a href="/blog/bcba-vs-rbt/">What’s the difference between a BCBA and an RBT? →</a></p>
     </div>
   </section>
