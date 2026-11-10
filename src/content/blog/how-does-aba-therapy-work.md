@@ -15,7 +15,7 @@ secondaryKeywords: ["aba therapy process", "aba therapy techniques", "abc model 
 searchIntent: informational
 funnelStage: MOFU
 relatedService: aba-therapy
-related: ["what-is-aba-therapy", "what-happens-in-an-aba-therapy-session", "supporting-aba-therapy-at-home"]
+related: ["functional-communication-training-aba", "what-is-aba-therapy", "what-happens-in-an-aba-therapy-session"]
 faqs:
   - q: "What is a functional behavior assessment?"
     a: "A functional behavior assessment is a process a BCBA uses to understand why a specific behavior happens. It usually combines interviews with caregivers, direct observation, and data on what happens before and after the behavior. The results guide a plan that teaches a safer or easier way to meet the same need."

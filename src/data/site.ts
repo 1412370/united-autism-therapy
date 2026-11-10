@@ -40,7 +40,7 @@ export const BUSINESS = {
     country: 'US',
   },
   /** Only set coordinates once confirmed from the Google Business Profile pin. */
-  geo: { lat: null as number | null, lng: null as number | null },
+  geo: { lat: 33.7654162, lng: -117.9903428 }, // from GBP pin, Westminster center (confirmed by client 2026-11-10)
   /** VERIFIED from current site. Used for display + openingHoursSpecification. */
   /** Confirmed by the business 2026-10-05. Used for display + openingHoursSpecification. */
   hours: [
@@ -84,7 +84,7 @@ export const INTEGRATIONS = {
    */
   formEndpoint: 'https://script.google.com/macros/s/AKfycbyT6GH6M9LZA80F84CHYAvHXW34D4pI4yMPu0Mxl_tF78ky2NuMbuX4DUjUk0NgbnYGZw/exec', // paste the Google Apps Script Web app URL (…/exec) here — see docs/google-apps-script/SETUP.md
   /** GA4 measurement ID, e.g. G-XXXXXXXXXX. Empty = no analytics script loaded. */
-  ga4Id: '',
+  ga4Id: 'G-YC8FWR5ZH3',
   /** Google Tag Manager container, e.g. GTM-XXXXXXX. Use GA4 *or* GTM, not both. */
   gtmId: '',
   /** Google Ads tag ID (AW-XXXXXXXXXX). Loads with the same gtag.js as GA4. */
