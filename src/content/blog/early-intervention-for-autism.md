@@ -15,7 +15,7 @@ secondaryKeywords: ["early intervention autism services", "benefits of early int
 searchIntent: informational
 funnelStage: MOFU
 relatedService: aba-therapy
-related: ["early-signs-of-autism", "when-to-get-an-autism-evaluation", "what-age-to-start-aba-therapy"]
+related: ["regional-center-eligibility-autism", "early-signs-of-autism", "what-age-to-start-aba-therapy"]
 faqs:
   - q: "Does my child need an autism diagnosis to get Early Start services?"
     a: "No diagnosis is needed to make a referral. Early Start eligibility is based on a developmental delay, an established risk condition, or a high risk for a developmental disability. Anyone, including a parent, can refer a child, and the regional center evaluates eligibility."

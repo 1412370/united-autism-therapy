@@ -15,7 +15,7 @@ secondaryKeywords: ["autism resources orange county", "regional center of orange
 searchIntent: local
 funnelStage: MOFU
 relatedService: parent-training
-related: ["early-intervention-for-autism", "when-to-get-an-autism-evaluation", "does-medi-cal-cover-aba-therapy"]
+related: ["how-to-request-rcoc-intake-for-autism", "early-intervention-for-autism", "does-medi-cal-cover-aba-therapy"]
 faqs:
   - q: "Is the Regional Center of Orange County only for children with an autism diagnosis?"
     a: "No. RCOC serves people with several developmental disabilities, including autism, cerebral palsy, epilepsy, and intellectual disability. For babies and toddlers under 36 months, Early Start eligibility is based on developmental delay or risk rather than a specific diagnosis."
