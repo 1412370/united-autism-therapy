@@ -84,7 +84,7 @@ export const INTEGRATIONS = {
    */
   formEndpoint: 'https://script.google.com/macros/s/AKfycbyT6GH6M9LZA80F84CHYAvHXW34D4pI4yMPu0Mxl_tF78ky2NuMbuX4DUjUk0NgbnYGZw/exec', // paste the Google Apps Script Web app URL (…/exec) here — see docs/google-apps-script/SETUP.md
   /** GA4 measurement ID, e.g. G-XXXXXXXXXX. Empty = no analytics script loaded. */
-  ga4Id: 'G-YC8FWR5ZH3',
+  ga4Id: 'G-C4D4F9N61W',
   /** Google Tag Manager container, e.g. GTM-XXXXXXX. Use GA4 *or* GTM, not both. */
   gtmId: '',
   /** Google Ads tag ID (AW-XXXXXXXXXX). Loads with the same gtag.js as GA4. */

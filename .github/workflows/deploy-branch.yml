@@ -35,21 +35,3 @@ jobs:
           force_orphan: false
           commit_message: 'Deploy ${{ github.sha }}'
 
-      # Uploads the built site to GoDaddy hosting (unitedautismtherapy.org).
-      # Runs only when the FTP secrets are set in GitHub:
-      #   FTP_SERVER, FTP_USERNAME (deploy@unitedautismtherapy.org), FTP_PASSWORD.
-      # server-dir is relative to the FTP account's root, which is public_html.
-      - name: Deploy to GoDaddy (public_html)
-        env:
-          FTP_SERVER: ${{ secrets.FTP_SERVER }}
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-        if: env.FTP_SERVER != ''
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ env.FTP_SERVER }}
-          username: ${{ env.FTP_USERNAME }}
-          password: ${{ env.FTP_PASSWORD }}
-          protocol: ftps
-          local-dir: ./dist/
-          server-dir: ./
