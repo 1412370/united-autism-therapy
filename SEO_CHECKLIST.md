@@ -13,7 +13,7 @@ Run `npm run build && npm run audit` before every deploy. The audit checks that 
 - ✅ Clean, stable URLs with trailing slashes (`trailingSlash: 'always'`, `build.format: 'directory'`).
 - ✅ Custom 404 page (`noindex`).
 - ✅ `.htaccess`: force HTTPS, non-www, trailing slash, strip `index.html`, security headers, gzip, long-cache for `/_astro/`.
-- 🔲 301-redirect the old domain `unitedautismthereapy.com` (and www) to `https://unitedautismcenter.com/`.
+- 🔲 301-redirect the old domain `unitedautismthereapy.com` (and www) to `https://unitedautismtherapy.org/`.
 - 🔲 Map old anchor URLs if they were ever shared (e.g. `/#uat-services` → can't redirect a hash server-side; the homepage covers them).
 - 🔲 Confirm the SSL certificate covers both the bare and www hostnames.
 
@@ -36,7 +36,7 @@ Run `npm run build && npm run audit` before every deploy. The audit checks that 
 - 🔲 **Update the phone on every listing to (714) 709-7819** (the old site showed (714) 724-7988), including GBP, Yelp and directories. NAP must match everywhere.
 - 🔲 Claim or verify the **Google Business Profile**:
   - Primary category: best fit such as "Behavioral therapist" or "Child health care centre". Confirm the available categories in GBP.
-  - Add services, hours, photos, and website URL `https://unitedautismcenter.com/`. Use `/locations/westminster-ca/` if you add more locations later.
+  - Add services, hours, photos, and website URL `https://unitedautismtherapy.org/`. Use `/locations/westminster-ca/` if you add more locations later.
 - 🔲 Paste the GBP URL into `BUSINESS.googleBusinessProfileUrl`. Add geo coordinates from the GBP pin to `BUSINESS.geo`.
 - 🔲 Keep NAP identical on Yelp, Healthgrades, Psychology Today, BBB, Apple Business Connect, Bing Places and the RCOC vendor directory, if applicable.
 - 🔲 Ask satisfied families (without incentives) to leave Google reviews, and respond to every review. Never write reviews on anyone's behalf.
@@ -117,7 +117,7 @@ Run `npm run build && npm run audit` before every deploy. The audit checks that 
 ## Search Console and analytics
 
 - 🔲 Verify the domain property in Search Console. Use DNS verification, or paste the token into `INTEGRATIONS.googleSiteVerification`.
-- 🔲 Submit `https://unitedautismcenter.com/sitemap.xml`.
+- 🔲 Submit `https://unitedautismtherapy.org/sitemap.xml`.
 - 🔲 Add the GA4 ID (`INTEGRATIONS.ga4Id`) or a GTM container (`INTEGRATIONS.gtmId`). Nothing loads until you do.
 - 🔲 Mark the `generate_lead` (form) and `click_to_call` events as conversions in GA4.
 - 🔲 Healthcare privacy: never send form contents or health details to analytics or ad pixels. Review HIPAA guidance on tracking technologies before adding any ad pixel. Add a consent banner if you add advertising tags.
