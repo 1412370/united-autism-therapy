@@ -1,11 +1,11 @@
 # SEO Keyword Map — United Autism Therapy
 
-**Market:** Westminster, CA 92683 and Orange County, CA (the only verified service area).
+**Market:** Westminster, CA 92683 (center) and five California counties for in-home ABA (Orange, Riverside, San Diego, San Bernardino, Santa Clara). In-home ABA launches in Orange County first (client confirmed 2026-11-04). Keyword targeting stays on Orange County and Westminster until other counties have verified local content.
 **Research date:** 2026-09-30.
 
 ## How this research was done — read first
 
-- **Sources used:** Google autocomplete suggestions (collected for 30+ seed terms), an audit of the current site (unitedautismthereapy.com), and the terminology used by authoritative sources (CDC, NICHD, BACB, ASHA, AOTA, CA DHCS, CA DDS, RCOC).
+- **Sources used:** Google autocomplete suggestions (collected for 30+ seed terms), an audit of the former site (unitedautismthereapy.com, now redirecting to unitedautismtherapy.org), and the terminology used by authoritative sources (CDC, NICHD, BACB, ASHA, AOTA, CA DHCS, CA DDS, RCOC).
 - **Not available:** no paid keyword tool (Ahrefs, Semrush, Google Keyword Planner) was reachable from the build environment, and web search was disabled.
 - **So:** search volume, keyword difficulty, CPC and traffic estimates are **not** included and are marked **Needs verification**. Nothing here is a made-up metric. Before you invest in a keyword, check it in Google Keyword Planner (free with a Google Ads account) or Search Console once the site has data.
 - **Priority** (High / Medium / Low) is a judgment based on business value (how close the searcher is to contacting a provider), local relevance and how clearly autocomplete showed the phrase exists. It is not based on volume.
