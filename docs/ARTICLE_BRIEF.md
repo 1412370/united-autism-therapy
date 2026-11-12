@@ -34,6 +34,8 @@ Service pages:
 
 Other pages: /about/ · /insurance/ · /contact/ · /faq/ · /locations/westminster-ca/ · /blog/
 
+Other site pages: /locations/orange-county-ca/ (in-home service area page for Orange County, exists in the repo; use it for Orange County landing pages).
+
 Blog articles (all 20 — link between them naturally):
 | slug | category | primary keyword |
 |---|---|---|
