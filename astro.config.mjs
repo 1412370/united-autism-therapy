@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 
 // Production origin — keep in sync with SITE.url in src/data/site.ts.
-const SITE_URL = 'https://unitedautismcenter.com';
+const SITE_URL = 'https://unitedautismtherapy.org';
 
 export default defineConfig({
   site: SITE_URL,

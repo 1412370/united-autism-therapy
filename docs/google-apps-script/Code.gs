@@ -16,7 +16,7 @@
 const NOTIFY_EMAIL = 'nntnhan96@gmail.com'; // who gets an email for each request (comma-separate for more)
 const SHEET_NAME = 'Consultation Requests';
 const SITE_NAME = 'United Autism Therapy';
-const THANK_YOU_URL = 'https://unitedautismcenter.com/thank-you/';
+const THANK_YOU_URL = 'https://unitedautismtherapy.org/thank-you/';
 
 // Column order in the sheet. Keys must match the form field `name`s.
 const FIELDS = [

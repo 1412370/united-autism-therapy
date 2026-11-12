@@ -9,10 +9,12 @@ DirectoryIndex index.html
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # 1) Force HTTPS and non-www in a single 301 hop
+  # 1) Force HTTPS and the canonical host (unitedautismtherapy.org) in a single
+  #    301 hop. Any other host (the old .com, its www, the misspelled domain) is
+  #    redirected here too, with the path preserved.
   RewriteCond %{HTTPS} off [OR]
-  RewriteCond %{HTTP_HOST} ^www\. [NC]
-  RewriteRule ^ https://unitedautismcenter.com%{REQUEST_URI} [L,R=301]
+  RewriteCond %{HTTP_HOST} !^unitedautismtherapy\.org$ [NC]
+  RewriteRule ^ https://unitedautismtherapy.org%{REQUEST_URI} [L,R=301]
 
   # 2) Remove "index.html" from URLs (/about/index.html -> /about/)
   RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
@@ -38,7 +40,7 @@ DirectoryIndex index.html
 # Old-domain redirect: point unitedautismthereapy.com at this host and add a
 # vhost-level rule there, e.g.:
 #   RewriteCond %{HTTP_HOST} unitedautismthereapy\.com$ [NC]
-#   RewriteRule ^ https://unitedautismcenter.com%{REQUEST_URI} [L,R=301]
+#   RewriteRule ^ https://unitedautismtherapy.org%{REQUEST_URI} [L,R=301]
 
 ErrorDocument 404 /404.html
 

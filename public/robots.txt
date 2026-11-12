@@ -1,4 +1,4 @@
-# United Autism Therapy — https://unitedautismcenter.com
+# United Autism Therapy — https://unitedautismtherapy.org
 # Search engines and AI answer engines are welcome to crawl public pages.
 User-agent: *
 Allow: /
@@ -21,4 +21,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://unitedautismcenter.com/sitemap.xml
+Sitemap: https://unitedautismtherapy.org/sitemap.xml

@@ -12,7 +12,7 @@
 
 export const SITE = {
   /** Production origin. No trailing slash. Also set in astro.config.mjs. */
-  url: 'https://unitedautismcenter.com',
+  url: 'https://unitedautismtherapy.org',
   name: 'United Autism Therapy',
   legalName: 'United Autism Therapy Inc.', // VERIFIED (footer copyright)
   tagline: 'Supporting Children. Empowering Families.', // from the client's logo

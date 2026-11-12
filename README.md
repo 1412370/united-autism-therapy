@@ -60,7 +60,7 @@ All business information lives in **`src/data/site.ts`**. Values in `[BRACKETS]`
 | Real photos in place of the generated illustrations | `src/assets/` (keep the same filenames) |
 | Privacy Policy and Terms (templates — have an attorney review them) | `src/pages/privacy-policy.astro`, `terms.astro` |
 
-**Domain.** The site is configured for **https://unitedautismcenter.com**. If you use a different domain, change it in three places:
+**Domain.** The site is configured for **https://unitedautismtherapy.org**. If you use a different domain, change it in three places:
 
 - `astro.config.mjs` (`SITE_URL`)
 - `src/data/site.ts` (`SITE.url`)
@@ -172,10 +172,10 @@ If a field is missing or wrong (a misspelled category, say), the build stops wit
    - Make sure **`.htaccess`** was uploaded. It's a hidden file, so enable "Show hidden files" in File Manager or in your FTP client.
 6. **Enable SSL** (cPanel → SSL/TLS Status → AutoSSL, or your host's free Let's Encrypt). The `.htaccess` then forces HTTPS and non-www.
 7. **Test these URLs:**
-   - `http://www.unitedautismcenter.com/about` should 301 to `https://unitedautismcenter.com/about/`
+   - `http://www.unitedautismcenter.com/about` should 301 to `https://unitedautismtherapy.org/about/`
    - `/sitemap.xml` and `/robots.txt` should load
    - an unknown URL should show the custom 404 page
-8. **Redirect the old domain.** In the old domain's hosting (or its registrar's forwarding settings), set a **301 redirect** from `unitedautismthereapy.com` to `https://unitedautismcenter.com/`, preserving paths. There's a sample rule in `.htaccess`.
+8. **Redirect the old domain.** In the old domain's hosting (or its registrar's forwarding settings), set a **301 redirect** from `unitedautismthereapy.com` to `https://unitedautismtherapy.org/`, preserving paths. There's a sample rule in `.htaccess`.
 
 To update the site later, rebuild and re-upload. Files in `_astro/` have hashed names, so it's safe to overwrite or add to them. You can delete the old `_astro/` folder first for a clean deploy.
 
