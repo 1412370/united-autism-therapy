@@ -4,6 +4,7 @@
  * JavaScript the item links straight to the service page).
  */
 import type { IconName } from '../components/Icon.astro';
+import { BUSINESS } from './site';
 
 export interface Highlight {
   id: string;
@@ -23,7 +24,7 @@ export const HIGHLIGHTS: Highlight[] = [
     icon: 'building',
     short: 'Structured therapy in our Westminster center.',
     intro:
-      'Center-based ABA takes place at our location at 13571 Beach Blvd in Westminster. The setting is designed for learning, with predictable routines, a range of materials and a team on site together.',
+      `Center-based ABA takes place at our location at ${BUSINESS.address.street} in ${BUSINESS.address.city}. The setting is designed for learning, with predictable routines, a range of materials and a team on site together.`,
     points: [
       'One-on-one teaching built into play, with BCBA oversight',
       'Chances to practice social skills around other children',

@@ -4,6 +4,8 @@
  * quotable (GEO), and only state verified business facts.
  * The homepage shows GENERAL_FAQS; /faq/ shows every group.
  */
+import { BUSINESS, fullAddress, openHoursText, closedDaysPluralText } from './site';
+
 export interface Faq {
   q: string;
   a: string;
@@ -51,7 +53,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
     id: 'insurance',
     title: 'Insurance & Medi-Cal',
     items: [
-      { q: 'Is ABA therapy covered by insurance or Medi-Cal?', a: 'Many plans, including Medi-Cal, cover ABA therapy for children with an autism diagnosis. Coverage and requirements vary by plan. Call (714) 709-7819 and our team will help you understand your coverage and start the authorization process.', link: { href: '/insurance/', label: 'Insurance & Medi-Cal' } },
+      { q: 'Is ABA therapy covered by insurance or Medi-Cal?', a: `Many plans, including Medi-Cal, cover ABA therapy for children with an autism diagnosis. Coverage and requirements vary by plan. Call ${BUSINESS.phone} and our team will help you understand your coverage and start the authorization process.`, link: { href: '/insurance/', label: 'Insurance & Medi-Cal' } },
       { q: 'What is prior authorization?', a: 'Prior authorization is a health plan’s review and approval of a service before it starts. For ABA it usually involves a diagnosis or recommendation, an assessment and a treatment plan. Approval does not guarantee that every requested hour will be covered.', link: { href: '/blog/how-to-start-aba-through-insurance/', label: 'How to start ABA through insurance' } },
       { q: 'What documents should I have ready?', a: 'Your child’s insurance card, any diagnosis report or recommendation from a physician or psychologist, your pediatrician’s contact information, and any previous evaluations. Please share insurance details by phone rather than through our website form.' },
       { q: 'How do I know if a provider is in my network?', a: 'Call the member services number on your insurance card and ask whether the provider is in network for ABA (behavioral health) services. You can also call us and we will help you check.' },
@@ -61,8 +63,8 @@ export const FAQ_GROUPS: FaqGroup[] = [
     id: 'visit',
     title: 'Location & hours',
     items: [
-      { q: 'Where are you located?', a: 'United Autism Therapy is based at 13571 Beach Blvd, Westminster, CA 92683. We provide in-home ABA to families across Orange, Riverside, San Diego, San Bernardino and Santa Clara Counties, launching in Orange County first.', link: { href: '/locations/westminster-ca/', label: 'Our Westminster location' } },
-      { q: 'What are your hours?', a: 'We are open Monday through Saturday, 8:00 AM to 6:00 PM, and closed on Sundays.' },
+      { q: 'Where are you located?', a: `United Autism Therapy is based at ${fullAddress}. We provide in-home ABA to families across Orange, Riverside, San Diego, San Bernardino and Santa Clara Counties, launching in Orange County first.`, link: { href: '/locations/westminster-ca/', label: 'Our Westminster location' } },
+      { q: 'What are your hours?', a: `We are open ${openHoursText}${closedDaysPluralText ? `, and closed on ${closedDaysPluralText}` : ''}.` },
       { q: 'What happens at the free consultation?', a: 'We listen to your concerns and goals, answer your questions, explain the intake and insurance steps, and help you decide whether in-home ABA is a good fit. There is no obligation.', link: { href: '/blog/how-to-start-in-home-aba-therapy/', label: 'How to start in-home ABA' } },
     ],
   },

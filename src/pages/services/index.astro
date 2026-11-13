@@ -3,7 +3,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
 import ProgramCard from '../../components/ProgramCard.astro';
 import { CORE_SERVICES } from '../../data/services';
 import { PROGRAMS } from '../../data/highlights';
-import { absoluteUrl } from '../../data/site';
+import { BUSINESS, telHref, absoluteUrl } from '../../data/site';
 import { localBusinessSchema, BUSINESS_ID } from '../../utils/schema';
 
 const crumbs = [{ name: 'Home', href: '/' }, { name: 'Services', href: '/services/' }];
@@ -57,7 +57,7 @@ const catalog = {
   <section class="section">
     <div class="wrap">
       <h2>Who our services are for</h2>
-      <p>Our services are for children with autism and their families. Our center is at 13571 Beach Blvd in Westminster, CA, where center-based ABA takes place. In-home ABA therapy is available across five California counties: Orange, Riverside, San Diego, San Bernardino and Santa Clara. We are launching in-home services in Orange County first, so availability in the other four counties may depend on your address. <a href="/locations/">See our service area</a>, or call <a href="tel:+17147097819">(714) 709-7819</a> to confirm availability.</p>
+      <p>Our services are for children with autism and their families. Our center is at {BUSINESS.address.street} in {BUSINESS.address.city}, {BUSINESS.address.region}, where center-based ABA takes place. In-home ABA therapy is available across five California counties: Orange, Riverside, San Diego, San Bernardino and Santa Clara. We are launching in-home services in Orange County first, so availability in the other four counties may depend on your address. <a href="/locations/">See our service area</a>, or call <a href={telHref}>{BUSINESS.phone}</a> to confirm availability.</p>
       <p>School-based ABA support is offered in classrooms across Orange County, helping children practice learning, social and routine skills with teachers and peers.</p>
     </div>
   </section>
@@ -72,7 +72,7 @@ const catalog = {
   <section class="section">
     <div class="wrap">
       <h2>How to get started</h2>
-      <p>Start with a free consultation. Call <a href="tel:+17147097819">(714) 709-7819</a> or send a message through our <a href="/contact/">contact page</a>. We will talk with you about your child's strengths, needs and goals, and help you decide which service is the right starting point. Before you choose a provider, our guide to <a href="/blog/how-to-choose-an-aba-provider/">questions to ask ABA providers</a> can help you compare options.</p>
+      <p>Start with a free consultation. Call <a href={telHref}>{BUSINESS.phone}</a> or send a message through our <a href="/contact/">contact page</a>. We will talk with you about your child's strengths, needs and goals, and help you decide which service is the right starting point. Before you choose a provider, our guide to <a href="/blog/how-to-choose-an-aba-provider/">questions to ask ABA providers</a> can help you compare options.</p>
       <p>Talk with your child's pediatrician about developmental concerns and specific medical needs. They know your child's history and can help you plan evaluations alongside therapy.</p>
     </div>
   </section>

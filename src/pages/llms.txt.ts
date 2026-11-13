@@ -4,7 +4,7 @@
  * same data as the site, so facts stay consistent with the visible pages.
  */
 import type { APIRoute } from 'astro';
-import { SITE, BUSINESS, fullAddress } from '../data/site';
+import { SITE, BUSINESS, fullAddress, hoursText } from '../data/site';
 import { CORE_SERVICES, ABA_SETTINGS } from '../data/services';
 import { CATEGORIES } from '../data/categories';
 import { getPosts } from '../utils/posts';
@@ -20,7 +20,7 @@ export const GET: APIRoute = async () => {
     '## Key facts',
     `- Address: ${fullAddress}`,
     `- Phone: ${BUSINESS.phone}`,
-    `- Hours: Monday–Saturday 8:00 AM–6:00 PM; closed Sunday`,
+    `- Hours: ${hoursText}`,
     `- Service area: Westminster, CA; in-home services in ${BUSINESS.counties.join(', ')}, California (launching in Orange County first)`,
     `- Insurance: many plans, including Medi-Cal, cover ABA for children with an autism diagnosis; coverage varies by plan`,
     `- Does not provide autism diagnostic evaluations`,
