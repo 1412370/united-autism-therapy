@@ -146,4 +146,4 @@ You don't need to have every answer before you take the first step.
 
 United Autism Therapy is based at 13571 Beach Blvd in Westminster, CA, and provides [ABA therapy](/services/aba-therapy/), [in-home ABA](/services/in-home-aba/), speech-language therapy, and occupational therapy for children with autism. We serve families across Orange, Riverside, San Diego, San Bernardino and Santa Clara Counties. Every child is different, and results vary.
 
-If you have questions about next steps, [contact us for a free consultation](/contact/) or call (714) 709-7819, Monday to Saturday, 8 AM to 6 PM.
+If you have questions about next steps, [contact us for a free consultation](/contact/) or call (714) 709-7819, Monday – Saturday, 8:00 AM – 6:00 PM.

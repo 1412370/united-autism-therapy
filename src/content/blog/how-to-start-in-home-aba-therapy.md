@@ -166,4 +166,4 @@ Every child is different. Talk with your pediatrician or a qualified professiona
 
 ## Talk with our team when you are ready
 
-United Autism Therapy provides [in-home ABA therapy](/services/in-home-aba/) across Westminster and Orange County, with programs supervised by BCBAs and delivered by RBTs. We offer a free consultation and can help you understand coverage and authorization. Call (714) 709-7819, Monday through Saturday, 8 AM to 6 PM, or [contact our team](/contact/) online.
+United Autism Therapy provides [in-home ABA therapy](/services/in-home-aba/) across Westminster and Orange County, with programs supervised by BCBAs and delivered by RBTs. We offer a free consultation and can help you understand coverage and authorization. Call (714) 709-7819, Monday – Saturday, 8:00 AM – 6:00 PM, or [contact our team](/contact/) online.

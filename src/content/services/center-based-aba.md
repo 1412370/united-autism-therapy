@@ -34,6 +34,6 @@ Your child’s program is designed and supervised by a Board Certified Behavior 
 
 ## Visiting our Westminster center
 
-Our center is on Beach Blvd in Westminster, convenient for families across central and west Orange County. We are open Monday through Saturday, 8:00 AM to 6:00 PM. Find directions on our [Westminster location page](/locations/westminster-ca/).
+Our center is on Beach Blvd in Westminster, convenient for families across central and west Orange County. We are open Monday – Saturday, 8:00 AM – 6:00 PM. Find directions on our [Westminster location page](/locations/westminster-ca/).
 
 Choosing a center is a big decision, and we encourage families to ask questions. Our guide on [how to choose an ABA provider](/blog/how-to-choose-an-aba-provider/) includes a checklist you can bring to your consultation.

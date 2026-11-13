@@ -170,7 +170,7 @@ RCOC's [Comfort Connection Family Resource Center](https://www.rcocdd.com/family
 - A lending library of books, articles, and videos in English, Spanish, and Vietnamese
 - Emails about local community events
 
-You can reach Comfort Connection at (714) 558-5400, Monday through Saturday, 8 AM to 6 PM
+You can reach Comfort Connection at (714) 558-5400.
 
 For help with school questions, [TASK (Team of Advocates for Special Kids)](https://www.taskca.org/) offers telephone support, IEP consultations, and workshops in English and Spanish for families of people from birth to age 26.
 
@@ -185,4 +185,4 @@ For help with school questions, [TASK (Team of Advocates for Special Kids)](http
 
 ## Talk with our team
 
-If you are in Westminster or elsewhere in Orange County and are not sure what to do next, we are happy to help you think it through. We offer a free consultation for families. Call (714) 709-7819, Monday through Saturday, 8 AM to 6 PM, or [reach out through our contact page](/contact/).
+If you are in Westminster or elsewhere in Orange County and are not sure what to do next, we are happy to help you think it through. We offer a free consultation for families. Call (714) 709-7819, Monday – Saturday, 8:00 AM – 6:00 PM, or [reach out through our contact page](/contact/).
