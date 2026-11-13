@@ -188,4 +188,4 @@ If you are waiting on an evaluation or just received results, we are glad to tal
 
 ## Next steps
 
-You do not have to have every answer before you call. We offer a free consultation to talk about your child and your options. Reach us at (714) 709-7819, Monday through Saturday, 8 AM to 6 PM, or [send us a message](/contact/).
+You do not have to have every answer before you call. We offer a free consultation to talk about your child and your options. Reach us at (714) 709-7819, Monday – Saturday, 8:00 AM – 6:00 PM, or [send us a message](/contact/).

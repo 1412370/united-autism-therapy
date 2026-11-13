@@ -190,4 +190,4 @@ Our BCBA- and RBT-certified team provides [ABA therapy](/services/aba-therapy/) 
 
 ## Talk with our team
 
-If you have noticed some early signs and want to talk them through, we are here. We offer a free consultation. Call (714) 709-7819, Monday through Saturday, 8 AM to 6 PM, or [contact us online](/contact/).
+If you have noticed some early signs and want to talk them through, we are here. We offer a free consultation. Call (714) 709-7819, Monday – Saturday, 8:00 AM – 6:00 PM, or [contact us online](/contact/).

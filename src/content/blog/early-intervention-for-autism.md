@@ -181,4 +181,4 @@ For young children, we focus on play-based goals, family involvement, and helpin
 
 ## Talk with our team
 
-If your child is young and you are weighing your options, we are glad to talk. We offer a free consultation. Call (714) 709-7819, Monday through Saturday, 8 AM to 6 PM, or [reach us through our contact page](/contact/).
+If your child is young and you are weighing your options, we are glad to talk. We offer a free consultation. Call (714) 709-7819, Monday – Saturday, 8:00 AM – 6:00 PM, or [reach us through our contact page](/contact/).

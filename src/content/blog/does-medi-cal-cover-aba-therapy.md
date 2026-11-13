@@ -181,4 +181,4 @@ Every child's needs are different. Please talk with your pediatrician or a quali
 
 ## Talk with our team
 
-If you have a Medi-Cal card and a lot of questions, that is a fine place to start. Our team offers a free consultation to talk through your child's needs and your coverage. Call us at (714) 709-7819, Monday through Saturday, 8 AM to 6 PM, or [send us a message](/contact/) and we will get back to you.
+If you have a Medi-Cal card and a lot of questions, that is a fine place to start. Our team offers a free consultation to talk through your child's needs and your coverage. Call us at (714) 709-7819, Monday – Saturday, 8:00 AM – 6:00 PM, or [send us a message](/contact/) and we will get back to you.
