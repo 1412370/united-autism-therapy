@@ -1,12 +1,17 @@
 /**
  * Post-build SEO audit: node scripts/audit.mjs (run after `npm run build`).
- * Checks every HTML page in dist/ for: one <h1>, title & description length,
- * canonical, valid JSON-LD, images with alt/width/height, and broken internal links.
+ * Checks every HTML page in dist/ for: one <h1>, title ≤ 60 chars, description
+ * 120–160 chars (indexable pages), canonical on SITE.url, valid JSON-LD,
+ * images with alt/width/height, and broken internal links.
  */
 import fs from 'node:fs';
 import path from 'node:path';
 
 const dist = path.resolve('dist');
+// Canonical domain comes from SITE.url in src/data/site.ts (single source of truth).
+const siteUrl = (fs.readFileSync(path.resolve('src/data/site.ts'), 'utf8').match(/\burl:\s*'([^']+)'/) || [])[1];
+if (!siteUrl) { console.log('✗ could not read SITE.url from src/data/site.ts'); process.exit(1); }
+const canonicalRe = new RegExp(`<link rel="canonical" href="${siteUrl.replace(/[.*+?^${}()|[\]\\/]/g, '\\$&')}/[^"]*"`);
 const files = [];
 (function walk(d) { for (const f of fs.readdirSync(d)) { const p = path.join(d, f); fs.statSync(p).isDirectory() ? walk(p) : p.endsWith('.html') && files.push(p); } })(dist);
 
@@ -27,12 +32,13 @@ for (const file of files) {
   if (h1s !== 1) warn(file, `${h1s} <h1> elements`);
   const title = ((html.match(/<title>([^<]*)<\/title>/) || [])[1] || '').replace(/&amp;/g, '&').replace(/&#39;/g, "'");
   if (!title) warn(file, 'missing <title>');
-  if (title.length > 65) warn(file, `title ${title.length} chars: ${title}`);
+  if (title.length > 60) warn(file, `title ${title.length} chars: ${title}`);
   titles.set(title, [...(titles.get(title) || []), file]);
   const noindex = /<meta name="robots" content="noindex/.test(html);
   const desc = (html.match(/<meta name="description" content="([^"]*)"/) || [])[1] || '';
-  if (!noindex && (desc.length < 70 || desc.length > 165)) warn(file, `description ${desc.length} chars`);
+  if (!noindex && (desc.length < 120 || desc.length > 160)) warn(file, `description ${desc.length} chars`);
   if (!/<link rel="canonical" href="https:\/\/[^"]+\/"/.test(html)) warn(file, 'missing/invalid canonical');
+  else if (!canonicalRe.test(html)) warn(file, `canonical not on ${siteUrl}`);
   for (const m of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
     try { JSON.parse(m[1]); } catch { warn(file, 'invalid JSON-LD'); }
   }

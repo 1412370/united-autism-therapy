@@ -5,6 +5,7 @@
  *
  * Only services listed on the business's current website are included.
  */
+import { BUSINESS, fullAddress, openHoursText } from './site';
 
 export interface ServiceFaq {
   q: string;
@@ -69,7 +70,7 @@ export const SERVICES = [
       },
       {
         q: 'Do you provide in-home ABA therapy in my city?',
-        a: 'We provide in-home ABA across Orange, Riverside, San Diego, San Bernardino and Santa Clara Counties, launching in Orange County first. Call (714) 709-7819 to confirm availability for your neighborhood and schedule.',
+        a: `We provide in-home ABA across Orange, Riverside, San Diego, San Bernardino and Santa Clara Counties, launching in Orange County first. Call ${BUSINESS.phone} to confirm availability for your neighborhood and schedule.`,
       },
       {
         q: 'Does a parent need to be home during in-home sessions?',
@@ -195,7 +196,7 @@ export const SERVICES = [
       },
       {
         q: 'Where is your center?',
-        a: 'Our center is at 13571 Beach Blvd, Westminster, CA 92683. We are open Monday through Saturday, 8:00 AM to 6:00 PM.',
+        a: `Our center is at ${fullAddress}. We are open ${openHoursText}.`,
       },
     ],
   },

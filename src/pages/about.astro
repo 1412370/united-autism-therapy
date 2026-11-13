@@ -5,7 +5,7 @@ import Icon from '../components/Icon.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import SocialLinks from '../components/SocialLinks.astro';
 import { CORE_SERVICES } from '../data/services';
-import { SITE, BUSINESS, fullAddress, telHref, absoluteUrl } from '../data/site';
+import { SITE, BUSINESS, fullAddress, telHref, absoluteUrl, hoursText } from '../data/site';
 import { localBusinessSchema, ORG_ID } from '../utils/schema';
 import { IMAGES } from '../utils/images';
 
@@ -103,7 +103,7 @@ const aboutPage = { '@type': 'AboutPage', '@id': absoluteUrl('/about/#page'), ur
         <div><dt>Service area</dt><dd>Westminster and Orange County, California. In-home ABA covers five California counties and is launching in Orange County first.</dd></div>
         <div><dt>Address</dt><dd>{fullAddress}</dd></div>
         <div><dt>Phone</dt><dd><a href={telHref}>{BUSINESS.phone}</a></dd></div>
-        <div><dt>Hours</dt><dd>Monday–Saturday, 8:00 AM–6:00 PM; closed Sunday</dd></div>
+        <div><dt>Hours</dt><dd>{hoursText}</dd></div>
         <div><dt>Clinical team</dt><dd>BCBA-designed and supervised programs, delivered with RBTs</dd></div>
         <div><dt>Insurance</dt><dd>Many plans, including Medi-Cal, cover ABA for children with an autism diagnosis — <a href="/insurance/">details</a></dd></div>
         <div><dt>First step</dt><dd>Free consultation — <a href="/contact/">request one online</a></dd></div>

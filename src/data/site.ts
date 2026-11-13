@@ -64,7 +64,10 @@ export const BUSINESS = {
   credentialsStatement: 'Care is designed and supervised by Board Certified Behavior Analysts (BCBAs) and delivered with Registered Behavior Technicians (RBTs).',
   /** Google Business Profile / Maps links — fill in once claimed/verified. */
   googleBusinessProfileUrl: '[GOOGLE BUSINESS PROFILE URL]',
-  mapsQuery: '13571 Beach Blvd, Westminster, CA 92683',
+  /** Derived from address above; currently "13571 Beach Blvd, Westminster, CA 92683". */
+  get mapsQuery(): string {
+    return `${this.address.street}, ${this.address.city}, ${this.address.region} ${this.address.postalCode}`;
+  },
   foundingYear: '[FOUNDING YEAR]',
   npi: '[NPI NUMBER]',
   social: {
@@ -107,5 +110,13 @@ export function isSet(value: string | null | undefined): value is string {
 
 export const fullAddress = `${BUSINESS.address.street}, ${BUSINESS.address.city}, ${BUSINESS.address.region} ${BUSINESS.address.postalCode}`;
 export const telHref = `tel:${BUSINESS.phoneE164}`;
+/** Open days and times from BUSINESS.hours, e.g. "Monday – Saturday, 8:00 AM – 6:00 PM". */
+export const openHoursText = BUSINESS.hours.filter((h) => h.schema).map((h) => `${h.days}, ${h.value}`).join('; ');
+/** Closed days from BUSINESS.hours, e.g. "Sunday". */
+export const closedDaysText = BUSINESS.hours.filter((h) => !h.schema).map((h) => h.days).join(' and ');
+/** Plural form of closedDaysText for "closed on ..." sentences, e.g. "Sundays". Empty when no day is closed. */
+export const closedDaysPluralText = closedDaysText.replace(/\b(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\b/g, '$1s');
+/** Full hours sentence, e.g. "Monday – Saturday, 8:00 AM – 6:00 PM; closed Sunday". */
+export const hoursText = closedDaysText ? `${openHoursText}; closed ${closedDaysText}` : openHoursText;
 export const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(BUSINESS.mapsQuery)}`;
 export const absoluteUrl = (path: string) => new URL(path, SITE.url).toString();

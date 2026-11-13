@@ -3,7 +3,7 @@ import PageLayout from '../layouts/PageLayout.astro';
 import ContactForm from '../components/ContactForm.astro';
 import ContactInfo from '../components/ContactInfo.astro';
 import MapEmbed from '../components/MapEmbed.astro';
-import { SITE, absoluteUrl } from '../data/site';
+import { SITE, BUSINESS, absoluteUrl } from '../data/site';
 import { localBusinessSchema, BUSINESS_ID } from '../utils/schema';
 
 const crumbs = [{ name: 'Home', href: '/' }, { name: 'Contact', href: '/contact/' }];
@@ -11,7 +11,7 @@ const contactPage = { '@type': 'ContactPage', '@id': absoluteUrl('/contact/#page
 ---
 <PageLayout
   title="Contact Us & Request a Free Consultation"
-  description="Request a free consultation with United Autism Therapy in Westminster, CA. Call (714) 709-7819 or send a message about ABA, speech or occupational therapy."
+  description={`Request a free consultation with United Autism Therapy in Westminster, CA. Call ${BUSINESS.phone} or send a message about ABA, speech or occupational therapy.`}
   h1="Request a Free Consultation"
   eyebrow="Contact"
   lead="Tell us a little about your child and how to reach you. A member of our team will get back to you to talk through your questions, next steps and insurance."

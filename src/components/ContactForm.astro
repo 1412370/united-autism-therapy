@@ -11,7 +11,7 @@
  * include diagnoses or medical records. If you need to collect health
  * information, use a HIPAA-eligible form provider with a signed BAA.
  */
-import { INTEGRATIONS, BUSINESS, isSet, telHref } from '../data/site';
+import { INTEGRATIONS, BUSINESS, isSet, telHref, openHoursText } from '../data/site';
 import { CORE_SERVICES } from '../data/services';
 const endpoint = isSet(INTEGRATIONS.formEndpoint) ? INTEGRATIONS.formEndpoint : '';
 ---
@@ -21,6 +21,7 @@ const endpoint = isSet(INTEGRATIONS.formEndpoint) ? INTEGRATIONS.formEndpoint : 
   action={endpoint || '#'}
   data-consult-form
   data-endpoint={endpoint}
+  data-phone={BUSINESS.phone}
   aria-describedby="form-privacy"
 >
   <div class="form__row form__row--2">
@@ -90,7 +91,7 @@ const endpoint = isSet(INTEGRATIONS.formEndpoint) ? INTEGRATIONS.formEndpoint : 
   <p id="form-privacy" class="hint">See our <a href="/privacy-policy/">Privacy Policy</a>. Fields marked <span class="req">*</span> are required.</p>
   <div class="form-status" role="status" aria-live="polite" hidden data-form-status></div>
   <button class="btn btn--cta" type="submit" style="justify-self:start">Request My Free Consultation</button>
-  <p class="hint">Prefer to talk? Call <a href={telHref}>{BUSINESS.phone}</a>, Monday–Saturday, 8 AM–6 PM.</p>
+  <p class="hint">Prefer to talk? Call <a href={telHref}>{BUSINESS.phone}</a>, {openHoursText}.</p>
 </form>
 
 <script>
@@ -107,8 +108,9 @@ const endpoint = isSet(INTEGRATIONS.formEndpoint) ? INTEGRATIONS.formEndpoint : 
     e.preventDefault();
     if (!form.reportValidity()) return;
     const endpoint = form.dataset.endpoint;
+    const phone = form.dataset.phone ?? '';
     if (!endpoint) {
-      show('Our online form is being set up. Please call (714) 709-7819 and we’ll be happy to help.', 'error');
+      show(`Our online form is being set up. Please call ${phone} and we’ll be happy to help.`, 'error');
       return;
     }
     const btn = form.querySelector<HTMLButtonElement>('button[type="submit"]');
@@ -138,7 +140,7 @@ const endpoint = isSet(INTEGRATIONS.formEndpoint) ? INTEGRATIONS.formEndpoint : 
           return done();
         } catch { /* fall through */ }
       }
-      show('Sorry, something went wrong sending your request. Please call (714) 709-7819.', 'error');
+      show(`Sorry, something went wrong sending your request. Please call ${phone}.`, 'error');
       btn?.removeAttribute('disabled');
     }
   });

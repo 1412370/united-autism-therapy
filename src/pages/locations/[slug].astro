@@ -6,7 +6,7 @@ import ServiceCard from '../../components/ServiceCard.astro';
 import { LOCATIONS } from '../../data/locations';
 import { CORE_SERVICES } from '../../data/services';
 import { localBusinessSchema } from '../../utils/schema';
-import { telHref, mapsUrl, BUSINESS } from '../../data/site';
+import { telHref, mapsUrl, BUSINESS, openHoursText, closedDaysPluralText } from '../../data/site';
 
 export function getStaticPaths() {
   return LOCATIONS.map((loc) => ({ params: { slug: loc.slug }, props: { loc } }));
@@ -20,7 +20,7 @@ const crumbs = [
 ];
 const faqs = [
   { q: 'Where is your Westminster center?', a: `We are located at ${loc.address.street}, ${loc.address.city}, ${loc.address.region} ${loc.address.postalCode}.` },
-  { q: 'What are your hours?', a: 'Monday through Saturday, 8:00 AM to 6:00 PM. We are closed on Sundays.' },
+  { q: 'What are your hours?', a: `${openHoursText}.${closedDaysPluralText ? ` We are closed on ${closedDaysPluralText}.` : ''}` },
   { q: 'Do you serve families outside Westminster?', a: 'Yes. In addition to our center, we provide in-home and school-based ABA to families throughout Orange County. Call us to confirm availability in your area.' },
   { q: 'Can I tour the center before starting?', a: 'Please call us to ask about visiting. A free consultation is a good first step to learn about our programs.' },
 ];

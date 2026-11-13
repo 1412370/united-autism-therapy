@@ -1,7 +1,7 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import { LOCATIONS } from '../../data/locations';
-import { BUSINESS, telHref } from '../../data/site';
+import { BUSINESS, telHref, fullAddress, openHoursText, closedDaysText } from '../../data/site';
 
 const crumbs = [{ name: 'Home', href: '/' }, { name: 'Locations', href: '/locations/' }];
 ---
@@ -35,14 +35,14 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Locations', href: '/locati
     <div class="wrap">
       <h2>How our service area is rolling out</h2>
       <p>United Autism Therapy serves families in five California counties: Orange, Riverside, San Diego, San Bernardino and Santa Clara. In-home ABA therapy is launching in Orange County first, so in-home availability in the other four counties may depend on your address.</p>
-      <p>Our Westminster center is the place for center-based ABA sessions, which families can attend at 13571 Beach Blvd. If you live outside Orange County, call us before you plan around in-home services, and we will tell you what is available for your address.</p>
+      <p>Our Westminster center is the place for center-based ABA sessions, which families can attend at {BUSINESS.address.street}. If you live outside Orange County, call us before you plan around in-home services, and we will tell you what is available for your address.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
       <h2>Finding us and getting in touch</h2>
-      <p>Our Westminster location is at 13571 Beach Blvd, Westminster, CA 92683. You can reach us at <a href="tel:+17147097819">(714) 709-7819</a>, and our hours are Monday to Saturday, 8:00 AM to 6:00 PM, with Sunday closed. To learn more about the families we support and our approach, visit our <a href="/about/">about page</a>, or send us a message through the <a href="/contact/">contact page</a>.</p>
+      <p>Our Westminster location is at {fullAddress}. You can reach us at <a href={telHref}>{BUSINESS.phone}</a>, and our hours are {openHoursText}{closedDaysText ? `, with ${closedDaysText} closed` : ''}. To learn more about the families we support and our approach, visit our <a href="/about/">about page</a>, or send us a message through the <a href="/contact/">contact page</a>.</p>
       <p>If you are looking for regional center information in Orange County, our guide to <a href="/blog/how-to-request-rcoc-intake-for-autism/">requesting regional center intake for autism</a> explains the steps. RCOC is a separate agency from United Autism Therapy.</p>
     </div>
   </section>
