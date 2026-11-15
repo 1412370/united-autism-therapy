@@ -3,7 +3,7 @@ import PageLayout from '../layouts/PageLayout.astro';
 import { SITE, BUSINESS, isSet, fullAddress } from '../data/site';
 const crumbs = [{ name: 'Home', href: '/' }, { name: 'Privacy Policy', href: '/privacy-policy/' }];
 const contact = isSet(BUSINESS.email) ? BUSINESS.email : BUSINESS.phone;
-const updated = 'September 30, 2026';
+const updated = 'November 15, 2026';
 ---
 <!-- TEMPLATE: have this policy reviewed by a qualified attorney before launch (HIPAA, CCPA/CPRA). -->
 <PageLayout title="Privacy Policy" description={`How ${SITE.legalName} collects, uses and protects information submitted through this website. Read this policy before you contact us.`} h1="Privacy Policy" crumbs={crumbs} showHeroCta={false} showCta={false} lead={`Last updated ${updated}`}>
@@ -11,10 +11,11 @@ const updated = 'September 30, 2026';
     <p>This Privacy Policy explains how {SITE.legalName} (“we”, “us”) handles information collected through this website. It does not replace the Notice of Privacy Practices you receive as a client, which governs protected health information under HIPAA.</p>
     <h2>Information we collect</h2>
     <ul>
-      <li><strong>Information you give us</strong> through the consultation form, such as your name, phone number, email, ZIP code, your child’s age range and your message.</li>
+      <li><strong>Information you give us</strong> through the consultation form: your name, email, phone number and ZIP code; your child’s name and date of birth; your child’s primary insurance; the location you are interested in; whether a licensed professional has diagnosed your child with autism; and your availability for services.</li>
       <li><strong>Technical information</strong> such as browser type, pages visited and approximate location, collected through analytics tools if enabled.</li>
     </ul>
-    <p>Please do not submit diagnoses, medical records or insurance ID numbers through the website form. We will collect clinical and insurance information through secure channels during intake.</p>
+    <p>Please do not send medical records, diagnostic reports or insurance ID numbers through the website form. We will collect those securely during intake.</p>
+    <p>If you agree to text messages, we use your phone number only to contact you about your inquiry. You can opt out at any time by replying STOP. We do not share your mobile number or text-messaging consent with third parties for their marketing.</p>
     <p>Form submissions are stored in a Google Sheets spreadsheet and emailed to our team using Google services. Google’s privacy policy applies to that processing.</p>
     <h2>How we use information</h2>
     <ul>

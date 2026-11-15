@@ -7,30 +7,38 @@
  *   3. Deploy → New deployment → Web app → Execute as: Me, Who has access: Anyone.
  *   4. Copy the Web app URL into INTEGRATIONS.formEndpoint in src/data/site.ts.
  *
- * Privacy: the website form only asks for contact details. Do not add fields
- * for diagnoses, medical records or insurance ID numbers — a regular Google
- * account is not a HIPAA-covered system.
+ * Privacy: since 2026-11-15 the form collects the child's name, date of birth,
+ * insurance and autism-diagnosis status. That is protected health information.
+ * Run this Sheet and script on a Google Workspace account covered by a signed
+ * BAA; a regular Google account is not HIPAA-covered. The alert email
+ * deliberately leaves out the child's details (they are in the Sheet).
  */
 
 // ---- Settings -------------------------------------------------------------
 const NOTIFY_EMAIL = 'nntnhan96@gmail.com'; // who gets an email for each request (comma-separate for more)
-const SHEET_NAME = 'Consultation Requests';
+const SHEET_NAME = 'Intake Requests'; // new tab (2026-11-15); the old 'Consultation Requests' tab keeps earlier rows
 const SITE_NAME = 'United Autism Therapy';
 const THANK_YOU_URL = 'https://unitedautismtherapy.org/thank-you/';
 
 // Column order in the sheet. Keys must match the form field `name`s.
+// Same order as the website form. 'child_dob' is built from the three
+// date-of-birth boxes (child_dob_month / _day / _year).
 const FIELDS = [
-  ['name', 'Parent / caregiver'],
-  ['phone', 'Phone'],
+  ['child_name', "Child's full name"],
+  ['child_dob', "Child's date of birth"],
+  ['name', 'Parent / legal guardian'],
   ['email', 'Email'],
-  ['zip', 'ZIP'],
-  ['child_age', 'Child age'],
-  ['service', 'Service'],
-  ['preferred_contact', 'Preferred contact'],
-  ['message', 'Message'],
-  ['consent', 'Consent'],
+  ['phone', 'Phone'],
+  ['zip', 'Zip code'],
+  ['insurance', 'Primary insurance'],
+  ['region', 'Region location'],
+  ['diagnosed', 'Autism diagnosis by licensed professional'],
+  ['availability', 'Availability'],
+  ['consent', 'SMS consent'],
   ['page', 'Page'],
 ];
+// Fields included in the alert email (no child details).
+const EMAIL_FIELDS = ['name', 'phone', 'email', 'zip', 'region', 'availability'];
 const EXTRA_COLUMNS = ['Status', 'Notes'];
 
 // ---- One-time setup -------------------------------------------------------
@@ -45,14 +53,17 @@ function setup() {
 
 // ---- Web app endpoint -----------------------------------------------------
 function doPost(e) {
-  const p = (e && e.parameter) || {};
+  const p = Object.assign({}, (e && e.parameter) || {});
+  p.child_dob = dob_(p);
 
   // Spam honeypot: real people never fill this hidden field.
   if (p._gotcha) return respond_(p, { result: 'success' });
 
   // Minimal validation.
-  if (!clean_(p.name) || !clean_(p.phone)) {
-    return respond_(p, { result: 'error', error: 'Name and phone are required.' });
+  const required = ['child_name', 'name', 'email', 'phone', 'zip', 'insurance', 'region', 'diagnosed', 'availability', 'consent'];
+  const missing = required.filter((k) => !clean_(p[k]));
+  if (missing.length) {
+    return respond_(p, { result: 'error', error: 'Missing required fields: ' + missing.join(', ') });
   }
 
   const lock = LockService.getScriptLock();
@@ -91,6 +102,14 @@ function getSheet_() {
   return sheet;
 }
 
+/** MM/DD/YYYY from the three date-of-birth boxes, or '' if all are empty. */
+function dob_(p) {
+  const m = clean_(p.child_dob_month), d = clean_(p.child_dob_day), y = clean_(p.child_dob_year);
+  if (!m && !d && !y) return '';
+  const pad = (v) => (v.length === 1 ? '0' + v : v);
+  return pad(m) + '/' + pad(d) + '/' + y;
+}
+
 /** Trim, cap length and neutralize spreadsheet formulas (=, +, -, @). */
 function clean_(value) {
   let v = String(value == null ? '' : value).trim().slice(0, 2000);
@@ -99,11 +118,13 @@ function clean_(value) {
 }
 
 function sendEmail_(p) {
-  const lines = FIELDS.map(([key, label]) => label + ': ' + (clean_(p[key]) || '—'));
-  const subject = 'New consultation request — ' + clean_(p.name) + (p.service ? ' (' + clean_(p.service) + ')' : '');
+  const lines = FIELDS.filter(([key]) => EMAIL_FIELDS.indexOf(key) !== -1)
+    .map(([key, label]) => label + ': ' + (clean_(p[key]) || '—'));
+  const subject = 'New consultation request — ' + clean_(p.name) + (p.region ? ' (' + clean_(p.region) + ')' : '');
   const body =
     'A new consultation request was submitted on the ' + SITE_NAME + ' website.\n\n' +
     lines.join('\n') +
+    "\n\nThe child's details, insurance and diagnosis answer are in the Sheet only." +
     '\n\nAll requests: ' + SpreadsheetApp.getActiveSpreadsheet().getUrl();
   const options = { name: SITE_NAME + ' Website' };
   if (p.email && /@/.test(p.email)) options.replyTo = clean_(p.email);

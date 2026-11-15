@@ -7,12 +7,27 @@
  * submits via fetch and redirects to /thank-you/; without JS it is a normal
  * HTML form POST.
  *
- * Privacy: the form asks for contact details only, and tells families not to
- * include diagnoses or medical records. If you need to collect health
- * information, use a HIPAA-eligible form provider with a signed BAA.
+ * Privacy: since 2026-11-15 the form collects the child's name, date of birth,
+ * insurance and autism-diagnosis status (user decision). That is protected
+ * health information. The Sheet and alert email should run on a Google
+ * Workspace account covered by a signed BAA; a regular Google account is not
+ * HIPAA-covered. See docs/google-apps-script/SETUP.md.
  */
-import { INTEGRATIONS, BUSINESS, isSet, telHref, openHoursText } from '../data/site';
-import { CORE_SERVICES } from '../data/services';
+import { SITE, INTEGRATIONS, BUSINESS, isSet, telHref, openHoursText } from '../data/site';
+
+// Options provided by the client (2026-11-15). Keep in sync with
+// docs/google-apps-script/Code.gs.
+const INSURANCE_OPTIONS = [
+  'Aetna',
+  'Anthem Blue Cross',
+  'Blue Cross Blue Shield',
+  'Blue Shield of CA',
+  'Medi-Cal / CalOptima',
+  'Optum / United Healthcare',
+  'Regional Center Orange County',
+  'Other',
+];
+const REGION_OPTIONS = ['Orange', 'Westminster'];
 const endpoint = isSet(INTEGRATIONS.formEndpoint) ? INTEGRATIONS.formEndpoint : '';
 ---
 <form
@@ -24,73 +39,101 @@ const endpoint = isSet(INTEGRATIONS.formEndpoint) ? INTEGRATIONS.formEndpoint : 
   data-phone={BUSINESS.phone}
   aria-describedby="form-privacy"
 >
-  <div class="form__row form__row--2">
-    <div class="field">
-      <label for="f-name">Parent / caregiver name <span class="req" aria-hidden="true">*</span></label>
-      <input id="f-name" name="name" type="text" autocomplete="name" required />
-    </div>
-    <div class="field">
-      <label for="f-phone">Phone <span class="req" aria-hidden="true">*</span></label>
-      <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required />
-    </div>
-  </div>
-  <div class="form__row form__row--2">
-    <div class="field">
-      <label for="f-email">Email</label>
-      <input id="f-email" name="email" type="email" autocomplete="email" />
-    </div>
-    <div class="field">
-      <label for="f-zip">ZIP code</label>
-      <input id="f-zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}" aria-describedby="f-zip-hint" />
-      <p class="hint" id="f-zip-hint">Helps us confirm in-home availability in your area.</p>
-    </div>
-  </div>
-  <div class="form__row form__row--2">
-    <div class="field">
-      <label for="f-age">Child’s age</label>
-      <select id="f-age" name="child_age">
-        <option value="">Select…</option>
-        <option>Under 3</option>
-        <option>3–5</option>
-        <option>6–12</option>
-        <option>13–17</option>
-        <option>18 or older</option>
-      </select>
-    </div>
-    <div class="field">
-      <label for="f-service">Service you’re interested in</label>
-      <select id="f-service" name="service">
-        <option value="">Not sure yet</option>
-        {CORE_SERVICES.map((s) => <option>{s.name}</option>)}
-      </select>
-    </div>
-  </div>
+  <p class="form__intro"><strong>All fields marked with <span class="req">*</span> are required and must be filled.</strong></p>
+
   <div class="field">
-    <label for="f-contact">Best way to reach you</label>
-    <select id="f-contact" name="preferred_contact">
-      <option>Phone call</option>
-      <option>Text message</option>
-      <option>Email</option>
+    <label for="f-child-name">Child’s Full Name <span class="req" aria-hidden="true">*</span></label>
+    <input id="f-child-name" name="child_name" type="text" autocomplete="off" required />
+  </div>
+
+  <fieldset class="field">
+    <legend>Child’s Date Of Birth</legend>
+    <div class="dob">
+      <div class="dob__part">
+        <input id="f-dob-month" name="child_dob_month" type="text" inputmode="numeric" maxlength="2" pattern="(0?[1-9]|1[0-2])" autocomplete="off" aria-label="Month" />
+        <span class="hint" aria-hidden="true">Month</span>
+      </div>
+      <div class="dob__part">
+        <input id="f-dob-day" name="child_dob_day" type="text" inputmode="numeric" maxlength="2" pattern="(0?[1-9]|[12][0-9]|3[01])" autocomplete="off" aria-label="Day" />
+        <span class="hint" aria-hidden="true">Day</span>
+      </div>
+      <div class="dob__part">
+        <input id="f-dob-year" name="child_dob_year" type="text" inputmode="numeric" maxlength="4" pattern="(19|20)[0-9]{2}" autocomplete="off" aria-label="Year" />
+        <span class="hint" aria-hidden="true">Year</span>
+      </div>
+    </div>
+  </fieldset>
+
+  <div class="field">
+    <label for="f-name">Parent/Legal Guardian’s Full Name <span class="req" aria-hidden="true">*</span></label>
+    <input id="f-name" name="name" type="text" autocomplete="name" required />
+  </div>
+
+  <div class="field">
+    <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
+    <input id="f-email" name="email" type="email" autocomplete="email" required />
+  </div>
+
+  <div class="field">
+    <label for="f-phone">Phone <span class="req" aria-hidden="true">*</span></label>
+    <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(000) 000-0000" required />
+  </div>
+
+  <div class="field">
+    <label for="f-zip">Zip Code <span class="req" aria-hidden="true">*</span></label>
+    <input id="f-zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}" maxlength="5" required />
+  </div>
+
+  <div class="field">
+    <label for="f-insurance">What is your child’s primary insurance? <span class="req" aria-hidden="true">*</span></label>
+    <select id="f-insurance" name="insurance" required>
+      <option value="">Please Select</option>
+      {INSURANCE_OPTIONS.map((o) => <option>{o}</option>)}
     </select>
   </div>
+
   <div class="field">
-    <label for="f-message">How can we help?</label>
-    <textarea id="f-message" name="message" aria-describedby="f-message-hint"></textarea>
-    <p class="hint" id="f-message-hint">A few words is plenty. Please don’t include diagnoses, medical records or insurance ID numbers — we’ll collect those securely later.</p>
+    <label for="f-region">Which region location are you interested in receiving services in? <span class="req" aria-hidden="true">*</span></label>
+    <select id="f-region" name="region" required>
+      <option value="">Please Select</option>
+      {REGION_OPTIONS.map((o) => <option>{o}</option>)}
+    </select>
   </div>
+
+  <fieldset class="field">
+    <legend>Has a licensed professional (physician or psychologist) diagnosed your child with Autism? <span class="req" aria-hidden="true">*</span></legend>
+    <div class="choices">
+      <label class="choice"><input type="radio" name="diagnosed" value="Yes" required /> Yes</label>
+      <label class="choice"><input type="radio" name="diagnosed" value="No" /> No</label>
+    </div>
+  </fieldset>
+
+  <fieldset class="field">
+    <legend>What is your availability for ABA services? <span class="req" aria-hidden="true">*</span></legend>
+    <div class="choices">
+      <label class="choice"><input type="radio" name="availability" value="Morning" required /> Morning</label>
+      <label class="choice"><input type="radio" name="availability" value="Afternoon" /> Afternoon</label>
+      <label class="choice"><input type="radio" name="availability" value="Both" /> Both</label>
+    </div>
+  </fieldset>
+
   <!-- Spam honeypot: hidden from people, tempting to bots. -->
   <div aria-hidden="true" style="position:absolute;left:-9999px">
     <label for="f-website">Leave this field empty</label>
     <input id="f-website" name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
   </div>
   <input type="hidden" name="page" value="/contact/" />
-  <div class="field field--check">
-    <input id="f-consent" name="consent" type="checkbox" value="yes" required />
-    <label for="f-consent">I agree to be contacted by United Autism Therapy about my inquiry. <span class="req" aria-hidden="true">*</span></label>
-  </div>
-  <p id="form-privacy" class="hint">See our <a href="/privacy-policy/">Privacy Policy</a>. Fields marked <span class="req">*</span> are required.</p>
+
+  <fieldset class="field">
+    <legend>Terms &amp; Conditions <span class="req" aria-hidden="true">*</span></legend>
+    <div class="field--check">
+      <input id="f-consent" name="consent" type="checkbox" value="yes" required />
+      <label for="f-consent">I agree to receive communications from {SITE.name} by text message about my inquiry. You may opt-out by replying STOP or reply HELP for more information. Message frequency varies. Message and data rates may apply. You may review our <a href="/privacy-policy/">Privacy Policy</a> to learn how your data is used.</label>
+    </div>
+  </fieldset>
+
   <div class="form-status" role="status" aria-live="polite" hidden data-form-status></div>
-  <button class="btn btn--cta" type="submit" style="justify-self:start">Request My Free Consultation</button>
+  <button class="btn btn--cta" type="submit" style="justify-self:start">Submit</button>
   <p class="hint">Prefer to talk? Call <a href={telHref}>{BUSINESS.phone}</a>, {openHoursText}.</p>
 </form>
 
