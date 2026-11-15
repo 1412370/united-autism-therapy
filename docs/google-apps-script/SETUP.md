@@ -33,8 +33,21 @@ Every consultation request is added as a row in a Google Sheet, and an email ale
 
 If you edit `Code.gs`, click **Deploy → Manage deployments → ✏️ Edit**, set **Version: New version**, and click **Deploy**. The URL stays the same. If you create a *new* deployment instead, the URL changes and you must update `site.ts`.
 
+## Updating to the intake form (2026-11-15)
+
+The website form now has: child's full name, child's date of birth, parent/legal guardian's name, email, phone, zip code, primary insurance, region location, autism diagnosis (yes/no), availability and SMS consent.
+
+Do these steps **before** the new website goes live. If the website goes live first, the old script drops the new fields.
+
+1. In Apps Script, replace the whole code with the new `Code.gs` and save.
+2. Run **setup** once. It creates a new tab, **Intake Requests**, with the new headers. The old **Consultation Requests** tab keeps its earlier rows untouched.
+3. **Deploy → Manage deployments → ✏️ Edit → Version: New version → Deploy.** The URL stays the same, so `site.ts` does not change.
+4. Push the website. Submit one test request and check that the row lands in **Intake Requests** with every column filled.
+
+**HIPAA:** the child's name, date of birth, insurance and diagnosis answer are protected health information. A regular Google account (and a personal Gmail alert address) is not covered by HIPAA. Move the Sheet and script to the business's Google Workspace account, sign Google's BAA in the Admin console, and set `NOTIFY_EMAIL` to a Workspace address. The alert email already leaves out the child's details; they are only in the Sheet.
+
 ## Notes
 
 - Use the **Status** and **Notes** columns to track follow-ups, e.g. New → Called → Scheduled.
 - Gmail-sent alerts are limited to about 100 per day on a free Google account. That's plenty for a contact form.
-- Don't add fields for diagnoses, medical records or insurance IDs. A regular Google account is not a HIPAA-covered system.
+- Don't add fields for medical records or insurance ID numbers. See the HIPAA note above.

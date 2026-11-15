@@ -2,6 +2,11 @@
 
 Record each decision that changes how the site, content, hosting or agents work. Newest first. Do not record routine edits here.
 
+## 2026-11-15: Consultation form collects intake details
+- Context: the user asked for the form fields and order of a competitor's intake form.
+- Decision (user): the form now collects child's name and date of birth, parent name, email, phone, zip, primary insurance (Aetna, Anthem Blue Cross, Blue Cross Blue Shield, Blue Shield of CA, Medi-Cal / CalOptima, Optum / United Healthcare, Regional Center Orange County, Other), region (Orange, Westminster), autism diagnosis yes/no, availability, and SMS consent. Spam protection stays a honeypot (no captcha). The Apps Script writes to a new tab, "Intake Requests"; the alert email leaves out the child's details.
+- Consequences: the form now collects protected health information, but the Sheet runs on a regular Google account that is not HIPAA-covered. Moving the Sheet to Google Workspace with a signed BAA is recommended. The insurance list and the "Orange" region are not verified in `docs/ARTICLE_BRIEF.md`; the client must confirm them. The Apps Script must be redeployed before the website goes live.
+
 ## 2026-11-12: Audit enforces the documented SEO limits; agent ownership clarified
 - Context: the rules said title 60 characters or fewer, description 120 to 160 and canonical on the canonical domain, but `scripts/audit.mjs` allowed 65, 70 to 165, and any https canonical. Agent files also disagreed on who owns `docs/`, `src/data/categories.ts` and `public/.htaccess`, and content-strategist was told to fetch sources and run the build without the tools to do so.
 - Decision: the audit now enforces title 60 or fewer, description 120 to 160 (indexable pages), and canonical on `SITE.url` read from `src/data/site.ts`. content-strategist owns `docs/CONTENT_CALENDAR.md` and the intro text in `src/data/categories.ts`, gets sources from the brief or research-analyst, and hands build checks to qa-specialist. `public/.htaccess` and `public/.cpanel.yml` need user approval.
