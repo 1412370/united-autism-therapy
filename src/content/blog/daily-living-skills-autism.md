@@ -16,7 +16,7 @@ secondaryKeywords: ["autism daily living skills", "self-care skills autism", "in
 searchIntent: informational
 funnelStage: TOFU
 relatedService: in-home-aba
-related: ["aba-in-everyday-family-routines", "occupational-therapy-for-autism", "supporting-aba-therapy-at-home"]
+related: ["autism-and-sleep-routines", "aba-in-everyday-family-routines", "occupational-therapy-for-autism"]
 faqs:
   - q: "What age should my child be able to dress or use the toilet on their own?"
     a: "There is no single deadline, and autistic children often learn self-care skills on their own timeline. A better question is what your child can do now and what the next small step would be. Your pediatrician can tell you whether anything about your child's development needs a closer look."

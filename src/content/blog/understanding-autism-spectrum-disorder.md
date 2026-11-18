@@ -163,7 +163,7 @@ In this article we use both, and our team follows your family's preference. As y
 
 ## What support can look like
 
-There is no single treatment that works for every autistic child. The CDC describes [several types of approaches](https://www.cdc.gov/autism/treatment/index.html), including behavioral approaches like applied behavior analysis (ABA), developmental approaches like speech and language therapy and occupational therapy, educational approaches, and social-relational approaches. The CDC also notes that there are no medications that treat the core features of autism, though a doctor may treat co-occurring conditions.
+There is no single treatment that works for every autistic child. The CDC describes [several types of approaches](https://www.cdc.gov/autism/treatment/index.html), including behavioral approaches like applied behavior analysis (ABA), developmental approaches like speech and language therapy and occupational therapy, educational approaches, and social-relational approaches. The CDC also notes that there are no medications that treat the core features of autism, though a doctor may treat co-occurring conditions. For a fuller map of these approaches, including what medication can and cannot do, see our guide to [autism treatment options for children](/blog/autism-treatment-options/).
 
 For many families, support includes some mix of:
 

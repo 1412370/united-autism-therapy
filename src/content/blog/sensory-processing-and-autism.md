@@ -15,7 +15,7 @@ secondaryKeywords: ["sensory issues autism", "sensory integration autism", "sens
 searchIntent: informational
 funnelStage: TOFU
 relatedService: occupational-therapy
-related: ["occupational-therapy-for-autism", "understanding-autism-spectrum-disorder", "supporting-aba-therapy-at-home"]
+related: ["autism-meltdown-vs-tantrum", "occupational-therapy-for-autism", "understanding-autism-spectrum-disorder"]
 faqs:
   - q: "Can a child be both sensory seeking and sensory avoiding?"
     a: "Yes, and it is very common. A child may avoid loud sounds but seek out spinning and jumping, or avoid certain food textures but love tight hugs. Sensory responses can also change from day to day depending on sleep, stress, and hunger."
@@ -126,6 +126,8 @@ Overload can lead to a meltdown. From the outside, a meltdown and a tantrum can 
 | Awareness | Your child often checks whether you are watching | Your child may seem unaware of people around them |
 | What helps | Calm limits, and it often stops when the goal is met or no longer possible | Reducing input, safety, and time; rewards or consequences usually do not help in the moment |
 | Afterward | Often quick | Can take a while; your child may feel tired or withdrawn afterward |
+
+For a fuller side-by-side, see our guide to [autism meltdowns vs. tantrums](/blog/autism-meltdown-vs-tantrum/).
 
 ### What to do during a meltdown
 

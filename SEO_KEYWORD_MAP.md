@@ -29,7 +29,11 @@ Status key: ✅ Live (page built) · 🟡 Planned · ⚪ Needs business input
 | autism therapy Westminster | Local / commercial | BOFU | / (homepage) | High | Needs verification |
 | autism therapy near me | Local / commercial | BOFU | / + Google Business Profile | High | Needs verification |
 | ABA therapy Orange County CA | Local / commercial | BOFU | /services/aba-therapy/ | High | Needs verification |
-| autism therapy center Westminster CA | Local / commercial | BOFU | /locations/westminster-ca/ | High | Needs verification |
+| autism therapy center Westminster CA / autism center Westminster | Local / commercial | BOFU | /locations/westminster-ca/ | High | Needs verification |
+| applied behavior analysis therapy (Westminster) | Local / commercial | BOFU | /services/aba-therapy/ | High | Needs verification |
+| autism therapy Orange County / autism services Orange County | Local / commercial | BOFU | /locations/orange-county-ca/ | High | Needs verification |
+| autism services (Westminster) | Commercial | BOFU | /services/ | Medium | Needs verification |
+| ABA therapy cost / how much does ABA cost | Commercial / informational | MOFU | /insurance/ | Medium | Needs verification |
 | center based ABA therapy (near me / Westminster) | Local / commercial | BOFU | /services/center-based-aba/ | High | Needs verification |
 | in home ABA therapy (near me / Orange County) | Local / commercial | BOFU | /services/in-home-aba/ | High | Needs verification |
 | school based ABA therapy (Orange County) | Commercial | BOFU | /services/school-based-aba/ | Medium | Needs verification |
@@ -98,6 +102,7 @@ Each primary keyword is owned by **one** page. Other pages may mention the topic
 | autism spectrum disorder in children | Informational | /blog/understanding-autism-spectrum-disorder/ | — | — | signs, sensory, controversy | ✅ |
 | AAC autism | Informational | /blog/aac-and-autism/ | /services/speech-language-therapy/ | — | speech article + service | ✅ |
 | sensory processing autism | Informational | /blog/sensory-processing-and-autism/ | /services/occupational-therapy/ | — | OT article + service | ✅ |
+| autism treatment options (types of autism therapy, autism therapy for children) | Informational | /blog/autism-treatment-options/ | /services/aba-therapy/ | — | ASD guide, early-intervention, what-age articles | ✅ (added 2026-11-18) |
 
 ### Cannibalization decisions made
 
@@ -132,6 +137,7 @@ Each primary keyword is owned by **one** page. Other pages may mention the topic
 | 18 | aac-and-autism | aac autism | AAC device, AAC app, what is AAC | Informational | MOFU | Speech & Language |
 | 19 | occupational-therapy-for-autism | occupational therapy for autism | OT for autistic child, at home, activities, fine motor | Informational | MOFU | Occupational Therapy |
 | 20 | sensory-processing-and-autism | sensory processing autism | sensory issues, sensory integration, seeking vs avoiding, overload | Informational | TOFU | Occupational Therapy |
+| 21 | autism-treatment-options | autism treatment options | autism therapy for children, types of autism therapy, autism services (informational only; local/commercial "autism services" stays with /services/ and /locations/orange-county-ca/) | Informational | TOFU | ABA Therapy |
 
 ## 4. Next steps to verify
 

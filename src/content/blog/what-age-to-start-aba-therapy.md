@@ -4,7 +4,7 @@ h1: "What Age to Start ABA Therapy, From Toddlers to Teens"
 description: "What age to start ABA therapy? Why early support helps, what ABA looks like for toddlers, preschoolers, school-age kids, and teens, and why it's never too late."
 slug: what-age-to-start-aba-therapy
 date: 2026-07-15
-updatedDate: 2026-09-30
+updatedDate: 2026-11-18
 author: uat-clinical-team
 category: aba-therapy
 tags: ["aba therapy", "early intervention", "toddlers", "getting started"]
@@ -25,6 +25,8 @@ faqs:
     a: "No. ABA can support school-age children and teens, with goals that fit their age, such as handling transitions, building friendships, or becoming more independent at home. NICHD notes that people of all ages can often improve after well-designed interventions."
   - q: "Does ABA end at a certain age?"
     a: "There is no set age when ABA must stop. Therapy usually winds down when goals are met and your child and family no longer need that level of support. Coverage rules can also play a role. For example, Medi-Cal behavioral health treatment is for eligible members under 21."
+  - q: "How is ABA for toddlers different from ABA for older children?"
+    a: "Toddler ABA is usually play-based and built into daily routines. It follows the child's lead, uses natural rewards like getting the toy they asked for, and focuses on building blocks such as joint attention, imitation, and play. Parents are often coached to use the same strategies during meals, bath time, and play."
 references:
   - title: "What are the treatments for autism?"
     publisher: "Eunice Kennedy Shriver National Institute of Child Health and Human Development"
@@ -44,6 +46,24 @@ references:
   - title: "Identification, Evaluation, and Management of Children With Autism Spectrum Disorder"
     publisher: "American Academy of Pediatrics (Pediatrics)"
     url: "https://publications.aap.org/pediatrics/article/145/1/e20193447/36917"
+  - title: "Naturalistic Developmental Behavioral Interventions: Empirically Validated Treatments for Autism Spectrum Disorder"
+    publisher: "Journal of Autism and Developmental Disorders (Schreibman et al., 2015)"
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4513196/"
+  - title: "Early Start: Birth to 36 Months"
+    publisher: "Regional Center of Orange County"
+    url: "https://www.rcocdd.com/client-services/intake/early-start/"
+  - title: "Early Intervention"
+    publisher: "Centers for Disease Control and Prevention"
+    url: "https://www.cdc.gov/act-early/early-intervention/index.html"
+  - title: "Parent-Mediated Therapy in Autism"
+    publisher: "Eunice Kennedy Shriver National Institute of Child Health and Human Development (NICHD)"
+    url: "https://www.nichd.nih.gov/health/topics/autism/conditioninfo/treatments/parent-mediated"
+  - title: "Early Intervention for Autism"
+    publisher: "Eunice Kennedy Shriver National Institute of Child Health and Human Development (NICHD)"
+    url: "https://www.nichd.nih.gov/health/topics/autism/conditioninfo/treatments/early-intervention"
+  - title: "Signs and Symptoms of Autism Spectrum Disorder"
+    publisher: "Centers for Disease Control and Prevention"
+    url: "https://www.cdc.gov/autism/signs-symptoms/index.html"
 ---
 <!-- Image suggestion: real photo of a toddler on a parent's lap during a play-based session, therapist on the floor offering a toy (replace generated placeholder) -->
 
@@ -75,11 +95,49 @@ The timeline often follows screening. The CDC reports that the AAP recommends [a
 
 If you have concerns about your child's development, talk with your pediatrician. You do not need to be certain to ask.
 
+## ABA therapy for toddlers
+
+ABA therapy for toddlers, meaning children under 3, usually looks like guided play built into everyday routines, with parents coached closely. It focuses on early building blocks such as sharing attention, imitating, playing and communicating, rather than long table-top lessons.
+
+Signs that may lead to an early conversation with your doctor can show up in the first two years. The CDC lists examples such as [using few or no gestures, like waving, by 12 months and not pointing to show you something interesting by 18 months](https://www.cdc.gov/autism/signs-symptoms/index.html). Some children without autism show these signs too, so talk with your child's doctor about any concerns. Our guide to the [early signs of autism](/blog/early-signs-of-autism/) covers more.
+
+### What a toddler ABA session can look like
+
+A session with a toddler often happens on the floor, at home, with toys your child already loves. Here is an example of how a few minutes might go:
+
+1. The therapist notices your child reaching for a jar of bubbles.
+2. They blow a few bubbles, then pause and wait.
+3. Your child looks up, reaches, or says "buh." That is a request.
+4. The therapist blows more bubbles right away. Getting the bubbles is the reward.
+5. Next, they coach you to try the same pause during snack or bath time.
+
+This style follows your child's lead and uses what they want in the moment. Schreibman and colleagues describe this kind of teaching in their [2015 review of naturalistic approaches](https://pmc.ncbi.nlm.nih.gov/articles/PMC4513196/): teaching in natural settings and play, with shared control, the child's own interests and natural rewards. Targets often include joint attention (sharing focus on something with another person), imitation, play and early language. The authors also link parent coaching during daily routines, such as meals and bath time, to better progress.
+
+A good toddler program also watches your child's comfort. If your child seems upset or tired, the therapist should slow down, change the activity, or take a break.
+
+### Play-based and naturalistic approaches
+
+The approaches above are often called naturalistic developmental behavioral interventions (NDBIs). They combine ABA with what is known about how young children develop. Examples named in the 2015 review include pivotal response training, the Early Start Denver Model, JASPER and Project ImPACT, and the authors treat NDBIs as a form of ABA.
+
+Parent-mediated therapy is a close relative. A professional trains you to use therapy strategies with your own child throughout the day. NICHD notes that some of these approaches [can be used with children who are at risk for autism but too young to be diagnosed](https://www.nichd.nih.gov/health/topics/autism/conditioninfo/treatments/parent-mediated). Our [parent training](/services/parent-training/) program helps families practice these skills at home.
+
+### California Early Start and RCOC (birth to 36 months)
+
+In Orange County, early intervention for infants and toddlers is provided through the [Regional Center of Orange County's Early Start program](https://www.rcocdd.com/client-services/intake/early-start/), which serves children from birth to 36 months. According to RCOC, a child may be eligible with:
+
+- A delay of at least 25% in one or more areas of development,
+- An established risk condition, or
+- A high risk of developmental disability because of a combination of biomedical risk factors.
+
+Families can apply online or through an RCOC Intake Specialist, and RCOC offers information in English, Spanish, Vietnamese and Korean. The CDC adds that early intervention programs are [free or low-cost, and "a doctor's referral is not necessary"](https://www.cdc.gov/act-early/early-intervention/index.html) to ask for an evaluation.
+
+You do not need to wait for a diagnosis to start this process. NICHD notes that recent guidelines recommend starting developmental and behavioral intervention [as soon as autism is diagnosed or seriously suspected](https://www.nichd.nih.gov/health/topics/autism/conditioninfo/treatments/early-intervention). For a wider look at therapies at every age, see our guide to [autism treatment options for children](/blog/autism-treatment-options/).
+
 ## ABA therapy by age
 
 Here is how ABA often looks at different stages. Every child is different, so treat these as general examples.
 
-### ABA therapy for toddlers (about 18 months to 3 years)
+### Toddlers (about 18 months to 3 years)
 
 For toddlers, ABA should look a lot like play. Sessions often happen on the floor, with bubbles, songs, and toys your child already loves. Parents are usually closely involved, because so much of a toddler's day happens with family.
 

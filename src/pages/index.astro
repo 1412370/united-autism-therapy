@@ -8,6 +8,7 @@ import FAQ from '../components/FAQ.astro';
 import CTABand from '../components/CTABand.astro';
 import ContactInfo from '../components/ContactInfo.astro';
 import MapEmbed from '../components/MapEmbed.astro';
+import ContactForm from '../components/ContactForm.astro';
 import Testimonials from '../components/Testimonials.astro';
 import BrandWave from '../components/BrandWave.astro';
 import ProgramCard from '../components/ProgramCard.astro';
@@ -33,9 +34,9 @@ const routines = [
 ];
 ---
 <Layout
-  title="ABA Therapy for Autism in Westminster, CA"
+  title="Autism Therapy & ABA for Children in Westminster, CA"
   rawTitle
-  description="ABA therapy for children with autism in Westminster, CA, designed and supervised by BCBAs. In-home ABA is launching in Orange County first. Free consultation."
+  description="Autism therapy for children in Westminster, CA: BCBA-designed ABA, speech and occupational therapy. In-home ABA is launching in Orange County first."
   canonical="/"
   schema={[localBusinessSchema(), ...(INTEGRATIONS.faqSchema ? [faqSchema(homeFaqs)] : [])]}
 >
@@ -47,7 +48,7 @@ const routines = [
           <span class="badge badge--green"><Icon name="check" />BCBA &amp; RBT certified</span>
           <span class="badge badge--sun">Westminster, CA</span>
         </div>
-        <h1><span class="accent">ABA Therapy</span> for Children with Autism in Westminster, CA</h1>
+        <h1><span class="accent">Autism Therapy</span> for Children in Westminster, CA</h1>
         <p class="hero__lead">
           United Autism Therapy provides ABA therapy for children with autism. Programs are designed and supervised by
           Board Certified Behavior Analysts (BCBAs) and delivered with Registered Behavior Technicians (RBTs). In-home ABA
@@ -74,7 +75,7 @@ const routines = [
         <Picture
           src={heroPhoto}
           formats={['avif', 'webp']}
-          alt="Smiling ABA therapist in a blue United Autism Therapy shirt working with a happy boy on a color-matching activity"
+          alt="A therapist and a young boy smiling during a color-matching activity"
           widths={[420, 640, 829]}
           sizes="(min-width: 900px) 500px, 92vw"
           loading="eager"
@@ -168,6 +169,26 @@ const routines = [
         <li><h3>Therapy at home</h3><p>Your personalized plan begins, with regular updates and parent coaching.</p></li>
       </ol>
       <div class="btn-row mt-3"><a class="btn btn--light" href="/contact/">Start today</a><a class="btn btn--cta" href="/blog/how-to-start-in-home-aba-therapy/">Read the step-by-step guide</a></div>
+    </div>
+  </section>
+
+  <!-- Lead capture -->
+  <section class="section section--sky" id="consultation" aria-labelledby="consult-title">
+    <div class="wrap split" style="align-items:start">
+      <div>
+        <p class="eyebrow">Free consultation</p>
+        <h2 id="consult-title">Request a free ABA therapy consultation</h2>
+        <p class="lead mt-1">
+          Tell us a little about your child and how to reach you. Our team will call you back to answer your questions
+          about ABA therapy for autism, check your insurance and explain the next steps. There is no obligation.
+        </p>
+        <ul class="check-list mt-2">
+          <li>Plans designed and supervised by a BCBA</li>
+          <li>Help with insurance, Medi-Cal and authorization</li>
+          <li>Therapy at home or at our Westminster center</li>
+        </ul>
+      </div>
+      <ContactForm />
     </div>
   </section>
 

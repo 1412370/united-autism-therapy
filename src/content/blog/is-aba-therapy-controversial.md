@@ -29,9 +29,12 @@ references:
   - title: "Autistic Self Advocacy Network"
     publisher: "Autistic Self Advocacy Network"
     url: "https://autisticadvocacy.org/"
-  - title: "Position Statements"
+  - title: "Position Statements (archived January 2022)"
     publisher: "Autistic Self Advocacy Network"
-    url: "https://autisticadvocacy.org/about-asan/position-statements/"
+    url: "https://web.archive.org/web/20220125172343/https://autisticadvocacy.org/about-asan/position-statements/"
+  - title: "Address to Florida Autism Task Force on World Autism Day"
+    publisher: "Autistic Self Advocacy Network"
+    url: "https://autisticadvocacy.org/2008/04/address-to-florida-autism-task-force-on-world-autism-day/"
   - title: "Ethics Codes"
     publisher: "Behavior Analyst Certification Board"
     url: "https://www.bacb.com/ethics-information/ethics-codes/"
@@ -65,7 +68,7 @@ Applied behavior analysis grew out of behavioral psychology in the mid-1900s. So
 
 Some early programs also aimed to make autistic children look as much like their non-autistic peers as possible. That framing treated autistic traits themselves as the problem.
 
-Aversive methods are widely rejected now, but that history still shapes how many autistic people view ABA. The Autistic Self Advocacy Network (ASAN) describes aversives as "the application of pain as a means of behavior modification" and calls for them to be banned, along with limits on non-emergency restraint and seclusion, in its [position statements](https://autisticadvocacy.org/about-asan/position-statements/).
+Aversive methods are widely rejected now, but that history still shapes how many autistic people view ABA. The Autistic Self Advocacy Network (ASAN) has described aversives as "the application of pain as a means of behavior modification" in an [address to Florida's autism task force](https://autisticadvocacy.org/2008/04/address-to-florida-autism-task-force-on-world-autism-day/). In its [position statements](https://web.archive.org/web/20220125172343/https://autisticadvocacy.org/about-asan/position-statements/), ASAN calls for an end to aversives and says restraint and seclusion should never be treated as acceptable.
 
 ## What autistic self-advocates criticize about ABA
 
