@@ -39,6 +39,7 @@ export const FOOTER_NAV: { heading: string; links: NavItem[] }[] = [
     heading: 'Company',
     links: [
       { label: 'About Us', href: '/about/' },
+      { label: 'Locations', href: '/locations/' },
       { label: 'Westminster Location', href: '/locations/westminster-ca/' },
       { label: 'Orange County Service Area', href: '/locations/orange-county-ca/' },
       { label: 'FAQ', href: '/faq/' },

@@ -21,8 +21,26 @@ const tagId = ga4Id || googleAdsId; // gtag.js only needs to load once
   </script>
 ) : tagId ? (
   <>
-    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${tagId}`}></script>
-    <script is:inline define:vars={{ ga4Id, googleAdsId }}>
+    <script is:inline define:vars={{ ga4Id, googleAdsId, tagId }}>
+      // gtag.js (~350 KB) is loaded on the first interaction, or 3.5 s after the page
+      // has loaded, so it does not compete with the first paint. Calls made before it
+      // loads are queued in dataLayer and sent when it arrives.
+      (function () {
+        var loaded = false;
+        var events = ['pointerdown', 'keydown', 'scroll', 'touchstart'];
+        function loadTag() {
+          if (loaded) return;
+          loaded = true;
+          events.forEach(function (e) { removeEventListener(e, loadTag); });
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=' + tagId;
+          document.head.appendChild(s);
+        }
+        events.forEach(function (e) { addEventListener(e, loadTag, { once: true, passive: true }); });
+        if (document.readyState === 'complete') setTimeout(loadTag, 3500);
+        else addEventListener('load', function () { setTimeout(loadTag, 3500); });
+      })();
       window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());

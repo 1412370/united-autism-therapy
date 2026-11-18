@@ -2,6 +2,20 @@
 
 Record each decision that changes how the site, content, hosting or agents work. Newest first. Do not record routine edits here.
 
+## 2026-11-18: Home lead form, direct map embed, ABA/autism keyword coverage
+- Decision (user): the home page has a consultation form section (same form as /contact/). The Google Map shows directly (lazy-loaded iframe) instead of click-to-load. The privacy policy and the CSP `frame-src` in `public/.htaccess` were updated to allow Google Maps.
+- Keywords: added "Applied Behavior Analysis" to the ABA service title/H1, "autism therapy center" to the Westminster title, "Autism Therapy & ABA Services" to the Orange County page (it no longer duplicates the in-home page H1), "autism services" to the services hub, and an "ABA therapy cost" FAQ on /insurance/. New rows are in `SEO_KEYWORD_MAP.md`.
+- Consequences: Google Maps loads on pages with a map once the visitor scrolls near it (adds third-party requests and cookies).
+
+## 2026-11-18: SEO audit fixes (code-only items)
+- Context: the 2026-11-17 SEO audit (77/100) found a future-dated post, slow mobile LCP, the home page and `/services/aba-therapy/` competing for the same query, weak internal links and a broken ASAN citation.
+- Decision:
+  - The audit now fails on any post whose `article:published_time` is in the future. There is no scheduled publishing, so a future date would go live early.
+  - All CSS is inlined (`build.inlineStylesheets: 'always'`). The Nunito latin font is preloaded.
+  - gtag.js loads on the first interaction, or 3.5 s after page load. Calls made before then are queued in dataLayer.
+  - Following `SEO_KEYWORD_MAP.md`, the home page targets "autism therapy Westminster", and `/services/aba-therapy/` keeps "ABA therapy Westminster CA".
+- Consequences: visitors who leave within about 3.5 s without interacting may not be counted in GA4 or Ads. Remeasure LCP with PageSpeed Insights after deploy.
+
 ## 2026-11-15: Consultation form collects intake details
 - Context: the user asked for the form fields and order of a competitor's intake form.
 - Decision (user): the form now collects child's name and date of birth, parent name, email, phone, zip, primary insurance (Aetna, Anthem Blue Cross, Blue Cross Blue Shield, Blue Shield of CA, Medi-Cal / CalOptima, Optum / United Healthcare, Regional Center Orange County, Other), region (Orange, Westminster), autism diagnosis yes/no, availability, and SMS consent. Spam protection stays a honeypot (no captcha). The Apps Script writes to a new tab, "Intake Requests"; the alert email leaves out the child's details.

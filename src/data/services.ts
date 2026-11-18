@@ -89,8 +89,8 @@ export const SERVICES = [
   {
     slug: 'aba-therapy',
     name: 'ABA Therapy',
-    seoTitle: 'ABA Therapy in Westminster, CA',
-    h1: 'ABA Therapy for Children With Autism in Westminster, CA',
+    seoTitle: 'Applied Behavior Analysis (ABA) Therapy in Westminster, CA',
+    h1: 'ABA (Applied Behavior Analysis) Therapy for Children With Autism in Westminster, CA',
     description:
       'Individualized ABA therapy for children with autism in Westminster and Orange County. BCBA-designed plans, center, home and school options. Free consultation.',
     summary: 'Individualized, play-based Applied Behavior Analysis designed by BCBAs around your child and family goals.',

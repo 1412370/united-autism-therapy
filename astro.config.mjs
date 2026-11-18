@@ -11,7 +11,8 @@ export default defineConfig({
   trailingSlash: 'always',
   build: {
     format: 'directory', // /about/ → dist/about/index.html (works on any static host)
-    inlineStylesheets: 'auto',
+    // Inline all CSS (~9 KB): removes the render-blocking stylesheet that delayed mobile LCP.
+    inlineStylesheets: 'always',
   },
   compressHTML: true,
   image: {

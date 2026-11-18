@@ -1,7 +1,7 @@
 /**
  * Post-build SEO audit: node scripts/audit.mjs (run after `npm run build`).
  * Checks every HTML page in dist/ for: one <h1>, title ≤ 60 chars, description
- * 120–160 chars (indexable pages), canonical on SITE.url, valid JSON-LD,
+ * 120–160 chars (indexable pages), canonical on SITE.url, no future publish date, valid JSON-LD,
  * images with alt/width/height, and broken internal links.
  */
 import fs from 'node:fs';
@@ -22,6 +22,8 @@ const exists = (href) => {
   return fs.existsSync(p) && (fs.statSync(p).isFile() || fs.existsSync(path.join(p, 'index.html')));
 };
 
+// Dates are stored as UTC midnight; allow today's date in any US/VN time zone.
+const endOfToday = new Date(Date.now() + 24 * 3600 * 1000);
 let problems = 0;
 const warn = (file, msg) => { problems++; console.log(`✗ ${path.relative(dist, file)}: ${msg}`); };
 const titles = new Map();
@@ -39,6 +41,9 @@ for (const file of files) {
   if (!noindex && (desc.length < 120 || desc.length > 160)) warn(file, `description ${desc.length} chars`);
   if (!/<link rel="canonical" href="https:\/\/[^"]+\/"/.test(html)) warn(file, 'missing/invalid canonical');
   else if (!canonicalRe.test(html)) warn(file, `canonical not on ${siteUrl}`);
+  // A post dated in the future would go live early (static build, no scheduler).
+  const published = (html.match(/<meta property="article:published_time" content="([^"]+)"/) || [])[1];
+  if (published && new Date(published) > endOfToday) warn(file, `published date in the future: ${published}`);
   for (const m of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
     try { JSON.parse(m[1]); } catch { warn(file, 'invalid JSON-LD'); }
   }

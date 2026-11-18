@@ -16,7 +16,7 @@ secondaryKeywords: ["aba goals examples", "examples of aba therapy goals", "aba 
 searchIntent: informational
 funnelStage: MOFU
 relatedService: aba-therapy
-related: ["data-driven-aba-therapy", "how-does-aba-therapy-work", "benefits-of-aba-therapy"]
+related: ["functional-communication-training-aba", "data-driven-aba-therapy", "how-does-aba-therapy-work"]
 faqs:
   - q: "How many goals does a child usually work on in ABA?"
     a: "There is no set number. It depends on your child's needs, how often sessions happen, and what matters most to your family. Your child's BCBA will usually focus on a manageable set of priorities and add new goals as earlier ones are mastered."

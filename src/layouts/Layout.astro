@@ -5,6 +5,8 @@
  */
 import '@fontsource-variable/nunito';
 import '../styles/global.css';
+// Same file the @fontsource CSS uses (Vite gives it the same hashed URL), preloaded so text paints sooner.
+import nunitoLatin from '@fontsource-variable/nunito/files/nunito-latin-wght-normal.woff2?url';
 import SEO, { type SEOProps } from '../components/SEO.astro';
 import Schema from '../components/Schema.astro';
 import Header from '../components/Header.astro';
@@ -25,6 +27,7 @@ const jsonLd = graph(organizationSchema(), websiteSchema(), ...schema);
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preload" href={nunitoLatin} as="font" type="font/woff2" crossorigin />
     <SEO {...seo} />
     <meta name="theme-color" content={SITE.themeColor} />
     <meta name="format-detection" content="telephone=no" />

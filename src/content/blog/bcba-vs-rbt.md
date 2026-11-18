@@ -5,14 +5,14 @@ description: "BCBA vs RBT explained for parents: what each ABA credential means,
 summary: "A BCBA (Board Certified Behavior Analyst) holds a graduate-level certification, assesses your child, writes the ABA treatment plan, and supervises the team. An RBT (Registered Behavior Technician) holds a paraprofessional certification and works directly with your child in sessions, following the BCBA's plan under close, ongoing supervision. Both credentials are issued by the Behavior Analyst Certification Board (BACB)."
 slug: bcba-vs-rbt
 date: 2026-09-23
-updatedDate: 2026-10-05
+updatedDate: 2026-11-18
 author: uat-clinical-team
 category: aba-therapy
 tags: ["aba therapy", "bcba", "rbt", "choosing a provider", "parent guide"]
 featuredImage: ../../assets/blog/bcba-vs-rbt.jpg
 alt: "Behavior analyst reviewing a session clipboard with a behavior technician while a young child plays with blocks on a living-room rug nearby"
 primaryKeyword: "bcba vs rbt"
-secondaryKeywords: ["difference between bcba and rbt", "what is a bcba", "what is an rbt", "rbt supervision", "aba therapy team roles"]
+secondaryKeywords: ["difference between bcba and rbt", "what is a bcba", "what is an rbt", "rbt supervision", "aba therapy team roles", "aba therapist", "what does an aba therapist do"]
 searchIntent: informational
 funnelStage: MOFU
 relatedService: in-home-aba
@@ -26,6 +26,8 @@ faqs:
     a: "You can mention it to the RBT, but the BCBA is usually the right person for questions about goals, strategies, or how your child is responding. The RBT Ethics Code asks RBTs to bring caregiver questions and concerns about their services to their supervisor."
   - q: "How often will the BCBA see my child?"
     a: "It varies by program, your child's needs, and your insurance authorization. Ask any provider how often the BCBA will observe sessions in person, meet with you, and review your child's data."
+  - q: "Is an ABA therapist the same as a BCBA?"
+    a: "Not always. \"ABA therapist\" is an informal term, not a BACB credential, and people use it for RBTs, BCaBAs and BCBAs alike. Ask which credential the person holds, then check it on the BACB Certificant Registry."
 references:
   - title: "Board Certified Behavior Analyst (BCBA)"
     publisher: "Behavior Analyst Certification Board"
@@ -42,6 +44,18 @@ references:
   - title: "Treatment and Intervention for Autism Spectrum Disorder"
     publisher: "Centers for Disease Control and Prevention"
     url: "https://www.cdc.gov/autism/treatment/index.html"
+  - title: "Board Certified Assistant Behavior Analyst (BCaBA)"
+    publisher: "Behavior Analyst Certification Board"
+    url: "https://www.bacb.com/bcaba/"
+  - title: "About Behavior Analysis"
+    publisher: "Behavior Analyst Certification Board"
+    url: "https://www.bacb.com/about-behavior-analysis/"
+  - title: "Verify BACB Certification"
+    publisher: "Behavior Analyst Certification Board"
+    url: "https://www.bacb.com/verify-certification/"
+  - title: "When to Establish an RBT Requirements Coordinator Structure within an Organization"
+    publisher: "Behavior Analyst Certification Board"
+    url: "https://www.bacb.com/when-to-establish-an-rbt-requirements-coordinator-structure-within-an-organization/"
 ---
 <!-- Image suggestion: real photo of a BCBA and an RBT reviewing a clipboard together in a family living room while a preschool-age child plays with blocks on the rug nearby, warm natural light (replace generated placeholder) -->
 
@@ -54,6 +68,7 @@ The main difference between a BCBA and an RBT is their role on your child's ABA 
 > - The BCBA plans, supervises, and reviews data. The RBT delivers sessions and records data.
 > - RBTs always work under close, ongoing supervision.
 > - You can check any BCBA's or RBT's certification on the BACB Certificant Registry.
+> - "ABA therapist" is an informal term, not a BACB credential. Ask which credential the person holds.
 
 ## What is a BCBA?
 
@@ -104,6 +119,35 @@ The BACB's RBT Ethics Code says RBTs [follow the direction of their supervisors]
 | Reviews data and makes decisions | Yes | Reports observations to the BCBA |
 | Trains and coaches parents | Usually | May model strategies during sessions, as directed |
 | Supervises others | Yes, including RBTs | No |
+
+## What is an ABA therapist?
+
+"ABA therapist" is an everyday term, not a credential. The BACB, which certifies behavior analysts, lists its credentials as [RBT, BCaBA, BCBA and BCBA-D](https://www.bacb.com/about-behavior-analysis/). None of them is called "ABA therapist." Families, schools and job ads use the phrase loosely for anyone who works with a child in ABA. Most often it means the RBT who runs sessions, but people also use it for a BCBA or a BCaBA.
+
+So when someone introduces themselves as your child's ABA therapist, it is fair to ask which credential they hold. The BACB also notes that some places may require additional credentials beyond BACB certification.
+
+### What does an ABA therapist do?
+
+It depends on their credential. ABA itself, the BACB explains, mainly [teaches more effective behavior through positive reinforcement](https://www.bacb.com/about-behavior-analysis/). Each credential plays a different part in that work:
+
+| Credential | Level (per BACB) | Practices independently? | Typical role with your child |
+|---|---|---|---|
+| BCBA (Board Certified Behavior Analyst) | [Graduate-level](https://www.bacb.com/bcba/) | Yes | Assesses, writes the plan, supervises the team, reviews data |
+| BCaBA (Board Certified Assistant Behavior Analyst) | [Undergraduate-level](https://www.bacb.com/bcaba/) | No, only under BCBA supervision | Supports the BCBA and may supervise RBTs |
+| RBT (Registered Behavior Technician) | [Paraprofessional](https://www.bacb.com/rbt/) | No, works under close supervision | Runs sessions and records data, following the plan |
+
+RBT supervision is not optional. The BACB sets an [ongoing supervision requirement for RBTs](https://www.bacb.com/when-to-establish-an-rbt-requirements-coordinator-structure-within-an-organization/), with a 5% monthly minimum. BCBAs and qualified BCaBAs can serve as RBT Supervisors, and supervision only counts when the RBT is listed as a supervisee in the supervisor's BACB account.
+
+### How to verify an ABA therapist's credential
+
+The BACB's [Verify Certification page](https://www.bacb.com/verify-certification/) explains how to use its public Certificant Registry, which is updated daily. To check someone on your child's team:
+
+1. Ask for their full name and which BACB credential they hold.
+2. Search for them in the registry.
+3. Confirm their status is active, not inactive or expired.
+4. Check whether any reportable disciplinary actions are listed.
+
+If a person you are told is an "ABA therapist" does not appear in the registry, ask the provider what training and supervision that person has. You will find more questions to ask in the credentials section below.
 
 ## How BCBA supervision of RBTs works
 

@@ -71,7 +71,7 @@ The NICHD also notes that there is no one standard treatment for autism, and tha
 
 ## What early intervention for autism can include
 
-Early intervention is not a single program. It is a mix of supports matched to your child's needs.
+Early intervention is not a single program. It is a mix of supports matched to your child's needs. For an overview of therapy types at every age, see our guide to [autism treatment options for children](/blog/autism-treatment-options/).
 
 ### Parent-mediated therapy
 

@@ -15,7 +15,7 @@ secondaryKeywords: ["speech therapy for autistic child", "speech therapy for aut
 searchIntent: informational
 funnelStage: MOFU
 relatedService: speech-language-therapy
-related: ["aac-and-autism", "occupational-therapy-for-autism", "supporting-aba-therapy-at-home"]
+related: ["autism-social-skills", "aac-and-autism", "occupational-therapy-for-autism"]
 faqs:
   - q: "My child talks a lot. Can they still benefit from speech therapy?"
     a: "Often, yes. Some autistic children have large vocabularies but find conversation, taking turns, understanding figures of speech, or reading social cues hard. A speech-language pathologist can work on these social communication skills, not just on words."

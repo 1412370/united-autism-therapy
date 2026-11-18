@@ -10,7 +10,7 @@ export const LOCATIONS = [
   {
     slug: 'westminster-ca',
     name: 'Westminster, CA',
-    title: 'ABA Center in Westminster, CA',
+    title: 'Autism Therapy Center in Westminster, CA',
     h1: 'Our Westminster, CA Autism Therapy Center',
     description:
       `Visit United Autism Therapy at ${fullAddress}. Center-based ABA, speech, OT and parent training, plus in-home ABA across Orange County.`,
