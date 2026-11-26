@@ -169,7 +169,7 @@ Common next steps include:
 - **Regional center services for ages 3 and up.** RCOC provides Lanterman services for people 3 and older with a qualifying developmental disability, including autism, and a provisional Lanterman category for ages 3 to 4.
 - **Health plan–covered therapies.** Therapies such as ABA, speech, and OT may continue through your health plan when medically necessary.
 
-Ask your service coordinator about transition planning well before your child's third birthday so there is time to schedule assessments and meetings.
+Ask your service coordinator about transition planning well before your child's third birthday so there is time to schedule assessments and meetings. Our guide to [what happens after Early Start at age 3](/blog/what-happens-after-early-start-at-age-3/) walks through the possible paths.
 
 Please talk with your pediatrician or a qualified professional about which early supports fit your child.
 

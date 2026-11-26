@@ -103,6 +103,9 @@ Each primary keyword is owned by **one** page. Other pages may mention the topic
 | AAC autism | Informational | /blog/aac-and-autism/ | /services/speech-language-therapy/ | — | speech article + service | ✅ |
 | sensory processing autism | Informational | /blog/sensory-processing-and-autism/ | /services/occupational-therapy/ | — | OT article + service | ✅ |
 | autism treatment options (types of autism therapy, autism therapy for children) | Informational | /blog/autism-treatment-options/ | /services/aba-therapy/ | — | ASD guide, early-intervention, what-age articles | ✅ (added 2026-11-18) |
+| echolalia in autism (what is echolalia, scripting autism) | Informational | /blog/echolalia-in-autism/ | /services/speech-language-therapy/ | /blog/speech-therapy-for-autism/ (keeps the broader SLP how-to) | Early signs, speech therapy articles | ✅ (added 2026-11-26) |
+| stimming in autism (what is stimming, hand flapping autism) | Informational | /blog/stimming-in-autism/ | /services/occupational-therapy/ | /blog/is-aba-therapy-controversial/ (keeps the ABA-and-stimming stance; link only) | Sensory, meltdown, ABA controversy articles | ✅ (added 2026-11-26) |
+| early start transition at age 3 (turning 3 early start california) | Informational / local | /blog/what-happens-after-early-start-at-age-3/ | /services/parent-training/ | /blog/iep-for-autism-orange-county/ (keeps IEP process), /blog/early-intervention-for-autism/ | Early intervention, IEP, RCOC intake articles | ✅ (added 2026-11-26) |
 
 ### Cannibalization decisions made
 

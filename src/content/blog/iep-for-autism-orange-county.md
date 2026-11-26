@@ -151,7 +151,7 @@ Under IDEA, a **transition conference** should take place at least **90 days** b
 - An IEP meeting, so services can start by the third birthday if your child qualifies
 - Whether your child may qualify for [RCOC Lanterman services](https://www.rcocdd.com/client-services/intake/lanterman/) for ages 3 and older
 
-**Tip:** Ask your service coordinator about transition planning around your child's second birthday, so there is plenty of time. See our guide to [early intervention for autism](/blog/early-intervention-for-autism/) for more on Early Start.
+**Tip:** Ask your service coordinator about transition planning around your child's second birthday, so there is plenty of time. See our guide to [early intervention for autism](/blog/early-intervention-for-autism/) for more on Early Start. For the full picture of the paths at age 3, see [what happens after Early Start at age 3](/blog/what-happens-after-early-start-at-age-3/).
 
 ## What if I disagree with the school?
 

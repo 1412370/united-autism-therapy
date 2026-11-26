@@ -88,7 +88,7 @@ That is a real safety issue. Children, and autistic children especially, need to
 
 ### Suppressing stimming
 
-Stimming, such as hand-flapping, rocking, humming, or spinning objects, often helps autistic people regulate, focus, or express joy. Programs that try to reduce harmless stimming can take away a useful coping tool. Many self-advocates see this as trying to change who a child is rather than supporting them.
+Stimming, such as hand-flapping, rocking, humming, or spinning objects, often helps autistic people regulate, focus, or express joy. Programs that try to reduce harmless stimming can take away a useful coping tool. Many self-advocates see this as trying to change who a child is rather than supporting them. Our guide to [stimming in autism](/blog/stimming-in-autism/) explains what it is and when it may need support.
 
 ### Intensity and loss of childhood
 
