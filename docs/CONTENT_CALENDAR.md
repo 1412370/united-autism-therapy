@@ -18,6 +18,9 @@ Last updated: 2026-11-04. Owner: content lead. Cadence follows CONTENT_STRATEGY.
 | 2026-11-16 | regional-center-eligibility-autism | autism | regional center eligibility autism | Autism / aba-therapy | MOFU | Source: RCOC Lanterman page (verified). Image placeholder from early-intervention-for-autism.jpg |
 | 2026-11-18 | functional-communication-training-aba | aba-therapy | functional communication training | ABA therapy / aba-therapy | MOFU | Source: CDC treatment page (verified). Image placeholder from aba-therapy-goals.jpg |
 | 2026-11-18 | autism-treatment-options | autism | autism treatment options | Autism / aba-therapy | TOFU | Sources: verified list in docs/research/2026-11-18-keyword-content-sources.md (CDC, NICHD, NIMH brochure, ASHA Practice Portal, CHSA AAC, Schreibman 2015, RCOC, FDA). Image placeholder from understanding-autism-spectrum-disorder.jpg. Same run: bcba-vs-rbt expanded ("ABA therapist") and what-age-to-start-aba-therapy expanded ("ABA therapy for toddlers"). Blocked/unverified, not used: AAP 2020 report, FDA HBOT/MMS/stem-cell pages, ABA hours per week, RBT eligibility details, DDS Early Start, DHCS BHT. |
+| 2026-11-26 | what-happens-after-early-start-at-age-3 | parent-resources | early start transition at age 3 | Parent resources / parent-training | MOFU | Sources: docs/research/2026-11-26-three-articles-sources.md (RCOC pages and RCOC-hosted DDS packet, 2023 edition; CDC). DDS and ed.gov pages were blocked, so IDEA nine-month and late-referral rules are not stated. Recheck against the August 2025 DDS packet in a browser. Image placeholder from early-intervention-for-autism.jpg. |
+| 2026-11-26 | echolalia-in-autism | speech-therapy | echolalia in autism | Speech / speech-language-therapy | TOFU | Sources: ASHA Practice Portal, Cohn 2022, Hanen, ZERO TO THREE, Cleveland Clinic, CDC. SLP review recommended. Image placeholder from speech-therapy-for-autism.jpg. |
+| 2026-11-26 | stimming-in-autism | autism | stimming in autism | Autism / occupational-therapy | TOFU | Sources: APA blog, CDC, ASHA, NHS (UK), Kapp 2019, The Transmitter. No U.S. government stimming page found (stated in the article). SLP/OT review recommended. Image placeholder from sensory-processing-and-autism.jpg. |
 
 Why these three: each targets a keyword that is not in SEO_KEYWORD_MAP.md's current table, so there is no cannibalization. Each is linked from at least one existing article or service page, or is linked from the other new articles. Add links from existing pages once the articles are live (see "Internal link follow-ups").
 
@@ -25,7 +28,6 @@ Why these three: each targets a keyword that is not in SEO_KEYWORD_MAP.md's curr
 
 | Target week | Candidate slug | Keyword | Blocker before writing |
 |---|---|---|---|
-| 2026-11-30 | echolalia-in-autism | echolalia autism | The ASHA autism page cited in the brief returns 404. Find a replacement source and get SLP review. |
 | 2026-12-07 | toilet-training-autism | toilet training autism | No verified source yet. Fetch CDC or AAP content on toileting and autism before drafting. |
 | 2026-12-14 | picky-eating-autism-ot | picky eating autism | The AOTA "What is OT" page returned no content on fetch. Verify manually and get OT review. |
 | 2027-01-11 | commercial-insurance-aba-california | commercial insurance ABA California | Needs DMHC or other official source for plan rules. Do not name plans without verification. |

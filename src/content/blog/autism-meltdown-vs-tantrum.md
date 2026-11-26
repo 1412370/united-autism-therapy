@@ -88,7 +88,7 @@ Often it's not one trigger, but several stacking up. That's why a small thing, l
 Many children show signs before a meltdown starts. Catching them early gives you a chance to help. Watch for:
 
 - Covering ears or eyes
-- More stimming, such as rocking, flapping, or pacing
+- More [stimming](/blog/stimming-in-autism/), such as rocking, flapping, or pacing
 - Repeating a word or question over and over
 - Pulling away, hiding, or trying to leave
 - Getting very quiet, or louder and faster

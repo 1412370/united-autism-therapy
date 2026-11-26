@@ -112,7 +112,7 @@ Echolalia means repeating words or phrases. The CDC lists [repeating words or ph
 
 Echolalia can be immediate, like repeating your question right back to you. It can also be delayed, like reciting a line from a show hours later. It is easy to assume these repeats are meaningless, but they often carry a message. A child who says "Do you want a cookie?" may be asking for a cookie. A line from a cartoon may mean "I'm excited" or "I need a break."
 
-Many SLPs treat echolalia as a starting point rather than something to stop. They watch when your child uses a phrase, figure out what it likely means, and help your child build more flexible language from there. At home, you can do the same:
+Many SLPs treat echolalia as a starting point rather than something to stop. They watch when your child uses a phrase, figure out what it likely means, and help your child build more flexible language from there. At home, you can do the same: Our full guide to [echolalia in autism](/blog/echolalia-in-autism/) covers the types and how to respond.
 
 - Notice when the phrase comes up and what is happening around it
 - Respond to the likely meaning ("You want a cookie. Here's a cookie.")

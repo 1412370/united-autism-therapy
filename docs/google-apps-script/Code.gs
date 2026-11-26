@@ -15,7 +15,7 @@
  */
 
 // ---- Settings -------------------------------------------------------------
-const NOTIFY_EMAIL = 'nntnhan96@gmail.com'; // who gets an email for each request (comma-separate for more)
+const NOTIFY_EMAIL = 'nntnhan96@gmail.com,kellyavalon8@gmail.com,support@unitedautismtherapy.org'; // who gets an email for each request (comma-separate for more)
 const SHEET_NAME = 'Intake Requests'; // new tab (2026-11-15); the old 'Consultation Requests' tab keeps earlier rows
 const SITE_NAME = 'United Autism Therapy';
 const THANK_YOU_URL = 'https://unitedautismtherapy.org/thank-you/';

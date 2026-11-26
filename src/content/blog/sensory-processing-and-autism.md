@@ -112,7 +112,7 @@ A sensory-seeking child looks for more of certain sensations. You might see your
 
 Most children do not fit neatly into one group. A child might avoid loud sounds and seek deep pressure. Sensory needs can also shift with sleep, hunger, illness, and stress. A texture your child tolerates on a calm morning may feel impossible after a long day.
 
-Repetitive movements like rocking, spinning, or hand flapping (often called stimming) can help a child regulate. The AAP notes that some children with sensory processing differences engage in [self-stimulating behaviors](https://www.healthychildren.org/English/health-issues/conditions/developmental-disabilities/Pages/Sensory-Integration-Therapy.aspx). When stimming is safe, it usually does not need to be stopped.
+Repetitive movements like rocking, spinning, or hand flapping (often called stimming) can help a child regulate. The AAP notes that some children with sensory processing differences engage in [self-stimulating behaviors](https://www.healthychildren.org/English/health-issues/conditions/developmental-disabilities/Pages/Sensory-Integration-Therapy.aspx). When stimming is safe, it usually does not need to be stopped. For more, see our guide to [stimming in autism](/blog/stimming-in-autism/).
 
 ## Sensory overload in children: meltdown or tantrum?
 

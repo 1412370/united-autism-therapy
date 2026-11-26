@@ -123,7 +123,7 @@ A preschool teacher may be the first to mention differences in how your child pl
 Autism also includes restricted or repetitive behaviors and interests. The CDC lists examples such as:
 
 - Lining up toys or other objects and getting upset when the order is changed
-- Repeating words or phrases over and over (called echolalia)
+- Repeating words or phrases over and over (called [echolalia](/blog/echolalia-in-autism/))
 - Playing with toys the same way every time
 - Focusing on parts of objects, such as wheels
 - Getting upset by minor changes

@@ -63,7 +63,7 @@ RCOC's intake page directs families to one of three pages, based on your child's
 | Age 3 and older | Lanterman | Eligibility under the Lanterman criteria, which name autism and set functional limits |
 | Ages 3 and 4 | Provisional Lanterman | An RCOC option listed for children in this age range |
 
-Each page has its own eligibility rules. The [early intervention guide](/blog/early-intervention-for-autism/) explains the birth-to-3 system in more depth, and [Lanterman eligibility for autism](/blog/regional-center-eligibility-autism/) covers the criteria for children age 3 and older. Start with the page that matches your child's current age, and ask the intake specialist if your child is between categories.
+Each page has its own eligibility rules. The [early intervention guide](/blog/early-intervention-for-autism/) explains the birth-to-3 system in more depth, and [Lanterman eligibility for autism](/blog/regional-center-eligibility-autism/) covers the criteria for children age 3 and older. Start with the page that matches your child's current age, and ask the intake specialist if your child is between categories. If your child is about to turn 3, read [what happens after Early Start at age 3](/blog/what-happens-after-early-start-at-age-3/).
 
 ## Step 2: Send an inquiry or call the intake unit
 
